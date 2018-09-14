@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Dentro\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\Dentro\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Dentro\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_VGS+.-2034291147.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Dentro\Documents\GitHub\VGS-\VGS+" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Abilities" t="Include">
+            <e p="Ability.cs" t="Include" />
+          </e>
+          <e p="Attack.cs" t="Include" />
+          <e p="Class.cs" t="Include" />
+          <e p="EnemyHealth.cs" t="Include" />
+          <e p="Enums.cs" t="Include" />
+          <e p="PlayerMovement.cs" t="Include" />
+          <e p="Stats.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="VGS+.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
