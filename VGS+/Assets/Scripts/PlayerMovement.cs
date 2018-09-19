@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] private Vector3 velocity;
-    [SerializeField] private Rigidbody rb;
     [SerializeField] private float speedModifier = 1;
 
     public float SpeedModifier
@@ -22,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {

@@ -31,3 +31,9 @@ public enum Elements
     physical,
     none
 };
+public enum Enemies {
+    Plate,
+    Mail,
+    Leather,
+    Cloth
+};
