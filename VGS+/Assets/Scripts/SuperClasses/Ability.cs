@@ -37,7 +37,8 @@ public abstract class Ability : MonoBehaviour
     public List<GameObject> enemies;
     public List<GameObject> allies;
     public string keyBinding; // this must be rewritten
-
+    private float cdModifier;
+    float rangeModifier;
     public string Name
     {
         get
@@ -310,5 +311,23 @@ public abstract class Ability : MonoBehaviour
     private void addAlly(Collider other)
     {
         allies.Add(other.gameObject);
+    }
+    public void changeCD(float _cdModifier,float time) {
+        cdModifier = _cdModifier;
+        Cd *= cdModifier;
+        Invoke("expireCD", time);
+    }
+    private void expireCD() {
+        Cd /= cdModifier;
+    }
+    public void changeRange(float _modifier, float time)
+    {
+        rangeModifier = _modifier;
+        Range *= rangeModifier;
+        Invoke("expireR", time);
+    }
+    private void expireR()
+    {
+        Range /= rangeModifier;
     }
 }

@@ -25,4 +25,5 @@ public class Attack : Ability
     private void expire() {
         Cd /= modifier;
     }
+    
 }
