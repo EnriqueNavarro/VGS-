@@ -17,11 +17,11 @@ public class ShadowCloack : Ability
     
     public override void Activate()
     {
-        GetComponent<Stats>().Stealth = true;
+        GetComponentInParent<Stats>().Stealth = true;
         Invoke("endStealth", Duration);
         
     }
     void endStealth() {
-        GetComponent<Stats>().Stealth = false;
+        GetComponentInParent<Stats>().Stealth = false;
     }
 }
