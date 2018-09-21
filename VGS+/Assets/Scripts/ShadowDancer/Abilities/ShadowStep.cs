@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShadowStep : Ability {
-    [SerializeField] private Collider col;
+    
     [SerializeField] Vector3 pos;
     [SerializeField] GameObject lower;
     [SerializeField] float attackSpeedModifier;
@@ -12,13 +12,13 @@ public class ShadowStep : Ability {
     private Enemies aux;
 	// Use this for initialization
 	void Start () {
-        col.transform.localScale = new Vector3(Range, 2, Range);
+        Col.transform.localScale = new Vector3(Range, 2, Range);
 	}
     
 
     public override void Activate()
     {
-        Debug.Log("Activating " + this.name);
+        
         lower = null;
         foreach (GameObject enemy in enemies)
         {

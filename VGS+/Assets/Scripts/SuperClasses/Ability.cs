@@ -21,7 +21,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField]
     private GameObject particleflefx;
     [SerializeField]
-    private int duration;
+    private float duration;
     [SerializeField]
     private float range;
     [SerializeField]
@@ -34,11 +34,16 @@ public abstract class Ability : MonoBehaviour
     private bool targetAllies;
     [SerializeField]
     private bool targetAll;
+    [SerializeField]
+    private Collider col;
+    public float elapsed;
     public List<GameObject> enemies;
     public List<GameObject> allies;
     public string keyBinding; // this must be rewritten
     private float cdModifier;
     float rangeModifier;
+    private float modifier;
+    private sStats change;
     public string Name
     {
         get
@@ -143,7 +148,7 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
-    public int Duration
+    public float Duration
     {
         get
         {
@@ -234,16 +239,30 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
+    public Collider Col
+    {
+        get
+        {
+            return col;
+        }
+
+        set
+        {
+            col = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
-
+        Col.transform.localScale = new Vector3(Range, 2, Range);
     }
 
     // Update is called once per frame
     public void Update()
     {
         if (Input.GetKeyDown(keyBinding)) Trigger();
+        elapsed = Time.fixedTime - Timer;
     }
     //if (Input.GetKeyDown(keyBinding)) Trigger(); agregar esa linea en cada update
     public void Trigger()
@@ -252,6 +271,7 @@ public abstract class Ability : MonoBehaviour
         {
             Timer = Time.fixedTime;
             Activate();
+            Debug.Log("Activating " + this.name);
         }
     }
 
@@ -312,7 +332,43 @@ public abstract class Ability : MonoBehaviour
     {
         allies.Add(other.gameObject);
     }
-    public void changeCD(float _cdModifier,float time) {
+    public void changer(float _modifier,float time, sStats toChange) {
+        change = toChange;
+        modifier = _modifier;
+        switch(toChange) {
+            case sStats.CD:
+                Cd *= modifier;
+                break;
+            case sStats.Damage:
+                Damage = (int)(Damage*modifier);
+                break;
+            case sStats.Duration:
+                Duration *= modifier;
+                break;
+            case sStats.Range:
+                Range *= modifier;
+                break;
+        }
+        Invoke("reverter", time);
+    }
+    private void reverter() {
+        switch (change)
+        {
+            case sStats.CD:
+                Cd /= modifier;
+                break;
+            case sStats.Damage:
+                Damage = (int)(Damage / modifier);
+                break;
+            case sStats.Duration:
+                Duration /= modifier;
+                break;
+            case sStats.Range:
+                Range /= modifier;
+                break;
+        }
+    }
+    /*public void changeCD(float _cdModifier,float time) {
         cdModifier = _cdModifier;
         Cd *= cdModifier;
         Invoke("expireCD", time);
@@ -329,5 +385,5 @@ public abstract class Ability : MonoBehaviour
     private void expireR()
     {
         Range /= rangeModifier;
-    }
+    }*/
 }

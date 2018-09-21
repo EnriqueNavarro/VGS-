@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Attack : Ability
 {
-    float modifier;
+    float modifierS;
 	// Use this for initialization
 	void Start () {
-	}
+        Col.transform.localScale = new Vector3(Range, 2, Range);
+    }
 	
 	// Update is called once per frame
 	
@@ -18,12 +19,12 @@ public class Attack : Ability
         }
     }
     public void attackSpeed(float _modifier, float time) {
-        modifier = _modifier;
-        Cd *= modifier;
+        modifierS = _modifier;
+        Cd *= modifierS;
         Invoke("expire", time);
     }
     private void expire() {
-        Cd /= modifier;
+        Cd /= modifierS;
     }
     
 }

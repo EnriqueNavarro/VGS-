@@ -15,14 +15,14 @@ public class ShadowsEmbrace : Ability
     // Use this for initialization
     void Start()
     {
-
+        Col.transform.localScale = new Vector3(Range, 2, Range);
     }
 
     public override void Activate()
     {
-        Debug.Log("activated");
+        
         attackGameObject.GetComponent<Attack>().attackSpeed(attackSpeedModifier, Duration);
-        attackGameObject.GetComponent<Attack>().changeRange(rangeModifier2,Duration);
+        attackGameObject.GetComponent<Attack>().changer(rangeModifier2,Duration,sStats.Range);
         oldCd=ShadowStepGameObject.GetComponent<ShadowStep>().Cd;
         ShadowStepGameObject.GetComponent<ShadowStep>().Cd = newCd;
         Invoke("endCDs", Duration);

@@ -37,3 +37,11 @@ public enum Enemies {
     Leather,
     Cloth
 };
+public enum sStats {
+    Particleflefx,
+    Duration,
+    Range,
+    DmgType,
+    Damage,
+    CD
+};

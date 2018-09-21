@@ -11,18 +11,35 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1269917224612270}
   m_IsPrefabAsset: 1
---- !u!1 &1028747123529206
+--- !u!1 &1099131214354342
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4398933896676664}
-  - component: {fileID: 114772177129494010}
-  - component: {fileID: 65245382412922990}
+  - component: {fileID: 4748803384913328}
+  - component: {fileID: 114365717404665408}
+  - component: {fileID: 65658528386604234}
   m_Layer: 0
-  m_Name: AutoAttack
+  m_Name: ShadowDancer AutoAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1264543517370846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4931771873210124}
+  - component: {fileID: 114027782985003358}
+  - component: {fileID: 65567488676510740}
+  m_Layer: 0
+  m_Name: ShadowsEmbrace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4289965127354282}
   - component: {fileID: 114890777259456716}
+  - component: {fileID: 65041219175190778}
   m_Layer: 0
   m_Name: ShadowCloack
   m_TagString: Untagged
@@ -66,6 +84,53 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1711423017827124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4361332432844982}
+  - component: {fileID: 114580973525033514}
+  - component: {fileID: 65781846590113630}
+  m_Layer: 0
+  m_Name: ShadowStep
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1955832259164202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4182653031638264}
+  - component: {fileID: 114522136920293462}
+  - component: {fileID: 65055515936984236}
+  m_Layer: 0
+  m_Name: Blade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4182653031638264
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955832259164202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4358795431871066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4289965127354282
 Transform:
   m_ObjectHideFlags: 1
@@ -77,7 +142,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4358795431871066}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4358795431871066
 Transform:
@@ -86,26 +151,55 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269917224612270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0.5, z: -1.41}
+  m_LocalPosition: {x: -0.7, y: 0.5, z: 0.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4398933896676664}
+  - {fileID: 4182653031638264}
+  - {fileID: 4748803384913328}
   - {fileID: 4289965127354282}
+  - {fileID: 4361332432844982}
+  - {fileID: 4931771873210124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4398933896676664
+--- !u!4 &4361332432844982
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028747123529206}
+  m_GameObject: {fileID: 1711423017827124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4358795431871066}
-  m_RootOrder: 0
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4748803384913328
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099131214354342}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4358795431871066}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4931771873210124
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264543517370846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4358795431871066}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23084779731095754
 MeshRenderer:
@@ -164,6 +258,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &65041219175190778
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366779337827462}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65055515936984236
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955832259164202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65198535293343520
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -176,18 +294,81 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65245382412922990
+--- !u!65 &65567488676510740
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028747123529206}
+  m_GameObject: {fileID: 1264543517370846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65658528386604234
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099131214354342}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 1.5}
   m_Center: {x: 0, y: 0, z: 1.25}
+--- !u!65 &65781846590113630
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711423017827124}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114027782985003358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264543517370846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3990bd027194414eb0e949466894ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Shadow's Embrace
+  description: A shadow clone will strike all enemies in range, and the user will
+    get an attack speed buff, and have shadow step's cd greartly reduced
+  icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
+  cd: 30
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 10
+  range: 10
+  dmgType: 4
+  damage: 20
+  targetEnemies: 1
+  targetAllies: 0
+  targetAll: 0
+  col: {fileID: 65567488676510740}
+  elapsed: 0
+  enemies: []
+  allies: []
+  keyBinding: r
+  pos: {x: 0, y: 0, z: 0}
+  attackSpeedModifier: 0.5
+  rangeModifier2: 2
+  newCd: 0.5
+  attackGameObject: {fileID: 1099131214354342}
+  ShadowStepGameObject: {fileID: 1711423017827124}
+  player: {fileID: 1269917224612270}
 --- !u!114 &114160688127152544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,14 +383,47 @@ MonoBehaviour:
   cName: 0
   stats: {fileID: 114511300138888890}
   passives:
-  - {fileID: 0}
+  - {fileID: 1955832259164202}
   - {fileID: 0}
   actives:
   - {fileID: 1366779337827462}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1711423017827124}
+  - {fileID: 1264543517370846}
   stealth: 0
+--- !u!114 &114365717404665408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1099131214354342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9fcecaa1bd60840897f2dd7da9f6b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Auto attack
+  description: Shadow dancer's version of an auta attack that works in tandem with
+    the magical blade
+  icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
+  cd: 0.5
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 0
+  range: 1
+  dmgType: 4
+  damage: 5
+  targetEnemies: 1
+  targetAllies: 0
+  targetAll: 0
+  col: {fileID: 65658528386604234}
+  elapsed: 0
+  enemies: []
+  allies: []
+  keyBinding: a
+  bladeGameObject: {fileID: 1955832259164202}
 --- !u!114 &114511300138888890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,19 +451,22 @@ MonoBehaviour:
   xpRequiered: 0
   baseDmg: 0
   stealth: 0
---- !u!114 &114772177129494010
+--- !u!114 &114522136920293462
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1028747123529206}
+  m_GameObject: {fileID: 1955832259164202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa50be878a4e6e64f9a16b6873ebdbe4, type: 3}
+  m_Script: {fileID: 11500000, guid: e774b14dc433ce04a9b28590d41f2c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Auto attack
-  description: Basic attack
+  name: Magic Blade
+  description: The shadow dancer utilizes a magic blase to deal damage, said blade
+    will decrease in stability when used, depending on the enemy armor type (cloth
+    and leather make it more stable, mail and plate less stable), and it may explode
+    dealing damage to friend or foe
   icon: {fileID: 0}
   requireTarget: 0
   selfTarget: 0
@@ -257,15 +474,63 @@ MonoBehaviour:
   timer: 0
   particleflefx: {fileID: 0}
   duration: 0
-  range: 0
-  dmgType: 5
-  damage: 5
+  range: 2
+  dmgType: 0
+  damage: 0
+  targetEnemies: 1
+  targetAllies: 1
+  targetAll: 0
+  col: {fileID: 65055515936984236}
+  elapsed: 0
+  enemies: []
+  allies: []
+  keyBinding: N/A
+  instability: 0
+  plateModifier: 10
+  mailModifier: 5
+  leatherModifier: 4
+  clothModifier: 6
+  baseDamage: 0
+  stability: 20
+  baseInstability: 0
+  baseStability: 20
+--- !u!114 &114580973525033514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711423017827124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f7c8bf2bafc484f9e34d5f1ba26337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Shadow Step
+  description: Teleports you to one of the lowest armor types in the vecinity, and
+    if there is a target get an attack speed buff
+  icon: {fileID: 0}
+  requireTarget: 1
+  selfTarget: 0
+  cd: 10
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 3
+  range: 10
+  dmgType: 4
+  damage: 20
   targetEnemies: 1
   targetAllies: 0
   targetAll: 0
+  col: {fileID: 65781846590113630}
+  elapsed: 0
   enemies: []
   allies: []
-  keyBinding: a
+  keyBinding: w
+  pos: {x: 0, y: 0, z: 0}
+  lower: {fileID: 0}
+  attackSpeedModifier: 0.5
+  attackGameObject: {fileID: 1099131214354342}
+  player: {fileID: 1269917224612270}
 --- !u!114 &114890777259456716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,6 +557,8 @@ MonoBehaviour:
   targetEnemies: 0
   targetAllies: 0
   targetAll: 0
+  col: {fileID: 65041219175190778}
+  elapsed: 0
   enemies: []
   allies: []
   keyBinding: q
