@@ -248,7 +248,7 @@ public class Stats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GetComponent<PlayerMovement>().SpeedModifier = Speed;
+        GetComponent<PlayerMovement>().SpeedModifier = Speed+0.1f;
         BaseDmg = 1;
         switch (ClassName)
         {

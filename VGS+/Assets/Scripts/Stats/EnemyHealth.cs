@@ -218,7 +218,7 @@ public class EnemyHealth : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (lvl == null || lvl == 0) lvl = 1;
+        if (lvl == 0) lvl = 1;
         switch (TypeName)
         {
             case Enemies.Plate:

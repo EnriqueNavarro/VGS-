@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1126899138176524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4898384441708496}
+  - component: {fileID: 114492476971588162}
+  m_Layer: 0
+  m_Name: CreateBlade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1264543517370846
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,6 +174,7 @@ Transform:
   - {fileID: 4748803384913328}
   - {fileID: 4289965127354282}
   - {fileID: 4361332432844982}
+  - {fileID: 4898384441708496}
   - {fileID: 4931771873210124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -188,6 +205,19 @@ Transform:
   m_Father: {fileID: 4358795431871066}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4898384441708496
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126899138176524}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4358795431871066}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4931771873210124
 Transform:
   m_ObjectHideFlags: 1
@@ -199,7 +229,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4358795431871066}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23084779731095754
 MeshRenderer:
@@ -424,6 +454,40 @@ MonoBehaviour:
   allies: []
   keyBinding: a
   bladeGameObject: {fileID: 1955832259164202}
+--- !u!114 &114492476971588162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126899138176524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c12a4b26c17f140b2ef60653306a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Create Blade
+  description: Activates the magic blade, and if it is already ativated, increases
+    instability
+  icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
+  cd: 15
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 0
+  range: 0
+  dmgType: 6
+  damage: 0
+  targetEnemies: 0
+  targetAllies: 0
+  targetAll: 0
+  col: {fileID: 0}
+  elapsed: 0
+  enemies: []
+  allies: []
+  keyBinding: e
+  blade: {fileID: 1955832259164202}
+  extraInstability: 20
 --- !u!114 &114511300138888890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,7 +539,7 @@ MonoBehaviour:
   particleflefx: {fileID: 0}
   duration: 0
   range: 2
-  dmgType: 0
+  dmgType: 4
   damage: 0
   targetEnemies: 1
   targetAllies: 1
@@ -493,7 +557,8 @@ MonoBehaviour:
   baseDamage: 0
   stability: 20
   baseInstability: 0
-  baseStability: 20
+  baseStability: 50
+  live: 0
 --- !u!114 &114580973525033514
 MonoBehaviour:
   m_ObjectHideFlags: 1
