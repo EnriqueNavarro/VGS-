@@ -152,6 +152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114522261172707028, guid: e725b5fcdb848c74180aca46ca249782,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1978975744}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e725b5fcdb848c74180aca46ca249782, type: 2}
   m_IsPrefabAsset: 0
@@ -342,16 +347,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 65113676410511182, guid: f9844e226fa022646a90696f8e7fc6d7,
+    - target: {fileID: 114137376368767326, guid: f9844e226fa022646a90696f8e7fc6d7,
         type: 2}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 65113676410511182, guid: f9844e226fa022646a90696f8e7fc6d7,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1978975744}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9844e226fa022646a90696f8e7fc6d7, type: 2}
   m_IsPrefabAsset: 0
@@ -565,6 +565,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4540321774802566, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
     type: 2}
   m_PrefabInternal: {fileID: 1978975742}
+--- !u!1 &1978975744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1325531234331084, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1978975742}
 --- !u!1001 &2119128081
 Prefab:
   m_ObjectHideFlags: 0
@@ -609,6 +614,11 @@ Prefab:
       propertyPath: autoAttack
       value: 
       objectReference: {fileID: 176007528}
+    - target: {fileID: 114555986867239618, guid: 2d6cfcb0c90a8c24d9139325254fa2c0,
+        type: 2}
+      propertyPath: resource
+      value: 
+      objectReference: {fileID: 1978975744}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d6cfcb0c90a8c24d9139325254fa2c0, type: 2}
   m_IsPrefabAsset: 0

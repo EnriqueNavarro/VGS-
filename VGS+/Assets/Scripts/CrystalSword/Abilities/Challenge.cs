@@ -6,6 +6,16 @@ public class Challenge : Ability {
     private Enemies aux;
     private float auxHP;
     [SerializeField] GameObject higher;
+    [SerializeField] private GameObject resource;
+    [SerializeField] private float cost;
+    public void Update()
+    {
+        if (resource.GetComponent<CrystalSword>().expendShard(cost))
+        {
+            if (Input.GetKeyDown(keyBinding)) Trigger();
+            elapsed = Time.fixedTime - Timer;
+        }
+    }
     public override void Activate()
     {
 

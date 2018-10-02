@@ -70,7 +70,7 @@ MonoBehaviour:
   icon: {fileID: 0}
   requireTarget: 1
   selfTarget: 0
-  cd: 15
+  cd: 1
   timer: 0
   particleflefx: {fileID: 0}
   duration: 5
@@ -86,3 +86,5 @@ MonoBehaviour:
   allies: []
   keyBinding: e
   higher: {fileID: 0}
+  resource: {fileID: 0}
+  cost: 2
