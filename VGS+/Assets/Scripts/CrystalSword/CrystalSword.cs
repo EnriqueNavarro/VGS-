@@ -8,9 +8,7 @@ public class CrystalSword : Class {
     public float tCost;
     private bool free;
 	// Use this for initialization
-	void Start () {
-		
-	}
+	
 	
 	// Update is called once per frame
 	void Update () {

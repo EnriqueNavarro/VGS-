@@ -4,34 +4,20 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int maxHealth;
-    [SerializeField]
-    private int lvl = 0;
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private Enemies typeName;
-    [SerializeField]
-    private int physicalRes;//0-> none, 1->small, 2->medium, 3->large, 4->great
-    [SerializeField]
-    private int baseMagicRes;
-    [SerializeField]
-    private int fireRes;
-    [SerializeField]
-    private int frostRes;
-    [SerializeField]
-    private int lightRes;
-    [SerializeField]
-    private int shadowRes;
-    [SerializeField]
-    private int poisonRes;
-    [SerializeField]
-    private int baseDmg;
-    [SerializeField]
-    private bool stealth = false;
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int lvl = 0;
+    [SerializeField] private float speed;
+    [SerializeField] private Enemies typeName;
+    [SerializeField] private int physicalRes;//0-> none, 1->small, 2->medium, 3->large, 4->great
+    [SerializeField] private int baseMagicRes;
+    [SerializeField] private int fireRes;
+    [SerializeField] private int frostRes;
+    [SerializeField] private int lightRes;
+    [SerializeField] private int shadowRes;
+    [SerializeField] private int poisonRes;
+    [SerializeField] private int baseDmg;
+    [SerializeField] private bool stealth = false;
 
     public int Health
     {
@@ -282,6 +268,39 @@ public class EnemyHealth : MonoBehaviour
     }
     public void damage(int dmg, Elements element)
     {
+        switch (element)
+        {
+            case Elements.fire:
+                dmg = health - (int)Mathf.Floor(dmg * (10 - fireRes * 2) / 10);
+                break;
+            case Elements.frost:
+                dmg = health - (int)Mathf.Floor(dmg * (10 - frostRes * 2) / 10);
+                break;
+            case Elements.poison:
+                dmg = health - (int)Mathf.Floor(dmg * (10 - poisonRes * 2) / 10);
+                break;
+            case Elements.light:
+                dmg = health - (int)Mathf.Floor(dmg * (10 - lightRes * 2) / 10);
+                break;
+            case Elements.shadow:
+                dmg = health - (int)Mathf.Floor(dmg * (10 - shadowRes * 2) / 10);
+                break;
+        }
+        Health = Mathf.Clamp(dmg, 0, MaxHealth);
+        if (Health == 0) death();
+    }
+    public void damage(int dmg, float critChance, float CritDamage)
+    {
+        bool crit = (Random.Range(0, 1) < critChance);
+        if (crit) dmg = ((int)(dmg * CritDamage));
+        dmg = health - (int)Mathf.Floor(dmg * (10 - physicalRes * 2) / 10);
+        Health = Mathf.Clamp(dmg, 0, MaxHealth);
+        if (Health == 0) death();
+    }
+    public void damage(int dmg, Elements element, float critChance, float CritDamage)
+    {
+        bool crit = (Random.Range(0, 1) < critChance);
+        if (crit) dmg = ((int)(dmg * CritDamage));
         switch (element)
         {
             case Elements.fire:

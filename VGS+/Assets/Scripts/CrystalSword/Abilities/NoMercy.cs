@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoMercy : Ability {
     [SerializeField] private GameObject[] activeAbilities;
-    [SerializeField] private float rangeModifier;
+    [SerializeField] private float _rangeModifier;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
     public void Update()
@@ -20,7 +20,7 @@ public class NoMercy : Ability {
         resource.GetComponent<CrystalSword>().Free(Duration);
         for(int i = 0; i < activeAbilities.Length; i++)
         {
-            activeAbilities[i].GetComponent<Ability>().changer(rangeModifier, Duration, sStats.Range);
+            activeAbilities[i].GetComponent<Ability>().changer(_rangeModifier, Duration, sStats.Range);
         }
     }
 }

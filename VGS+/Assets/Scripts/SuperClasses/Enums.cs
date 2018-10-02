@@ -43,5 +43,8 @@ public enum sStats {
     Range,
     DmgType,
     Damage,
-    CD
+    CD,
+    CritChance,//Abilities dont have inherent critChance, critDmg or speed, those are from the class itself
+    CritDamage,
+    Speed
 };

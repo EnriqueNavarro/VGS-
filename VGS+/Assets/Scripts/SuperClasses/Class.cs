@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Class : MonoBehaviour
 {
-    [SerializeField]
-    private ClassNames cName;
-    [SerializeField]
-    private Stats stats;
-    [SerializeField]
-    private GameObject[] passives = new GameObject[2]; // each class has at least 1 passive
-    [SerializeField]
-    private GameObject[] actives = new GameObject[4]; //each class has at most 4 actives
-    [SerializeField]
-    private bool stealth = false;
+    [SerializeField] private ClassNames cName;
+    [SerializeField] private Stats stats;
+    [SerializeField] private GameObject[] passives = new GameObject[2]; // each class has at least 1 passive
+    [SerializeField] private GameObject[] actives = new GameObject[5]; //each class has at most 4 actives
+    [SerializeField] private bool stealth = false;
+    [SerializeField] private bool combat;
+    private bool first = true;
+    [SerializeField] private int[] baseDmgs = new int[5];
 
     public ClassNames CName
     {
@@ -80,15 +78,41 @@ public class Class : MonoBehaviour
         }
     }
 
+    public bool Combat
+    {
+        get
+        {
+            return combat;
+        }
+
+        set
+        {
+            combat = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
-
+        increaseDmg();
+        first = false;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void increaseDmg()
     {
-
+        for (int i = 0; i < actives.Length; i++)
+        {
+            if (first)
+            {
+                baseDmgs[i] = actives[i].GetComponent<Ability>().Damage;
+                actives[i].GetComponent<Ability>().Damage = (int)(actives[i].GetComponent<Ability>().Damage * stats.BaseDmg);
+                
+            } else
+            {
+                actives[i].GetComponent<Ability>().Damage = (int)(baseDmgs[i] * stats.BaseDmg);
+            }
+            
+        }
     }
+
+   
 }
