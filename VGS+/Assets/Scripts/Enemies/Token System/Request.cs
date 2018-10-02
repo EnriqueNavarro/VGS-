@@ -25,7 +25,7 @@ public class Request : MonoBehaviour {
         this.targetHP = targetHP;
         if (!inRange && !LOS) totalValue -= int.MaxValue;
         totalValue += toHit;
-        totalValue += 10 + 1 / distance;
+        totalValue += 1 + 10 / distance;
         totalValue += threat;
         totalValue += targetHP * 2;
     }
@@ -42,7 +42,7 @@ public class Request : MonoBehaviour {
         this.priority = priority;
         if (!inRange && !LOS) totalValue -= int.MaxValue;
         totalValue += toHit;
-        totalValue += 10 + 1 / distance;
+        totalValue += 1 + 10 / distance;
         totalValue += threat;
         totalValue += targetHP * 2;
         totalValue += priority*1000;
