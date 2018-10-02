@@ -6,6 +6,7 @@ public class CrystalSword : Class {
     [SerializeField] private float[] bloodShards;
     public bool testCost;
     public float tCost;
+    private bool free;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +19,17 @@ public class CrystalSword : Class {
             testCost = false;
         }
 	}
-    public bool expendShard(float cost) {        
+    public void Free(float duration)
+    {
+        free = true;
+        Invoke("nfree", duration);
+    }
+    void nfree()
+    {
+        free = false;
+    }
+    public bool expendShard(float cost) {
+        if (free) cost = 0;
         float total=0;
         foreach(float shard in bloodShards) {
             total += shard;
