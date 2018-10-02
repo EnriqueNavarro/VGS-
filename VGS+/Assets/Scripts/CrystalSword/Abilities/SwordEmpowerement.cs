@@ -7,7 +7,7 @@ public class SwordEmpowerement : Ability {
     [SerializeField] private float attackSpeed;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
-    public void Update()
+    new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().expendShard(cost))
         {

@@ -13,7 +13,6 @@ public class InTheThickOfIt : Ability {
     private float startingTime;
     [SerializeField] private int[] tiers= new int[7];
     [SerializeField] private bool tierChecker=false;
-    private int lastTier;
     private float exitTime;
     private bool once=false;
     [SerializeField] private float t1AttackSpeed;
@@ -27,7 +26,7 @@ public class InTheThickOfIt : Ability {
     {
         tierChecker = true;
     }
-    public void Update()
+    new public void Update()
     {
         combat = resource.GetComponent<CrystalSword>().Combat;
         if (!combat && once)
@@ -64,7 +63,7 @@ public class InTheThickOfIt : Ability {
     }
     void deActivate()
     {
-        lastTier = 0;
+
         for(int i = 0; i < tiers[0]; i++)
         {
             autoAttack.GetComponent<CrystalSwordAttack>().Cd /= t1AttackSpeed;

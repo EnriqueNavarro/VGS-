@@ -57,7 +57,7 @@ public class Blade : Ability {
     public void addInstability(int i) {
         instability += i;
     }
-    public void Update(){}
+    new public void Update(){}
     // Update is called once per frame
     public override void Activate(){}
     public  void Activate(List<GameObject> _enemies) {

@@ -7,7 +7,7 @@ public class NoMercy : Ability {
     [SerializeField] private float _rangeModifier;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
-    public void Update()
+    new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().expendShard(cost))
         {

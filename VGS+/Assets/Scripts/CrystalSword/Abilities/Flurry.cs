@@ -6,7 +6,7 @@ public class Flurry : Ability {
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
     // Update is called once per frame
-    public void Update()
+    new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().expendShard(cost))
         {

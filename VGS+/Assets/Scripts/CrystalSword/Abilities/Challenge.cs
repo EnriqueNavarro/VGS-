@@ -8,7 +8,7 @@ public class Challenge : Ability {
     [SerializeField] GameObject higher;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
-    public void Update()
+    new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().expendShard(cost))
         {
