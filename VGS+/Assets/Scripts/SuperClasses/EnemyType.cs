@@ -77,18 +77,27 @@ public class EnemyType : MonoBehaviour {
             enemy = value;
         }
     }
-
+    public ThreatMeter[] threats;
     // Use this for initialization
     void Start()
     {
-        increaseDmg();
+        //increaseDmg();
         first = false;
         enemy = stats.GetComponent<EnemyHealth>().TypeName;
 
     }
     private void Update()
     {
-        if (players.Length == 0) players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length == 0)
+        {
+            players = GameObject.FindGameObjectsWithTag("Player");
+            ThreatMeter[] threats = new ThreatMeter[players.Length];
+            for(int i=0;i<players.Length;i++) {
+                threats[i] = new ThreatMeter(0,players[i],false);
+            }
+            stats.Threat = threats;
+            GetComponentInChildren<LineOfSight>().Players = players;
+        }
     }
     public void increaseDmg()
     {

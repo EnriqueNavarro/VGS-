@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23565814039811446}
   - component: {fileID: 65991239746895786}
   - component: {fileID: 114443291868546110}
+  - component: {fileID: 114861399865541824}
+  - component: {fileID: 114708549033081824}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -122,3 +124,38 @@ MonoBehaviour:
   poisonRes: 0
   baseDmg: 0
   stealth: 0
+--- !u!114 &114708549033081824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032046438125272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9091cc43146f2447a3fe6fd43b70bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxRange: 5
+--- !u!114 &114861399865541824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032046438125272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4c72ac4cbf30343bea9235861f4612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: 1
+  stats: {fileID: 114443291868546110}
+  abilities:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  stealth: 0
+  combat: 0
+  baseDmgs: 0000000000000000000000000000000000000000
+  players: []

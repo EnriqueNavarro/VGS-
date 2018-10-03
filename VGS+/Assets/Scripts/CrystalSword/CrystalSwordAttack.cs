@@ -13,7 +13,7 @@ public class CrystalSwordAttack : Attack {
     {
         foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<EnemyHealth>().damage(Damage,resource.GetComponent<Stats>().CritChance, resource.GetComponent<Stats>().CritDamage, this.gameObject);
+            enemy.GetComponent<EnemyHealth>().damage(Damage,resource.GetComponent<Stats>().CritChance, resource.GetComponent<Stats>().CritDamage, Player1);
             resource.GetComponent<CrystalSword>().generateShard(generate);
         }
     }

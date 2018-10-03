@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 114671466491116654}
   m_Layer: 0
   m_Name: Crystal Sword
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +247,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4b61943c0043af642a747c4d90fc2277, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -287,7 +287,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65007622780026446
 BoxCollider:
@@ -400,6 +400,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65329919078090902}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []
@@ -464,6 +465,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65007622780026446}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []
@@ -499,6 +501,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65320240452952486}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []
@@ -532,6 +535,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65704075430721516}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []
@@ -539,14 +543,15 @@ MonoBehaviour:
   resource: {fileID: 1325531234331084}
   cost: 0
   combat: 0
-  autoAttack: {fileID: 0}
+  autoAttack: {fileID: 1294522355244204}
   timerT: 0
   tiers: 00000000000000000000000000000000000000000000000000000000
+  tierChecker: 0
   t1AttackSpeed: 0.1
   t2MoveSpeed: 0.5
   t3BaseDmg: 0.2
   t4BaseDmg: 0.3
-  t5MinSpeed: 0
+  t5SlowImmunity: 0
   t6CritChance: 0.1
   tnCritDamage: 0.2
 --- !u!114 &114513864596979186
@@ -577,6 +582,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65849225719730830}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []
@@ -626,6 +632,7 @@ MonoBehaviour:
   xpRequiered: 0
   baseDmg: 0
   stealth: 0
+  slowImmunity: 0
 --- !u!114 &114859530702305362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -654,6 +661,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65373913769057470}
+  Player: {fileID: 1325531234331084}
   elapsed: 0
   enemies: []
   allies: []

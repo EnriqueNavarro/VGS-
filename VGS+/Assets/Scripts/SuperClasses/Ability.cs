@@ -4,38 +4,23 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    [SerializeField]
-    new private string name;
-    [SerializeField]
-    private string description;
-    [SerializeField]
-    private Sprite icon;
-    [SerializeField]
-    private bool requireTarget;
-    [SerializeField]
-    private bool selfTarget;
-    [SerializeField]
-    private float cd; //secs
-    [SerializeField]
-    private float timer;
-    [SerializeField]
-    private GameObject particleflefx;
-    [SerializeField]
-    private float duration;
-    [SerializeField]
-    private float range;
-    [SerializeField]
-    private Elements dmgType;
-    [SerializeField]
-    private int damage;
-    [SerializeField]
-    private bool targetEnemies;
-    [SerializeField]
-    private bool targetAllies;
-    [SerializeField]
-    private bool targetAll;
-    [SerializeField]
-    private Collider col;
+    [SerializeField] new private string name;
+    [SerializeField] private string description;
+    [SerializeField] private Sprite icon;
+    [SerializeField] private bool requireTarget;
+    [SerializeField] private bool selfTarget;
+    [SerializeField] private float cd; //secs
+    [SerializeField] private float timer;
+    [SerializeField] private GameObject particleflefx;
+    [SerializeField] private float duration;
+    [SerializeField] private float range;
+    [SerializeField] private Elements dmgType;
+    [SerializeField] private int damage;
+    [SerializeField] private bool targetEnemies;
+    [SerializeField] private bool targetAllies;
+    [SerializeField] private bool targetAll;
+    [SerializeField] private Collider col;
+    [SerializeField] private GameObject Player;
     public float elapsed;
     public List<GameObject> enemies;
     public List<GameObject> allies;
@@ -249,6 +234,19 @@ public abstract class Ability : MonoBehaviour
         set
         {
             col = value;
+        }
+    }
+
+    public GameObject Player1
+    {
+        get
+        {
+            return Player;
+        }
+
+        set
+        {
+            Player = value;
         }
     }
 

@@ -53,7 +53,6 @@ public class CrystalSword : Class {
         return cost == 0;
     }
     public void generateShard(float generated) {
-        Debug.Log("Generating");
         for(int i=0; i<bloodShards.Length;i++) {
             if(bloodShards[i]<1 && generated>0) {
                 float toFill = 1 - bloodShards[i];

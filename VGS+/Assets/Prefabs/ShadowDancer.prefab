@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 114160688127152544}
   m_Layer: 0
   m_Name: ShadowDancer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,7 +246,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fe8c2d8f02b38864e97db726299a1bf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -388,6 +388,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65567488676510740}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []
@@ -421,6 +422,8 @@ MonoBehaviour:
   - {fileID: 1711423017827124}
   - {fileID: 1264543517370846}
   stealth: 0
+  combat: 0
+  baseDmgs: 0000000000000000000000000000000000000000
 --- !u!114 &114365717404665408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -449,6 +452,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65658528386604234}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []
@@ -482,6 +486,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 0}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []
@@ -499,6 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a7e4774c3533a4295da916b94ff751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  critChance: 0
+  critDamage: 0
   health: 0
   maxHealth: 0
   lvl: 0
@@ -515,6 +522,7 @@ MonoBehaviour:
   xpRequiered: 0
   baseDmg: 0
   stealth: 0
+  slowImmunity: 0
 --- !u!114 &114522136920293462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,6 +553,7 @@ MonoBehaviour:
   targetAllies: 1
   targetAll: 0
   col: {fileID: 65055515936984236}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []
@@ -587,6 +596,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65781846590113630}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []
@@ -623,6 +633,7 @@ MonoBehaviour:
   targetAllies: 0
   targetAll: 0
   col: {fileID: 65041219175190778}
+  Player: {fileID: 1269917224612270}
   elapsed: 0
   enemies: []
   allies: []

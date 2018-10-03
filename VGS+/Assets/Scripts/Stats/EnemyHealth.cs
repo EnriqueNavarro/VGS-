@@ -18,6 +18,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int poisonRes;
     [SerializeField] private int baseDmg;
     [SerializeField] private bool stealth = false;
+    [SerializeField] private GameObject attacker;//the player with the most threat
+    private ThreatMeter[] threat;
+    public int max;
 
     public int Health
     {
@@ -201,6 +204,32 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public ThreatMeter[] Threat
+    {
+        get
+        {
+            return threat;
+        }
+
+        set
+        {
+            threat = value;
+        }
+    }
+
+    public GameObject Attacker
+    {
+        get
+        {
+            return attacker;
+        }
+
+        set
+        {
+            attacker = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -261,14 +290,32 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
-    public void damage(int dmg, GameObject attacker)
+    private void AddThreat(int dmg, GameObject attacker1) {
+        for(int i=0;i<threat.Length;i++) {
+            if (threat[i].player==attacker1) {
+                threat[i].threat += dmg;
+                Debug.Log(threat[i].player + " gained threat=" + dmg);
+            }
+        }
+        max=0;
+        for (int i = 0; i < threat.Length; i++)
+        {
+            if(threat[i].threat>=max) {
+                max = threat[i].threat;
+                Attacker = threat[i].player;
+            }
+        }
+    }
+    public void damage(int dmg, GameObject attacker1)
     {
+        AddThreat(dmg, attacker1);
         dmg = health - (int)Mathf.Floor(dmg * (10 - physicalRes * 2) / 10);
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
-        if (Health == 0) death();
+        if (Health == 0) death();        
     }
-    public void damage(int dmg, Elements element, GameObject attacker)
+    public void damage(int dmg, Elements element, GameObject attacker1)
     {
+        AddThreat(dmg, attacker1);
         switch (element)
         {
             case Elements.fire:
@@ -290,18 +337,20 @@ public class EnemyHealth : MonoBehaviour
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
     }
-    public void damage(int dmg, float critChance, float CritDamage, GameObject attacker)
+    public void damage(int dmg, float critChance, float CritDamage, GameObject attacker1)
     {
         bool crit = (Random.Range(0, 1) < critChance);
         if (crit) dmg = ((int)(dmg * CritDamage));
+        AddThreat(dmg, attacker1);
         dmg = health - (int)Mathf.Floor(dmg * (10 - physicalRes * 2) / 10);
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
     }
-    public void damage(int dmg, Elements element, float critChance, float CritDamage, GameObject attacker)
+    public void damage(int dmg, Elements element, float critChance, float CritDamage, GameObject attacker1)
     {
         bool crit = (Random.Range(0, 1) < critChance);
         if (crit) dmg = ((int)(dmg * CritDamage));
+        AddThreat(dmg, attacker1);
         switch (element)
         {
             case Elements.fire:
