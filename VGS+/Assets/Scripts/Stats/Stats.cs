@@ -4,38 +4,25 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int maxHealth;
-    [SerializeField]
-    private int lvl;
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private ClassNames className;
-    [SerializeField]
-    private int physicalRes;//0-> none, 1->small, 2->medium, 3->large, 4->great
-    [SerializeField]
-    private int baseMagicRes;
-    [SerializeField]
-    private int fireRes;
-    [SerializeField]
-    private int frostRes;
-    [SerializeField]
-    private int lightRes;
-    [SerializeField]
-    private int shadowRes;
-    [SerializeField]
-    private int poisonRes;
-    [SerializeField]
-    private int xp;
-    [SerializeField]
-    private int xpRequiered = 0;
-    [SerializeField]
-    private int baseDmg;
-    [SerializeField]
-    private bool stealth = false;
+    [SerializeField] private float critChance;
+    [SerializeField] private float critDamage;
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int lvl;
+    [SerializeField] private float speed;
+    [SerializeField] private ClassNames className;
+    [SerializeField] private int physicalRes;//0-> none, 1->small, 2->medium, 3->large, 4->great
+    [SerializeField] private int baseMagicRes;
+    [SerializeField] private int fireRes;
+    [SerializeField] private int frostRes;
+    [SerializeField] private int lightRes;
+    [SerializeField] private int shadowRes;
+    [SerializeField] private int poisonRes;
+    [SerializeField] private int xp;
+    [SerializeField] private int xpRequiered = 0;
+    [SerializeField] private float baseDmg; 
+    [SerializeField] private bool stealth = false;
+    [SerializeField] private bool slowImmunity;
 
     public int Health
     {
@@ -219,7 +206,7 @@ public class Stats : MonoBehaviour
         }
     }
 
-    public int BaseDmg
+    public float BaseDmg
     {
         get
         {
@@ -245,11 +232,51 @@ public class Stats : MonoBehaviour
         }
     }
 
+    public float CritChance
+    {
+        get
+        {
+            return critChance;
+        }
+
+        set
+        {
+            critChance = value;
+        }
+    }
+
+    public float CritDamage
+    {
+        get
+        {
+            return critDamage;
+        }
+
+        set
+        {
+            critDamage = value;
+        }
+    }
+
+    public bool SlowImmunity
+    {
+        get
+        {
+            return slowImmunity;
+        }
+
+        set
+        {
+            slowImmunity = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
-        GetComponent<PlayerMovement>().SpeedModifier = Speed;
+        GetComponent<PlayerMovement>().SpeedModifier = Speed+0.1f;
         BaseDmg = 1;
+        critDamage = 2;
         switch (ClassName)
         {
             case ClassNames.ShadowDancer:
@@ -262,6 +289,7 @@ public class Stats : MonoBehaviour
                 LightRes = BaseMagicRes - 1;
                 ShadowRes = BaseMagicRes + 1;
                 PoisonRes = BaseMagicRes + 1;
+                critChance = 0.25f;
                 break;
             case ClassNames.CrystalSword:
                 Health = 90;
@@ -273,6 +301,7 @@ public class Stats : MonoBehaviour
                 LightRes = BaseMagicRes;
                 ShadowRes = BaseMagicRes;
                 PoisonRes = BaseMagicRes;
+                critChance = 0.2f;
                 break;
         }
     }
@@ -290,6 +319,7 @@ public class Stats : MonoBehaviour
     }
     public void damage(int dmg, Elements element)
     {
+        dmg = (int)(dmg * baseDmg);
         switch (element)
         {
             case Elements.fire:

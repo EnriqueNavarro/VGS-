@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     [SerializeField]
-    private string name;
+    new private string name;
     [SerializeField]
     private string description;
     [SerializeField]
