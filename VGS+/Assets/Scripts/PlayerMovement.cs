@@ -18,15 +18,11 @@ public class PlayerMovement : MonoBehaviour {
             speedModifier = value;
         }
     }
-
-    private void Start()
-    {
-    }
+    
     private void Update()
     {
         velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         this.transform.position += velocity*SpeedModifier;
-        
-
+      
     }
 }
