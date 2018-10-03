@@ -7,8 +7,8 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private int maxTokens;
     [SerializeField] private int currentTokens;
     [SerializeField] private float timer;
-    [SerializeField] private List<Request> requests = new List<Request>();
-    [SerializeField] private List<Request> sorted = new List<Request>();
+    [SerializeField] private List<Request> buffer = new List<Request>();
+    [SerializeField] private float ageValue;//adds value to older requests, must be a very small number since it is added on fixed update
     private int iterator=0;
 	// Use this for initialization
 	void Start () {
@@ -24,40 +24,33 @@ public class TokenManager : MonoBehaviour {
     }
     public void AddRequest(Request r)
     {
-        requests.Add(r);
+        if(buffer.Count==0) {
+            buffer.Add(r);
+        } else {
+            bool inserted = false;
+            for(int i=0;i<buffer.Count;i++) 
+            {
+                if (r.totalValue < buffer[i].totalValue)
+                {
+                    buffer.Insert(i, r);
+                    inserted = true;
+                }
+            }
+            if (!inserted) buffer.Add(r);
+        }
     }
     // Update is called once per frame
     void FixedUpdate () {
-        iterator++;
-        if (iterator % 5 == 0) CheckRequests();
-	}
-    private Request Compare(Request r1, Request r2)
-    {
-        if (r1.totalValue >= r2.totalValue)return r1;
-        return r2;
-    }
-    private void Sort()
-    {
-        Request r1=null;
-        Request r2=null;
-        Request r3=null;
-        for (int i = 0; i < requests.Count; i++)
-        {
-            
-            for(int j =0; j < sorted.Count; j++)
-            {
-
+        for(int i=0;i<buffer.Count;i++) {
+            if(buffer[i].cost<=currentTokens) {
+                Approve(buffer[i]);
+            } else {
+                buffer[i].totalValue += ageValue;
             }
-            if (sorted.Count == 0) sorted.Add(requests[i]);
-
-
-
         }
-
-    }
-    private void CheckRequests()
-    {
-        
-        
-    }
+	}
+    private void Approve(Request approved) {
+        //to decide
+    } 
+    
 }
