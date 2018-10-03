@@ -15,7 +15,7 @@ public class Attack : Ability
     public override void Activate()
     {
         foreach(GameObject enemy in enemies) {
-            enemy.GetComponent<EnemyHealth>().damage(Damage);
+            enemy.GetComponent<EnemyHealth>().damage(Damage,this.gameObject);
         }
     }
     public void attackSpeed(float _modifier, float time) {

@@ -69,7 +69,7 @@ public class Blade : Ability {
             foreach (GameObject enemy in aaEnemies)
             {
                 Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
-                enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType);
+                enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, this.gameObject);
                 switch (target)
                 {
                     case Enemies.Plate:
@@ -96,7 +96,7 @@ public class Blade : Ability {
             foreach (GameObject enemy in aaEnemies)
             {
                 Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
-                enemy.GetComponent<EnemyHealth>().damage(Damage);
+                enemy.GetComponent<EnemyHealth>().damage(Damage, this.gameObject);
             }
         }
     }
@@ -106,7 +106,7 @@ public class Blade : Ability {
             Live = false;
             Damage = (int)(instability + (BaseDamage * 10)) / 2;
             foreach (GameObject enemy in enemies) {
-                enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType);
+                enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, this.gameObject);
             }
             foreach (GameObject ally in allies) {
                 ally.GetComponent<Stats>().damage((int)Damage / 5, DmgType);

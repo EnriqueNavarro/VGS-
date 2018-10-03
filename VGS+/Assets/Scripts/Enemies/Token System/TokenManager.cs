@@ -9,7 +9,7 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private float timer;
     [SerializeField] private List<Request> buffer = new List<Request>();
     [SerializeField] private float ageValue;//adds value to older requests, must be a very small number since it is added on fixed update
-    private int iterator=0;
+
 	// Use this for initialization
 	void Start () {
         currentTokens = maxTokens;

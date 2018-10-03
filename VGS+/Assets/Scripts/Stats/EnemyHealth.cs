@@ -205,6 +205,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         if (lvl == 0) lvl = 1;
+        BaseDmg = 1;
         switch (TypeName)
         {
             case Enemies.Plate:
@@ -258,15 +259,15 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-    public void damage(int dmg)
+    public void damage(int dmg, GameObject attacker)
     {
         dmg = health - (int)Mathf.Floor(dmg * (10 - physicalRes * 2) / 10);
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
     }
-    public void damage(int dmg, Elements element)
+    public void damage(int dmg, Elements element, GameObject attacker)
     {
         switch (element)
         {
@@ -289,7 +290,7 @@ public class EnemyHealth : MonoBehaviour
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
     }
-    public void damage(int dmg, float critChance, float CritDamage)
+    public void damage(int dmg, float critChance, float CritDamage, GameObject attacker)
     {
         bool crit = (Random.Range(0, 1) < critChance);
         if (crit) dmg = ((int)(dmg * CritDamage));
@@ -297,7 +298,7 @@ public class EnemyHealth : MonoBehaviour
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
     }
-    public void damage(int dmg, Elements element, float critChance, float CritDamage)
+    public void damage(int dmg, Elements element, float critChance, float CritDamage, GameObject attacker)
     {
         bool crit = (Random.Range(0, 1) < critChance);
         if (crit) dmg = ((int)(dmg * CritDamage));

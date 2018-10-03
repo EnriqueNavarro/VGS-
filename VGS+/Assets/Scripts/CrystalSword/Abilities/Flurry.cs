@@ -18,7 +18,7 @@ public class Flurry : Ability {
     {
         foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType);
+            enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType,resource.GetComponent<Stats>().CritChance, resource.GetComponent<Stats>().CritDamage, this.gameObject);
         }
     }
 }
