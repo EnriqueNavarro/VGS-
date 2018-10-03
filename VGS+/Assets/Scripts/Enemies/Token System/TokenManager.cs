@@ -22,6 +22,9 @@ public class TokenManager : MonoBehaviour {
     {
         enemies.Remove(e);
     }
+    public void Refund(int refund) {
+        currentTokens += refund;
+    }
     public void AddRequest(Request r)
     {
         if(buffer.Count==0) {
@@ -51,6 +54,19 @@ public class TokenManager : MonoBehaviour {
 	}
     private void Approve(Request approved) {
         //to decide
+        int j=-1;
+        for(int i=0;i<enemies.Count;i++) {
+            if (enemies[i] == approved.requester) j = i;
+        }
+        if (j < 0) return;
+        int size = enemies[j].GetComponent<EnemyType>().Abilities.Length;
+        for (int i=0;i<size;i++) {
+            Request aux = enemies[j].GetComponent<EnemyType>().Abilities[i].GetComponent<EnemyAbility>().Request;
+            if(aux.cost==approved.cost) {
+                approved.requester.GetComponent<EnemyType>().Abilities[i].GetComponent<EnemyAbility>().Approved = true;
+                currentTokens -= aux.cost;
+            }
+        }
     } 
     
 }

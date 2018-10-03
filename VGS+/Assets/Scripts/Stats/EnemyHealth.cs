@@ -19,6 +19,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int baseDmg;
     [SerializeField] private bool stealth = false;
     [SerializeField] private GameObject attacker;//the player with the most threat
+    public TokenManager tokenManager;
+    private int number;//number of target in the array
     private ThreatMeter[] threat;
     public int max;
 
@@ -230,7 +232,19 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    // Use this for initialization
+    public int Number
+    {
+        get
+        {
+            return number;
+        }
+
+        set
+        {
+            number = value;
+        }
+    }
+
     void Start()
     {
         if (lvl == 0) lvl = 1;
@@ -283,28 +297,38 @@ public class EnemyHealth : MonoBehaviour
                 break;
 
         }
+        tokenManager.Adder(this.gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    
+    
+    public void CheckLOS(bool[] LOS) {
+        for(int i=0;i<threat.Length;i++) {
+            if(LOS[i] && threat[i].threat==0) {
+                threat[i].threat += 1;//when a player comes into line of sight and the enemy has no threat it must start pursing said player
+            }
+        }
+        UpdateTarget();
+    }
+    private void UpdateTarget() {
+        max = 0;
+        for (int i = 0; i < threat.Length; i++)
+        {
+            if (threat[i].threat >= max)
+            {
+                max = threat[i].threat;
+                Attacker = threat[i].player;
+                number = i;
+            }
+        }        
     }
     private void AddThreat(int dmg, GameObject attacker1) {
         for(int i=0;i<threat.Length;i++) {
             if (threat[i].player==attacker1) {
                 threat[i].threat += dmg;
-                Debug.Log(threat[i].player + " gained threat=" + dmg);
+                //Debug.Log(threat[i].player + " gained threat=" + dmg);
             }
         }
-        max=0;
-        for (int i = 0; i < threat.Length; i++)
-        {
-            if(threat[i].threat>=max) {
-                max = threat[i].threat;
-                Attacker = threat[i].player;
-            }
-        }
+        UpdateTarget();
     }
     public void damage(int dmg, GameObject attacker1)
     {
@@ -332,6 +356,12 @@ public class EnemyHealth : MonoBehaviour
                 break;
             case Elements.shadow:
                 dmg = health - (int)Mathf.Floor(dmg * (10 - shadowRes * 2) / 10);
+                break;
+            case Elements.physical:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
+                break;
+            case Elements.none:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
                 break;
         }
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
@@ -367,6 +397,12 @@ public class EnemyHealth : MonoBehaviour
                 break;
             case Elements.shadow:
                 dmg = health - (int)Mathf.Floor(dmg * (10 - shadowRes * 2) / 10);
+                break;
+            case Elements.physical:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
+                break;
+            case Elements.none:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
                 break;
         }
         Health = Mathf.Clamp(dmg, 0, MaxHealth);

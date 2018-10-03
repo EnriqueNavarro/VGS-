@@ -14,7 +14,9 @@ public class Request : MonoBehaviour {
     public int priority;//used to make a certain enemy have priority, the higher the number the more important
     public float totalValue=0;
     public int cost=0;
+    public Request() {
 
+    }
     public Request(GameObject requester, bool inRange, bool lOS, int toHit, float distance, int threat, int targetHP, float range, int priority)
     {
         this.requester = requester;
