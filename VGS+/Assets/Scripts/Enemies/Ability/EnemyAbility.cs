@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
-{
+public class EnemyAbility : MonoBehaviour {
     [SerializeField] new private string name;
     [SerializeField] private string description;
     [SerializeField] private Sprite icon;
@@ -16,10 +15,17 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private float range;
     [SerializeField] private Elements dmgType;
     [SerializeField] private int damage;
-    [SerializeField] private bool targetEnemies;
-    [SerializeField] private bool targetAllies;
     [SerializeField] private Collider col;
-    [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject user;
+    [SerializeField] private bool LOS;
+    [SerializeField] private bool inRange;
+    public GameObject tokens;
+    private TokenManager tokenManager;
+    [SerializeField] private bool requestSent=false;
+    [SerializeField] private bool approved;
+    [SerializeField] private GameObject target;
+    [SerializeField] private Request request;
+    private ThreatMeter tuple;
     public float elapsed;
     public List<GameObject> enemies;
     public List<GameObject> allies;
@@ -28,6 +34,7 @@ public abstract class Ability : MonoBehaviour
     float rangeModifier;
     private float modifier;
     private sStats change;
+    private int cost;
     public string Name
     {
         get
@@ -183,35 +190,7 @@ public abstract class Ability : MonoBehaviour
             damage = value;
         }
     }
-
-    public bool TargetEnemies
-    {
-        get
-        {
-            return targetEnemies;
-        }
-
-        set
-        {
-            targetEnemies = value;
-        }
-    }
-
-    public bool TargetAllies
-    {
-        get
-        {
-            return targetAllies;
-        }
-
-        set
-        {
-            targetAllies = value;
-        }
-    }
-
     
-
     public Collider Col
     {
         get
@@ -225,16 +204,68 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
-    public GameObject Player1
+    public GameObject User
     {
         get
         {
-            return Player;
+            return user;
         }
 
         set
         {
-            Player = value;
+            user = value;
+        }
+    }
+
+    public bool LOS1
+    {
+        get
+        {
+            return LOS;
+        }
+
+        set
+        {
+            LOS = value;
+        }
+    }
+
+    public bool InRange
+    {
+        get
+        {
+            return inRange;
+        }
+
+        set
+        {
+            inRange = value;
+        }
+    }
+
+    public Request Request
+    {
+        get
+        {
+            return request;
+        }
+
+        set
+        {
+            request = value;
+        }
+    }
+
+    public bool Approved
+    {
+        get
+        {
+            return approved;
+        }
+
+        set
+        {
+            approved = value;
         }
     }
 
@@ -242,55 +273,59 @@ public abstract class Ability : MonoBehaviour
     void Start()
     {
         Col.transform.localScale = new Vector3(Range, 2, Range);
+        tokenManager = tokens.GetComponent<TokenManager>();
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKeyDown(keyBinding)) Trigger();
+        if ((Time.fixedTime - Timer) >= Cd) {
+            if(!requestSent) {
+                float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
+                int i = user.GetComponent<EnemyHealth>().Number;
+                tuple = user.GetComponent<EnemyHealth>().Threat[i];
+                target = tuple.player;
+                int targetHp = target.GetComponent<Stats>().Health;
+                Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                tokenManager.AddRequest(Request);
+                cost = request.cost;
+                requestSent = true;
+            } else {
+                if(Approved) {
+                    requestSent = false;
+                    approved = false;
+                    Trigger();
+                    Invoke("Return",Duration);
+                    request = new Request();
+                }
+            }
+        }
         elapsed = Time.fixedTime - Timer;
+    }
+    private void Return() {
+        tokenManager.Refund(cost);
     }
     //if (Input.GetKeyDown(keyBinding)) Trigger(); agregar esa linea en cada update
     public void Trigger()
-    {
-        if ((Time.fixedTime - Timer) >= Cd)
-        {
-            Timer = Time.fixedTime;
-            Activate();
-            Debug.Log("Activating " + this.name);
-        }
+    {        
+        Timer = Time.fixedTime;
+        Activate();
+        Debug.Log("Activating " + this.name);        
     }
 
-    abstract public void Activate();
+    public void Activate() {
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Stats>().damage(Damage, DmgType);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.tag + " added");
-        
-        
-        
-            if (TargetEnemies)
-            {
-                if (other.tag == "Enemy") addEnemy(other);
-            }
-            if (TargetAllies)
-            {
-                if (other.tag == "Player") addAlly(other);
-            }
-        
+      if (other.tag == "Player") addEnemy(other);  
     }
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log(other.tag + " removed");
-        
-            if (TargetEnemies)
-            {
-                if (other.tag == "Enemy") removeEnemy(other);
-            }
-            if (TargetAllies)
-            {
-                if (other.tag == "Player") removeAlly(other);
-            }
-        
+        if (other.tag == "Player") removeEnemy(other);   
     }
     private void removeEnemy(Collider other)
     {
@@ -308,15 +343,17 @@ public abstract class Ability : MonoBehaviour
     {
         allies.Add(other.gameObject);
     }
-    public void changer(float _modifier,float time, sStats toChange) {
+    public void changer(float _modifier, float time, sStats toChange)
+    {
         change = toChange;
         modifier = _modifier;
-        switch(toChange) {
+        switch (toChange)
+        {
             case sStats.CD:
                 Cd *= modifier;
                 break;
             case sStats.Damage:
-                Damage = (int)(Damage*modifier);
+                Damage = (int)(Damage * modifier);
                 break;
             case sStats.Duration:
                 Duration *= modifier;
@@ -327,7 +364,8 @@ public abstract class Ability : MonoBehaviour
         }
         Invoke("reverter", time);
     }
-    private void reverter() {
+    private void reverter()
+    {
         switch (change)
         {
             case sStats.CD:

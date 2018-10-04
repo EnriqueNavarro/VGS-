@@ -60,7 +60,7 @@ public class LineOfSight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         iterator++;
-        if (iterator % 10 == 0)
+        if (iterator % 30 == 0)
         {
             RaycastHit hit;
             for (int i = 0; i < players.Length; i++)
@@ -84,7 +84,9 @@ public class LineOfSight : MonoBehaviour {
                     LOS[i] = false;
                 }
             }
+            GetComponent<EnemyHealth>().CheckLOS(LOS);
         }
+
     }
     
 }

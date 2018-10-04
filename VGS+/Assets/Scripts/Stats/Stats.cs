@@ -337,6 +337,12 @@ public class Stats : MonoBehaviour
             case Elements.shadow:
                 dmg = Health - (int)Mathf.Floor(dmg * (10 - ShadowRes * 2) / 10);
                 break;
+            case Elements.physical:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
+                break;
+            case Elements.none:
+                dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
+                break;
         }
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();
