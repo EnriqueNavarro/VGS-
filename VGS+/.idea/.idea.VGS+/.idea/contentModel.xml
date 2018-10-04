@@ -9,10 +9,33 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Attack.cs" t="Include" />
+          <e p="CrystalSword" t="Include">
+            <e p="Abilities" t="Include">
+              <e p="Challenge.cs" t="Include" />
+              <e p="Flurry.cs" t="Include" />
+              <e p="InTheThickOfIt.cs" t="Include" />
+              <e p="NoMercy.cs" t="Include" />
+              <e p="SwordEmpowerement.cs" t="Include" />
+            </e>
+            <e p="CrystalSword.cs" t="Include" />
+            <e p="CrystalSwordAttack.cs" t="Include" />
+          </e>
+          <e p="Enemies" t="Include">
+            <e p="Threat System" t="Include">
+              <e p="LineOfSight.cs" t="Include" />
+              <e p="ThreatMeter.cs" t="Include" />
+            </e>
+            <e p="Token System" t="Include">
+              <e p="Request.cs" t="Include" />
+              <e p="TokenManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="InterfaceManager.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="ShadowDancer" t="Include">
             <e p="Abilities" t="Include">
               <e p="Blade.cs" t="Include" />
+              <e p="CreateBlade.cs" t="Include" />
               <e p="ShadowCloack.cs" t="Include" />
               <e p="ShadowsEmbrace.cs" t="Include" />
               <e p="ShadowStep.cs" t="Include" />
@@ -27,6 +50,7 @@
           <e p="SuperClasses" t="Include">
             <e p="Ability.cs" t="Include" />
             <e p="Class.cs" t="Include" />
+            <e p="EnemyType.cs" t="Include" />
             <e p="Enums.cs" t="Include" />
           </e>
         </e>
