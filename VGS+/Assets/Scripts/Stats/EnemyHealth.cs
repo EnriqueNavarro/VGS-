@@ -303,7 +303,14 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if (attacker != null) combat = true;
+        if (attacker != null)
+        {
+            combat = true;
+            if (attacker.GetComponent<Stats>().Stealth)
+            {
+                UpdateTarget();
+            }
+        }
     }
     public void CheckLOS(bool[] LOS) {
         for(int i=0;i<threat.Length;i++) {
@@ -315,15 +322,26 @@ public class EnemyHealth : MonoBehaviour
     }
     private void UpdateTarget() {
         max = 0;
+        number = -1;
         for (int i = 0; i < threat.Length; i++)
         {
             if (threat[i].threat >= max)
             {
+                int aux = max;
                 max = threat[i].threat;
-                Attacker = threat[i].player;
-                number = i;
+                
+                if (!threat[i].player.GetComponent<Stats>().Stealth)
+                {
+                    Attacker = threat[i].player;
+                    number = i;
+                }
             }
-        }        
+        }
+        if (number == -1)
+        {
+            combat = false;
+            Attacker = null;
+        }
     }
     private void AddThreat(int dmg, GameObject attacker1) {
         for(int i=0;i<threat.Length;i++) {
