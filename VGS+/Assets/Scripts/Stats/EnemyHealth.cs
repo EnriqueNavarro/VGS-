@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
     private int number;//number of target in the array
     private ThreatMeter[] threat;
     public int max;
-
+    public bool combat;
     public int Health
     {
         get
@@ -247,6 +247,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        Attacker = null;
         if (lvl == 0) lvl = 1;
         BaseDmg = 1;
         switch (TypeName)
@@ -299,8 +300,11 @@ public class EnemyHealth : MonoBehaviour
         }
         tokenManager.Adder(this.gameObject);
     }
-    
-    
+
+    private void Update()
+    {
+        if (attacker != null) combat = true;
+    }
     public void CheckLOS(bool[] LOS) {
         for(int i=0;i<threat.Length;i++) {
             if(LOS[i] && threat[i].threat==0) {

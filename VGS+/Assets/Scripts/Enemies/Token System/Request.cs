@@ -17,6 +17,7 @@ public class Request : MonoBehaviour {
     public Request() {
 
     }
+    
     public Request(GameObject requester, bool inRange, bool lOS, int toHit, float distance, int threat, int targetHP, float range, int priority)
     {
         this.requester = requester;

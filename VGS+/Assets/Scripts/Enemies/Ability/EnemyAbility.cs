@@ -279,25 +279,34 @@ public class EnemyAbility : MonoBehaviour {
     // Update is called once per frame
     public void Update()
     {
-        if ((Time.fixedTime - Timer) >= Cd) {
-            if(!requestSent) {
-                float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
-                int i = user.GetComponent<EnemyHealth>().Number;
-                tuple = user.GetComponent<EnemyHealth>().Threat[i];
-                target = tuple.player;
-                int targetHp = target.GetComponent<Stats>().Health;
-                inRange= Vector3.Distance(user.transform.position, target.transform.position) < Range;
-                Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
-                tokenManager.AddRequest(Request);
-                cost = request.cost;
-                requestSent = true;
-            } else {
-                if(Approved) {
-                    requestSent = false;
-                    approved = false;
-                    Trigger();
-                    Invoke("Return",Duration);
-                    request = new Request();
+        if (user.GetComponent<EnemyHealth>().combat)
+        {
+            float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
+            int i = user.GetComponent<EnemyHealth>().Number;
+            tuple = user.GetComponent<EnemyHealth>().Threat[i];
+            LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
+            if ((Time.fixedTime - Timer) >= Cd && distance <= Range && LOS1)
+            {
+                if (!requestSent)
+                {                    
+                    target = tuple.player;
+                    int targetHp = target.GetComponent<Stats>().Health;
+                    inRange = Vector3.Distance(user.transform.position, target.transform.position) < Range;
+                    Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                    tokenManager.AddRequest(Request);
+                    cost = request.cost;
+                    requestSent = true;
+                }
+                else
+                {
+                    if (Approved)
+                    {
+                        requestSent = false;
+                        approved = false;
+                        Trigger();
+                        Invoke("Return", Duration);
+                        request = new Request();
+                    }
                 }
             }
         }
