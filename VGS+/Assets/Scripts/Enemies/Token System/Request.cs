@@ -58,5 +58,6 @@ public class Request : MonoBehaviour {
     private void CalculateCost() {
         cost += toHit;
         cost += (int)range;
+        Debug.Log("cost " + cost + "dmg"+toHit);
     }
 }

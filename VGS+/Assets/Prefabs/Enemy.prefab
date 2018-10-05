@@ -161,10 +161,10 @@ MonoBehaviour:
   cd: 1
   timer: 0
   particleflefx: {fileID: 0}
-  duration: 0
-  range: 0
+  duration: 2
+  range: 2
   dmgType: 5
-  damage: 0
+  damage: 5
   col: {fileID: 65481380103573154}
   user: {fileID: 1032046438125272}
   LOS: 0
@@ -234,11 +234,7 @@ MonoBehaviour:
   enemy: 1
   stats: {fileID: 114443291868546110}
   abilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1996652186511022}
   stealth: 0
   combat: 0
   baseDmgs: 0000000000000000000000000000000000000000

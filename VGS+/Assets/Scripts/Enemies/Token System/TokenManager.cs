@@ -47,6 +47,7 @@ public class TokenManager : MonoBehaviour {
         for(int i=0;i<buffer.Count;i++) {
             if(buffer[i].cost<=currentTokens) {
                 Approve(buffer[i]);
+                buffer.Remove(buffer[i]);
             } else {
                 buffer[i].totalValue += ageValue;
             }
@@ -55,6 +56,7 @@ public class TokenManager : MonoBehaviour {
     private void Approve(Request approved) {
         //to decide
         int j=-1;
+        //Debug.Log(approved.cost);
         for(int i=0;i<enemies.Count;i++) {
             if (enemies[i] == approved.requester) j = i;
         }
@@ -65,6 +67,7 @@ public class TokenManager : MonoBehaviour {
             if(aux.cost==approved.cost) {
                 approved.requester.GetComponent<EnemyType>().Abilities[i].GetComponent<EnemyAbility>().Approved = true;
                 currentTokens -= aux.cost;
+                //Debug.Log("Approving for " + aux.cost);
             }
         }
     } 

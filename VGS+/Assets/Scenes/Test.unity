@@ -113,22 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &112258243 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1325531234331084, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-    type: 2}
-  m_PrefabInternal: {fileID: 1803541296}
---- !u!114 &112258244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112258243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6f7c48f646a0a408fd68d26560601e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &229612288
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,11 +186,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114861399865541824, guid: 0b127af941e2856428fe7231f453bfe9,
-        type: 2}
-      propertyPath: abilities.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4951563246644916, guid: 0b127af941e2856428fe7231f453bfe9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.58
@@ -239,21 +218,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114102159594378530, guid: 0b127af941e2856428fe7231f453bfe9,
-        type: 2}
-      propertyPath: tokens
-      value: 
-      objectReference: {fileID: 1654578390}
     - target: {fileID: 114443291868546110, guid: 0b127af941e2856428fe7231f453bfe9,
         type: 2}
       propertyPath: tokenManager
       value: 
       objectReference: {fileID: 1654578391}
-    - target: {fileID: 114861399865541824, guid: 0b127af941e2856428fe7231f453bfe9,
+    - target: {fileID: 114102159594378530, guid: 0b127af941e2856428fe7231f453bfe9,
         type: 2}
-      propertyPath: abilities.Array.data[0]
+      propertyPath: tokens
       value: 
-      objectReference: {fileID: 2042378209}
+      objectReference: {fileID: 1654578390}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b127af941e2856428fe7231f453bfe9, type: 2}
   m_IsPrefabAsset: 0
@@ -551,8 +525,3 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &2042378209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1996652186511022, guid: 0b127af941e2856428fe7231f453bfe9,
-    type: 2}
-  m_PrefabInternal: {fileID: 430987608}

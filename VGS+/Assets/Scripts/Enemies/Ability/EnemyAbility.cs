@@ -286,6 +286,7 @@ public class EnemyAbility : MonoBehaviour {
                 tuple = user.GetComponent<EnemyHealth>().Threat[i];
                 target = tuple.player;
                 int targetHp = target.GetComponent<Stats>().Health;
+                inRange= Vector3.Distance(user.transform.position, target.transform.position) < Range;
                 Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
                 tokenManager.AddRequest(Request);
                 cost = request.cost;
