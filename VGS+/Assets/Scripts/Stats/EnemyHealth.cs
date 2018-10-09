@@ -327,7 +327,6 @@ public class EnemyHealth : MonoBehaviour
         {
             if (threat[i].threat >= max)
             {
-                int aux = max;
                 max = threat[i].threat;
                 
                 if (!threat[i].player.GetComponent<Stats>().Stealth)
@@ -343,7 +342,7 @@ public class EnemyHealth : MonoBehaviour
             Attacker = null;
         }
     }
-    private void AddThreat(int dmg, GameObject attacker1) {
+    public void AddThreat(int dmg, GameObject attacker1) {
         for(int i=0;i<threat.Length;i++) {
             if (threat[i].player==attacker1) {
                 threat[i].threat += dmg;

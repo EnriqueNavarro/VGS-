@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 1233951425326670}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4540321774802566}
   m_RootOrder: 6
@@ -604,18 +604,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Challenge
-  description: Focuses the strongest enemy in range, deals extra damage towards said
-    enemy, and makes you immune to his attack for a short duration
+  description: Generates a large amount of threat on the strongest enemy of the highest
+    armor type, and gives you bonus defenses against physcal attack depending on the
+    target
   icon: {fileID: 0}
   requireTarget: 1
   selfTarget: 0
-  cd: 1
+  cd: 10
   timer: 0
   particleflefx: {fileID: 0}
   duration: 5
   range: 10
   dmgType: 5
-  damage: 20
+  damage: 50
   targetEnemies: 1
   targetAllies: 0
   col: {fileID: 65849225719730830}
