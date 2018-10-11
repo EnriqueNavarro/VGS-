@@ -82,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1366779337827462
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269917224612270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0.5, z: 0.44}
+  m_LocalPosition: {x: 0.36, y: 0, z: -4.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4182653031638264}
@@ -298,7 +298,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65055515936984236
 BoxCollider:
@@ -310,7 +310,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65198535293343520
 BoxCollider:
@@ -322,7 +322,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65567488676510740
 BoxCollider:
@@ -346,8 +346,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 1.25}
+  m_Size: {x: 20, y: 20, z: 15}
+  m_Center: {x: 0, y: 0, z: 12.5}
 --- !u!65 &65781846590113630
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -358,7 +358,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 10, y: 20, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114027782985003358
 MonoBehaviour:
@@ -386,7 +386,6 @@ MonoBehaviour:
   damage: 20
   targetEnemies: 1
   targetAllies: 0
-  targetAll: 0
   col: {fileID: 65567488676510740}
   Player: {fileID: 1269917224612270}
   elapsed: 0
@@ -450,7 +449,6 @@ MonoBehaviour:
   damage: 5
   targetEnemies: 1
   targetAllies: 0
-  targetAll: 0
   col: {fileID: 65658528386604234}
   Player: {fileID: 1269917224612270}
   elapsed: 0
@@ -484,7 +482,6 @@ MonoBehaviour:
   damage: 0
   targetEnemies: 0
   targetAllies: 0
-  targetAll: 0
   col: {fileID: 0}
   Player: {fileID: 1269917224612270}
   elapsed: 0
@@ -551,7 +548,6 @@ MonoBehaviour:
   damage: 0
   targetEnemies: 1
   targetAllies: 1
-  targetAll: 0
   col: {fileID: 65055515936984236}
   Player: {fileID: 1269917224612270}
   elapsed: 0
@@ -594,7 +590,6 @@ MonoBehaviour:
   damage: 20
   targetEnemies: 1
   targetAllies: 0
-  targetAll: 0
   col: {fileID: 65781846590113630}
   Player: {fileID: 1269917224612270}
   elapsed: 0
@@ -631,7 +626,6 @@ MonoBehaviour:
   damage: 0
   targetEnemies: 0
   targetAllies: 0
-  targetAll: 0
   col: {fileID: 65041219175190778}
   Player: {fileID: 1269917224612270}
   elapsed: 0
