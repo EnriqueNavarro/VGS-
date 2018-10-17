@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] private Vector3 velocity;
     [SerializeField] private float speedModifier = 1;
+    
 
     public float SpeedModifier
     {
