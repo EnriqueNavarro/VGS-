@@ -59,10 +59,10 @@ MonoBehaviour:
   doorBot: 0
   doorLeft: 0
   doorRight: 0
-  doorU: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
-  doorD: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
-  doorL: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
-  doorR: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
+  doorU: {fileID: 1152370622949468, guid: 49f6f57100c9374468e497efe04e601e, type: 2}
+  doorD: {fileID: 1152370622949468, guid: 37c243a9d92610b4cb2f483d04c07922, type: 2}
+  doorL: {fileID: 1152370622949468, guid: cbd8e265b4247aa4eb6c856c510ee748, type: 2}
+  doorR: {fileID: 1152370622949468, guid: 7d0c87a174de8774597527adfe3480c6, type: 2}
   doorWall: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2, type: 2}
   mappings:
   - color: {r: 0, g: 0, b: 0, a: 1}

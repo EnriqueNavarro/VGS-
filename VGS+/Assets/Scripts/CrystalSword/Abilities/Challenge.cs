@@ -10,10 +10,14 @@ public class Challenge : Ability {
     [SerializeField] private float cost;
     new public void Update()
     {
-        if (resource.GetComponent<CrystalSword>().expendShard(cost))
+        if (resource.GetComponent<CrystalSword>().CheckShards(cost))
         {
-            if (Input.GetKeyDown(keyBinding)) Trigger();
-            elapsed = Time.fixedTime - Timer;
+            if (Input.GetKeyDown(keyBinding))
+            {
+                Trigger();
+                elapsed = Time.fixedTime - Timer;
+                resource.GetComponent<CrystalSword>().expendShard(cost);
+            }
         }
     }
     public override void Activate()
@@ -72,5 +76,13 @@ public class Challenge : Ability {
 
             }    
         }
+        //foreach ends here
+        this.GetComponentInParent<Stats>().PhysicalRes += higher.GetComponent<EnemyHealth>().PhysicalRes;
+        higher.GetComponent<EnemyHealth>().AddThreat(Damage*2, resource);
+        Invoke("ExpireRes", Duration);
+    }
+    private void ExpireRes()
+    {
+        this.GetComponentInParent<Stats>().PhysicalRes -= higher.GetComponent<EnemyHealth>().PhysicalRes;
     }
 }
