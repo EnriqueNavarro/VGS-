@@ -43,9 +43,9 @@ public class RoomInstance : MonoBehaviour {
 	void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn){
 		// check whether its a door or wall, then spawn
 		if (door){
-			Instantiate(doorSpawn, spawnPos, Quaternion.Euler(-90,0,0)).transform.parent = transform;
+			Instantiate(doorSpawn, spawnPos, Quaternion.Euler(90,0,0)).transform.parent = transform;
 		}else{
-			Instantiate(doorWall, spawnPos, Quaternion.Euler(-90,0,0)).transform.parent = transform;
+			Instantiate(doorWall, spawnPos, Quaternion.Euler(90,0,0)).transform.parent = transform;
 		}
 	}
 	void GenerateRoomTiles(){
@@ -66,7 +66,7 @@ public class RoomInstance : MonoBehaviour {
 		foreach (ColorToGameObject mapping in mappings){
 			if (mapping.color.Equals(pixelColor)){
 				Vector3 spawnPos = positionFromTileGrid(x,z);
-				Instantiate(mapping.prefab, spawnPos, Quaternion.Euler(-90,0,0)).transform.parent = this.transform;
+				Instantiate(mapping.prefab, spawnPos, Quaternion.Euler(90,0,0)).transform.parent = this.transform;
 			}else{
 				//forgot to remove the old print for the tutorial lol so I'll leave it here too
 				//print(mapping.color + ", " + pixelColor);
