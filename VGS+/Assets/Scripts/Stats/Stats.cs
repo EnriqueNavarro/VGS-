@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Stats : MonoBehaviour
     [SerializeField] private float baseDmg; 
     [SerializeField] private bool stealth = false;
     [SerializeField] private bool slowImmunity;
+
+    public Slider healthSlider;
 
     public int Health
     {
@@ -315,6 +318,7 @@ public class Stats : MonoBehaviour
     {
         dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
+        healthSlider.value = Health;
         if (Health == 0) death();
     }
     public void damage(int dmg, Elements element)

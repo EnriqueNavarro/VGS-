@@ -13,7 +13,7 @@ public class MenuManager : MonoBehaviour
 
 	public void LoadTest()
 	{
-		SceneManager.LoadScene("Test");
+		SceneManager.LoadScene("Level01(Intento de Union)");
 	}
 
 	public void LoadRunes()
