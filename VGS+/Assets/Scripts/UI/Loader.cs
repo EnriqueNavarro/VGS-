@@ -9,12 +9,12 @@ public class Loader : MonoBehaviour
 
 	private void Awake()
 	{
-		if (GameManager.instance == null)
+		/*if (GameManager.instance == null)
 		{
 			Instantiate(gameManager);
 		}
 		{
 			
-		}
+		}*/
 	}
 }
