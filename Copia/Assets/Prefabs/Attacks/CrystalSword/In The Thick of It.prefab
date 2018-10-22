@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1586588506134186}
+  m_IsPrefabAsset: 1
+--- !u!1 &1586588506134186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4161329201315172}
+  - component: {fileID: 114091731994259662}
+  - component: {fileID: 65484636776781552}
+  m_Layer: 0
+  m_Name: In The Thick of It
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4161329201315172
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586588506134186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65484636776781552
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586588506134186}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114091731994259662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1586588506134186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7550b2af60d585b4eaf9c564ab0747de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: In the thick of it
+  description: Provides bonus combat stacks, depending on how long you stay in combat
+  icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 1
+  cd: 0
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 0
+  range: 0
+  dmgType: 6
+  damage: 0
+  targetEnemies: 0
+  targetAllies: 0
+  targetAll: 0
+  col: {fileID: 65484636776781552}
+  elapsed: 0
+  enemies: []
+  allies: []
+  keyBinding: N/A
+  resource: {fileID: 0}
+  cost: 0
+  combat: 0
+  t1AttackSpeed: 0.1
+  t2MoveSpeed: 0.5
+  t3BaseDmg: 0.2
+  t4BaseDmg: 0.3
+  t5MinSpeed: 0
+  t6CritChance: 0.1
+  tnCritDamage: 0.2

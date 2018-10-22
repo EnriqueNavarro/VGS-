@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1880374488295916}
+  m_IsPrefabAsset: 1
+--- !u!1 &1880374488295916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4896406795957250}
+  - component: {fileID: 114569585588471564}
+  m_Layer: 0
+  m_Name: ShadowsEmbrace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4896406795957250
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880374488295916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114569585588471564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880374488295916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3990bd027194414eb0e949466894ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Shadow's Embrace
+  description: A shadow clone will strike all enemies in range, and the user will
+    get an attack speed buff, and have shadow step's cd greartly reduced
+  icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
+  cd: 30
+  timer: 0
+  particleflefx: {fileID: 0}
+  duration: 10
+  range: 3
+  dmgType: 4
+  damage: 20
+  targetEnemies: 1
+  targetAllies: 0
+  targetAll: 0
+  enemies: []
+  allies: []
+  keyBinding: r
+  pos: {x: 0, y: 0, z: 0}
+  attackSpeedModifier: 0.5
+  rangeModifier: 2
+  cdModifier: 0.05
+  attackGameObject: {fileID: 0}
+  ShadowStepGameObject: {fileID: 0}
+  player: {fileID: 0}
