@@ -38,7 +38,7 @@ public class CrystalSword : Class {
         return true;
     }
     public bool expendShard(float cost) {
-        Debug.Log("expend");
+        //Debug.Log("expend");
         if (free) cost = 0;
         float total=0;
         foreach(float shard in bloodShards) {
@@ -69,10 +69,10 @@ public class CrystalSword : Class {
             if(bloodShards[i]<1 && generated>0) {
                 float toFill = 1 - bloodShards[i];
                 if (generated <= toFill) {
-                    Debug.Log(bloodShards[i] + "+" + generated);
+                    //Debug.Log(bloodShards[i] + "+" + generated);
                     bloodShards[i] += generated;
                     generated = 0;
-                    Debug.Log(bloodShards[i] + "+" + generated);
+                    //Debug.Log(bloodShards[i] + "+" + generated);
                 } else {
                     bloodShards[i] = 1;
                     generated -= toFill;                    

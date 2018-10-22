@@ -13,9 +13,19 @@ public class Flurry : Ability {
             if (Input.GetKeyDown(keyBinding))
             {
                 Trigger();
-                elapsed = Time.fixedTime - Timer;
+
                 resource.GetComponent<CrystalSword>().expendShard(cost);
+                F = true;
             }
+        }
+        remainingCD = Mathf.Clamp((Cd - elapsed), 0, Cd);
+        if (F)
+        {
+            elapsed = Time.fixedTime - Timer;
+        }
+        else
+        {
+            elapsed = Cd;
         }
     }
     public override void Activate()

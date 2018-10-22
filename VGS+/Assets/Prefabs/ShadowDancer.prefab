@@ -69,13 +69,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4358795431871066}
-  - component: {fileID: 33927439292589106}
-  - component: {fileID: 23084779731095754}
   - component: {fileID: 65198535293343520}
   - component: {fileID: 54021770543814464}
   - component: {fileID: 114960612576735506}
   - component: {fileID: 114511300138888890}
   - component: {fileID: 114160688127152544}
+  - component: {fileID: 212022582281078038}
   m_Layer: 0
   m_Name: ShadowDancer
   m_TagString: Player
@@ -109,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4636111921449834}
   - component: {fileID: 212503222306882542}
+  - component: {fileID: 95728545386581318}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 114580973525033514}
   - component: {fileID: 65781846590113630}
   m_Layer: 0
-  m_Name: ShadowStep
+  m_Name: Shadow Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269917224612270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 16.2, y: -3.342617, z: 4.5745583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4636111921449834}
@@ -215,7 +215,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476146864581136}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5966, y: 2.5966, z: 1.2983}
   m_Children: []
@@ -261,48 +261,6 @@ Transform:
   m_Father: {fileID: 4358795431871066}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23084779731095754
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269917224612270}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: fe8c2d8f02b38864e97db726299a1bf3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &33927439292589106
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269917224612270}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54021770543814464
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -390,6 +348,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 20, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95728545386581318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476146864581136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62b8dbdb6b25b024cba5c68975a4b83f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114027782985003358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,11 +381,10 @@ MonoBehaviour:
   description: A shadow clone will strike all enemies in range, and the user will
     get an attack speed buff, and have shadow step's cd greartly reduced
   icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 0
   cd: 30
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 1
   duration: 10
   range: 10
   dmgType: 4
@@ -418,6 +393,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65567488676510740}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 95728545386581318}
+  animationDuration: 0.7
   elapsed: 0
   enemies: []
   allies: []
@@ -468,11 +445,10 @@ MonoBehaviour:
   description: Shadow dancer's version of an auta attack that works in tandem with
     the magical blade
   icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 0
   cd: 0.5
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 1
   duration: 0
   range: 1
   dmgType: 4
@@ -481,6 +457,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65658528386604234}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 95728545386581318}
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -501,11 +479,10 @@ MonoBehaviour:
   description: Activates the magic blade, and if it is already ativated, increases
     instability
   icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 0
   cd: 15
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 1
   duration: 0
   range: 0
   dmgType: 6
@@ -514,6 +491,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 0}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 95728545386581318}
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -534,7 +513,7 @@ MonoBehaviour:
   critChance: 0
   critDamage: 0
   health: 0
-  maxHealth: 0
+  maxHealth: 100
   lvl: 0
   speed: 0
   className: 0
@@ -550,6 +529,7 @@ MonoBehaviour:
   baseDmg: 0
   stealth: 0
   slowImmunity: 0
+  healthSlider: {fileID: 0}
 --- !u!114 &114522136920293462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,11 +547,10 @@ MonoBehaviour:
     and leather make it more stable, mail and plate less stable), and it may explode
     dealing damage to friend or foe
   icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 0
   cd: 0
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 0
   duration: 0
   range: 2
   dmgType: 4
@@ -580,6 +559,8 @@ MonoBehaviour:
   targetAllies: 1
   col: {fileID: 65055515936984236}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 0}
+  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -609,11 +590,10 @@ MonoBehaviour:
   description: Teleports you to one of the lowest armor types in the vecinity, and
     if there is a target get an attack speed buff
   icon: {fileID: 0}
-  requireTarget: 1
-  selfTarget: 0
   cd: 10
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 1
   duration: 3
   range: 10
   dmgType: 4
@@ -622,6 +602,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65781846590113630}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 95728545386581318}
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -645,11 +627,10 @@ MonoBehaviour:
   name: Shadow Cloack
   description: Makes the user invisible for a short duration
   icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 1
   cd: 10
-  timer: 0
+  remainingCD: 0
   particleflefx: {fileID: 0}
+  hasAnimation: 1
   duration: 5
   range: 0
   dmgType: 6
@@ -658,6 +639,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65041219175190778}
   Player: {fileID: 1269917224612270}
+  animator: {fileID: 95728545386581318}
+  animationDuration: 0.4
   elapsed: 0
   enemies: []
   allies: []
@@ -675,6 +658,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   speedModifier: 1.25
+  animator: {fileID: 95728545386581318}
+--- !u!212 &212022582281078038
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269917224612270}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.714286, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!212 &212503222306882542
 SpriteRenderer:
   m_ObjectHideFlags: 1
