@@ -6,7 +6,7 @@ public abstract class Ability : MonoBehaviour
 {
     [SerializeField] new private string name;
     [SerializeField] private string description;
-    [SerializeField] private Sprite icon;
+    [SerializeField] public Sprite icon;
     [SerializeField] private float cd; //secs
     private float timer;
     public float remainingCD;
