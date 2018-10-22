@@ -6,7 +6,7 @@ public class RoomInstance : MonoBehaviour {
 	public Texture2D tex;
 	[HideInInspector]
 	public Vector2 gridPos;
-	public int type; // 0: normal, 1: enter, 2:location, 3:boss
+	public int type; // 0: normal, 1: enter
 	[HideInInspector]
 	public bool doorTop, doorBot, doorLeft, doorRight;
 	[SerializeField]

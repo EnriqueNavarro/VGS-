@@ -418,10 +418,11 @@ MonoBehaviour:
   name: Crystal Sword auto attack
   description: Generates blood shards
   icon: {fileID: 0}
+  requireTarget: 1
+  selfTarget: 0
   cd: 0.5
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 0
   range: 1
   dmgType: 5
@@ -430,8 +431,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65329919078090902}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -483,10 +482,11 @@ MonoBehaviour:
   name: Sword Empowerement
   description: Increases auto attack damage and attack speed
   icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
   cd: 1
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 5
   range: 0
   dmgType: 6
@@ -495,8 +495,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65007622780026446}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -519,10 +517,11 @@ MonoBehaviour:
   name: 
   description: 
   icon: {fileID: 0}
+  requireTarget: 1
+  selfTarget: 0
   cd: 5
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 0
   range: 2
   dmgType: 5
@@ -531,8 +530,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65320240452952486}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -553,10 +550,11 @@ MonoBehaviour:
   name: In the thick of it
   description: Provides bonus combat stacks, depending on how long you stay in combat
   icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 1
   cd: 0
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 0
   range: 0
   dmgType: 6
@@ -565,8 +563,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65704075430721516}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -612,10 +608,11 @@ MonoBehaviour:
     armor type, and gives you bonus defenses against physcal attack depending on the
     target
   icon: {fileID: 0}
+  requireTarget: 1
+  selfTarget: 0
   cd: 10
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 5
   range: 10
   dmgType: 5
@@ -624,8 +621,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65849225719730830}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -646,7 +641,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   speedModifier: 1.25
-  animator: {fileID: 0}
 --- !u!114 &114814576576424250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,7 +671,6 @@ MonoBehaviour:
   baseDmg: 0
   stealth: 0
   slowImmunity: 0
-  healthSlider: {fileID: 0}
 --- !u!114 &114859530702305362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,10 +686,11 @@ MonoBehaviour:
   description: Makes all abilities free and increases the range of all abilities for
     the rest of the duration
   icon: {fileID: 0}
+  requireTarget: 0
+  selfTarget: 0
   cd: 30
-  remainingCD: 0
+  timer: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
   duration: 5
   range: 0
   dmgType: 6
@@ -705,8 +699,6 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65373913769057470}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []

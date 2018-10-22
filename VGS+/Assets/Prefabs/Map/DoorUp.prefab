@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114925987249657816}
   m_Layer: 0
   m_Name: DoorUp
-  m_TagString: DoorUp
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152370622949468}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.6300101, y: 132.26772, z: -102.303314}
+  m_LocalPosition: {x: 0, y: 0, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4742172850745752}
@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9590d523a5f155c46ac3e185b9837fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!212 &212058162008467170
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,11 +7,11 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] new private string name;
     [SerializeField] private string description;
     [SerializeField] private Sprite icon;
+    [SerializeField] private bool requireTarget;
+    [SerializeField] private bool selfTarget;
     [SerializeField] private float cd; //secs
-    private float timer;
-    public float remainingCD;
+    [SerializeField] private float timer;
     [SerializeField] private GameObject particleflefx;
-    [SerializeField] private bool hasAnimation;
     [SerializeField] private float duration;
     [SerializeField] private float range;
     [SerializeField] private Elements dmgType;
@@ -20,10 +20,6 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private bool targetAllies;
     [SerializeField] private Collider col;
     [SerializeField] private GameObject Player;
-    [SerializeField] private Animator animator;
-    [SerializeField] float animationDuration;
-    private bool f;
-    private string animationName;
     public float elapsed;
     public List<GameObject> enemies;
     public List<GameObject> allies;
@@ -68,6 +64,32 @@ public abstract class Ability : MonoBehaviour
         set
         {
             icon = value;
+        }
+    }
+
+    public bool RequireTarget
+    {
+        get
+        {
+            return requireTarget;
+        }
+
+        set
+        {
+            requireTarget = value;
+        }
+    }
+
+    public bool SelfTarget
+    {
+        get
+        {
+            return selfTarget;
+        }
+
+        set
+        {
+            selfTarget = value;
         }
     }
 
@@ -186,7 +208,9 @@ public abstract class Ability : MonoBehaviour
         {
             targetAllies = value;
         }
-    }  
+    }
+
+    
 
     public Collider Col
     {
@@ -214,19 +238,6 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
-    public bool F
-    {
-        get
-        {
-            return f;
-        }
-
-        set
-        {
-            f = value;
-        }
-    }
-
     // Use this for initialization
     void Start()
     {
@@ -236,35 +247,20 @@ public abstract class Ability : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (Input.GetKeyDown(keyBinding))
-        {
-            Trigger();
-            F = true;
-        }
-        if (F) { 
-            elapsed = Time.fixedTime - Timer; 
-        } else {
-            elapsed = Cd;
-        }
-        remainingCD = Mathf.Clamp((Cd-elapsed), 0, Cd);
+        if (Input.GetKeyDown(keyBinding)) Trigger();
+        elapsed = Time.fixedTime - Timer;
     }
     //if (Input.GetKeyDown(keyBinding)) Trigger(); agregar esa linea en cada update
     public void Trigger()
     {
-        if ((Time.fixedTime - Timer) >= Cd || !F)
+        if ((Time.fixedTime - Timer) >= Cd)
         {
-            if(hasAnimation) {
-                animator.SetBool(Name, true);
-                Invoke("EndAnimation", animationDuration);
-            }
             Timer = Time.fixedTime;
             Activate();
             Debug.Log("Activating " + this.name);
         }
     }
-    void EndAnimation() {
-        animator.SetBool(Name, false);
-    }
+
     abstract public void Activate();
     private void OnTriggerEnter(Collider other)
     {

@@ -72,9 +72,8 @@ MonoBehaviour:
   left: 0
   right: 0
   type: 0
-  normalColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
-  locationColor: {r: 1, g: 1, b: 1, a: 1}
-  bossColor: {r: 1, g: 0, b: 0, a: 1}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  enterColor: {r: 0.4783737, g: 0.8235294, b: 0.48075408, a: 1}
 --- !u!212 &212393331841987928
 SpriteRenderer:
   m_ObjectHideFlags: 1

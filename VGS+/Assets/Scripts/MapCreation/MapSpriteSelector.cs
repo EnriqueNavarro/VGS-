@@ -8,14 +8,15 @@ public class MapSpriteSelector : MonoBehaviour {
 			spUD, spRL, spUR, spUL, spDR, spDL,
 			spULD, spRUL, spDRU, spLDR, spUDRL;
 	public bool up, down, left, right;
-	public int type; // 0: normal, 1: enter, 2:location, 99:boss
-	public Color normalColor, locationColor, bossColor;
+	public int type; // 0: normal, 1: enter
+	public Color normalColor, enterColor;
 	Color mainColor;
 	SpriteRenderer rend;
 	void Start () {
 		rend = GetComponent<SpriteRenderer>();
 		mainColor = normalColor;
 		PickSprite();
+		PickColor();
 	}
 	void PickSprite(){ //picks correct sprite based on the four door bools
 		if (up){
@@ -71,17 +72,11 @@ public class MapSpriteSelector : MonoBehaviour {
 		}
 	}
 
-	void Update(){
-		PickColor ();
-	}
-
 	void PickColor(){ //changes color based on what type the room is
-		if (type == 0) {
+		if (type == 0){
 			mainColor = normalColor;
-		} else if (type == 1) {
-			mainColor = locationColor;
-		} else if (type == 99) {
-			mainColor = bossColor;
+		}else if (type == 1){
+			mainColor = enterColor;
 		}
 		rend.color = mainColor;
 	}
