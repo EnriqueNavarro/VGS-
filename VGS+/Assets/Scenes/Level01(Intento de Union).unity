@@ -517,11 +517,6 @@ Prefab:
       propertyPath: tokenManager
       value: 
       objectReference: {fileID: 399231071}
-    - target: {fileID: 65991239746895786, guid: 0b127af941e2856428fe7231f453bfe9,
-        type: 2}
-      propertyPath: m_Size.z
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b127af941e2856428fe7231f453bfe9, type: 2}
   m_IsPrefabAsset: 0
