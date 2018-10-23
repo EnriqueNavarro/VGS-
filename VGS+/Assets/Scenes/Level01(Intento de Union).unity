@@ -401,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &63433483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   baseDmg: 0
   stealth: 0
   slowImmunity: 0
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 456671796}
 --- !u!114 &63433488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd14140b7b7f074495e727bdfe28d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Crystal Sword auto attack
+  name: Auto attack
   description: Generates blood shards
   icon: {fileID: 0}
   cd: 0.5
@@ -704,7 +704,7 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 317310852}
   Player: {fileID: 63433482}
-  animator: {fileID: 0}
+  animator: {fileID: 743402848}
   animationDuration: 0
   elapsed: 0
   enemies: []
@@ -882,6 +882,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60e8973d076b47840ab691fd913f61f1, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &456671796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114664845808052314, guid: 60e8973d076b47840ab691fd913f61f1,
+    type: 2}
+  m_PrefabInternal: {fileID: 456671795}
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &635120600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,6 +1061,10 @@ Prefab:
     - target: {fileID: 4358795431871066, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}

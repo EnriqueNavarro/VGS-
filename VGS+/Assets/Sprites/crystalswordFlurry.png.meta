@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: 89d582ad4fa82fc40bedc050be0e3f4c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: crystalswordFlurry_1
+    21300002: crystalswordFlurry_2
+    21300004: crystalswordFlurry_3
+    21300006: crystalswordFlurry_5
+    21300008: crystalswordFlurry_7
+    21300010: crystalswordFlurry_8
+    21300012: crystalswordFlurry_10
+    21300014: crystalswordFlurry_11
+    21300016: crystalswordFlurry_13
+    21300018: crystalswordFlurry_14
+    21300020: crystalswordFlurry_0
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 7
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crystalswordFlurry_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 0
+        width: 63
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415c7b4a6ff02df48a20e1612270301d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 77
+        height: 101
+      alignment: 9
+      pivot: {x: 0.10449219, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd79ccc494d70b743b2559a2d722dda8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_3
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 144
+        height: 94
+      alignment: 9
+      pivot: {x: 0.69518155, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7635cbaebdf57649bc583c1165809e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_5
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 0
+        width: 129
+        height: 90
+      alignment: 9
+      pivot: {x: 0.6687778, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c80538e986f8834081014fccef51dc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_7
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 0
+        width: 143
+        height: 90
+      alignment: 9
+      pivot: {x: 0.67993677, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da4b3a1428ad54478a6062f75123e44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_8
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 0
+        width: 127
+        height: 82
+      alignment: 9
+      pivot: {x: 0.6620849, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000e646c42b161348ac17c88c5cd299e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_10
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 0
+        width: 143
+        height: 88
+      alignment: 9
+      pivot: {x: 0.6937777, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357bdccd63c7ff844a4dca39c7a3675e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_11
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 0
+        width: 128
+        height: 87
+      alignment: 9
+      pivot: {x: 0.688653, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300b5134312d0ad47bf02637ea6f23cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_13
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 0
+        width: 142
+        height: 81
+      alignment: 9
+      pivot: {x: 0.7174451, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fb6955678ac014a9259ee0bde8a15e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordFlurry_14
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 0
+        width: 132
+        height: 89
+      alignment: 9
+      pivot: {x: 0.69193244, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f8926073ca3e54581b4bb6e616a437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 04f82cb590ffc884ca70f768384bd25f
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
