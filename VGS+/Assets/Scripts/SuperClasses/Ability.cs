@@ -272,7 +272,7 @@ public abstract class Ability : MonoBehaviour
                 Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, r * Range* signZ);
             } else {
                 if(movement.x!=0) {
-                    Debug.Log(Movement);
+                    //Debug.Log(Movement);
                     Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y,0);
                 } else {
                     if(movement.z!=0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range* signZ);
