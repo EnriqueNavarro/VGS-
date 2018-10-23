@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114443291868546110}
   - component: {fileID: 114861399865541824}
   - component: {fileID: 114708549033081824}
+  - component: {fileID: 114463510639756934}
+  - component: {fileID: 54670954688919946}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -86,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 1965412532659594}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.71172, y: 0.71172, z: 0.71172}
   m_Children: []
   m_Father: {fileID: 4951563246644916}
   m_RootOrder: 1
@@ -148,6 +150,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032046438125272}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54670954688919946
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032046438125272}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!65 &65481380103573154
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -159,7 +176,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 20, z: 10}
-  m_Center: {x: 10, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65991239746895786
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -170,7 +187,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 10, y: 10, z: 25}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114102159594378530
 MonoBehaviour:
@@ -192,7 +209,7 @@ MonoBehaviour:
   timer: 0
   particleflefx: {fileID: 0}
   duration: 2
-  range: 2
+  range: 3
   dmgType: 5
   damage: 5
   col: {fileID: 65481380103573154}
@@ -223,7 +240,7 @@ MonoBehaviour:
   maxHealth: 0
   lvl: 0
   speed: 0
-  typeName: 0
+  typeName: 2
   physicalRes: 0
   baseMagicRes: 0
   fireRes: 0
@@ -237,6 +254,26 @@ MonoBehaviour:
   tokenManager: {fileID: 0}
   max: 0
   combat: 0
+--- !u!114 &114463510639756934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032046438125272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 179434c4952504341b45c9d8174a8a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combat: 0
+  target: {fileID: 0}
+  lastKnownPos: {x: 0, y: 0, z: 0}
+  maxRange: 1000
+  maxDistanceDelta: 0.5
+  minDistance: 25
+  lm:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!114 &114708549033081824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,9 +285,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9091cc43146f2447a3fe6fd43b70bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRange: 5
+  maxRange: 1000
   inRange: 
   LOS: 
+  lm:
+    serializedVersion: 2
+    m_Bits: 1536
 --- !u!114 &114861399865541824
 MonoBehaviour:
   m_ObjectHideFlags: 1

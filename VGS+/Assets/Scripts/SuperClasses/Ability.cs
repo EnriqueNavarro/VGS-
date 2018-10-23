@@ -232,6 +232,19 @@ public abstract class Ability : MonoBehaviour
     {
         get
         {
+            return Movement1;
+        }
+
+        set
+        {
+            Movement1 = value;
+        }
+    }
+
+    public Vector3 Movement1
+    {
+        get
+        {
             return movement;
         }
 
@@ -252,12 +265,12 @@ public abstract class Ability : MonoBehaviour
         float r = 3;
         float signZ;
         float signX;  
-        if(movement.z>0) {
+        if(Movement1.z>0) {
             signZ = 1;
         } else {
             signZ = -1;
         }
-        if (movement.x > 0)
+        if (Movement1.x > 0)
         {
             signX = -1;
         }
@@ -268,14 +281,14 @@ public abstract class Ability : MonoBehaviour
 
         Col.transform.localScale = new Vector3(Range, 2, Range);
         
-            if(movement.x!=0 &&movement.z!=0) {
+            if(Movement1.x!=0 &&Movement1.z!=0) {
                 Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, r * Range* signZ);
             } else {
-                if(movement.x!=0) {
+                if(Movement1.x!=0) {
                     //Debug.Log(Movement);
                     Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y,0);
                 } else {
-                    if(movement.z!=0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range* signZ);
+                    if(Movement1.z!=0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range* signZ);
                 }
             }
         

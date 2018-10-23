@@ -9,6 +9,7 @@ public class LineOfSight : MonoBehaviour {
     [SerializeField] private float maxRange;
     [SerializeField] private bool[] inRange;
     [SerializeField] private bool[] LOS;
+    [SerializeField] public LayerMask lm;
     public GameObject[] Players
     {
         get
@@ -52,13 +53,26 @@ public class LineOfSight : MonoBehaviour {
         }
     }
 
+    public LayerMask Lm
+    {
+        get
+        {
+            return lm;
+        }
+
+        set
+        {
+            lm = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         iterator++;
         if (iterator % 30 == 0)
         {
@@ -68,7 +82,7 @@ public class LineOfSight : MonoBehaviour {
                 if (Vector3.Distance(transform.position, players[i].transform.position) < maxRange)
                 {
                     inRange[i] = true;
-                    if (Physics.Raycast(transform.position, (players[i].transform.position - transform.position), out hit, maxRange))
+                    if (Physics.Raycast(transform.position, (players[i].transform.position - transform.position), out hit, maxRange,lm))
                     {
                         if (hit.transform == players[i].transform)
                         {

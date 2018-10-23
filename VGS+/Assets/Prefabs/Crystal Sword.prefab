@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 114814576576424250}
   - component: {fileID: 54929152118588654}
   - component: {fileID: 114671466491116654}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crystal Sword
   m_TagString: Player
   m_Icon: {fileID: 0}

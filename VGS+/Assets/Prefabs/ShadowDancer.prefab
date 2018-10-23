@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4898384441708496}
   - component: {fileID: 114492476971588162}
+  - component: {fileID: 65604196016567722}
   m_Layer: 0
   m_Name: CreateBlade
   m_TagString: Untagged
@@ -189,8 +190,8 @@ Transform:
   - {fileID: 4182653031638264}
   - {fileID: 4748803384913328}
   - {fileID: 4289965127354282}
-  - {fileID: 4361332432844982}
   - {fileID: 4898384441708496}
+  - {fileID: 4361332432844982}
   - {fileID: 4931771873210124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -206,7 +207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4358795431871066}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4636111921449834
 Transform:
@@ -245,7 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4358795431871066}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4931771873210124
 Transform:
@@ -322,6 +323,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65604196016567722
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1126899138176524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65658528386604234
 BoxCollider:
@@ -423,7 +436,7 @@ MonoBehaviour:
   - {fileID: 0}
   actives:
   - {fileID: 1366779337827462}
-  - {fileID: 0}
+  - {fileID: 1126899138176524}
   - {fileID: 1711423017827124}
   - {fileID: 1264543517370846}
   stealth: 0
@@ -488,14 +501,14 @@ MonoBehaviour:
   damage: 0
   targetEnemies: 0
   targetAllies: 0
-  col: {fileID: 0}
+  col: {fileID: 65604196016567722}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
   animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
-  keyBinding: e
+  keyBinding: w
   blade: {fileID: 1955832259164202}
   extraInstability: 20
 --- !u!114 &114511300138888890
@@ -606,7 +619,7 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  keyBinding: w
+  keyBinding: e
   pos: {x: 0, y: 0, z: 0}
   lower: {fileID: 0}
   attackSpeedModifier: 0.5
