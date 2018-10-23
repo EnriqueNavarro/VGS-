@@ -311,7 +311,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 20, y: 20, z: 30}
-  m_Center: {x: 0, y: 0, z: 15}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65373913769057470
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -397,7 +397,7 @@ MonoBehaviour:
   particleflefx: {fileID: 0}
   hasAnimation: 1
   duration: 0
-  range: 1
+  range: 2
   dmgType: 5
   damage: 5
   targetEnemies: 1
@@ -610,6 +610,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   speedModifier: 1.25
   animator: {fileID: 95105149571143792}
+  deltaPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114814576576424250
 MonoBehaviour:
   m_ObjectHideFlags: 1

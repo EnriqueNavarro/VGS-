@@ -860,8 +860,7 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 212022582281078038, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &827672188
@@ -1368,10 +1367,6 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 456671796}
-    - target: {fileID: 1325531234331084, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f, type: 2}
   m_IsPrefabAsset: 0
