@@ -259,6 +259,8 @@ public abstract class Ability : MonoBehaviour
     {
         Col.transform.localScale = new Vector3(Range, 2, Range);
         AdjustCol();
+
+        
     }
     public void AdjustCol() {
         //if (this.name == "Flurry") Debug.Log(Movement);
