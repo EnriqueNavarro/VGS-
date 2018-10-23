@@ -285,10 +285,13 @@ public class EnemyAbility : MonoBehaviour {
             int i = user.GetComponent<EnemyHealth>().Number;
             tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
+            //Debug.Log("CD:" + (Time.fixedTime - Timer) + "of" + Cd);
+            //Debug.Log(distance);
             if ((Time.fixedTime - Timer) >= Cd && distance <= Range && LOS1)
             {
                 if (!requestSent)
-                {                    
+                {
+                    //Debug.Log("Sending request");
                     target = tuple.player;
                     int targetHp = target.GetComponent<Stats>().Health;
                     inRange = Vector3.Distance(user.transform.position, target.transform.position) < Range;
