@@ -7,11 +7,7 @@ public class CreateBlade : Ability
     public GameObject blade;
     [SerializeField] private int extraInstability;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    
     public override void Activate() {        
         if(!blade.GetComponent<Blade>().Live) {
             blade.GetComponent<Blade>().create();

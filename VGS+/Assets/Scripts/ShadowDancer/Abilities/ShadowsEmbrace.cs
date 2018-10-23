@@ -13,10 +13,7 @@ public class ShadowsEmbrace : Ability
     [SerializeField] private GameObject player;
     float oldCd;
     // Use this for initialization
-    void Start()
-    {
-        Col.transform.localScale = new Vector3(Range, 2, Range);
-    }
+   
 
     public override void Activate()
     {

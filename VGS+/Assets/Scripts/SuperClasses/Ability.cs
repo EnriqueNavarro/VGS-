@@ -23,6 +23,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] float animationDuration;
     private bool f;
+    private Vector3 movement;
     private string animationName;
     public float elapsed;
     public List<GameObject> enemies;
@@ -227,12 +228,63 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
+    public Vector3 Movement
+    {
+        get
+        {
+            return movement;
+        }
+
+        set
+        {
+            movement = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
         Col.transform.localScale = new Vector3(Range, 2, Range);
+        AdjustCol();
     }
+    public void AdjustCol() {
+        //if (this.name == "Flurry") Debug.Log(Movement);
+        float r = 3;
+        float signZ;
+        float signX;  
+        if(movement.z>0) {
+            signZ = 1;
+        } else {
+            signZ = -1;
+        }
+        if (movement.x > 0)
+        {
+            signX = -1;
+        }
+        else
+        {
+            signX = -1;
+        }
 
+        Col.transform.localScale = new Vector3(Range, 2, Range);
+        
+            if(movement.x!=0 &&movement.z!=0) {
+                Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, r * Range* signZ);
+            } else {
+                if(movement.x!=0) {
+                    Debug.Log(Movement);
+                    Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y,0);
+                } else {
+                    if(movement.z!=0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range* signZ);
+                }
+            }
+        
+        
+    }
+    private void FixedUpdate()
+    {
+        AdjustCol();
+    }
     // Update is called once per frame
     public void Update()
     {
@@ -327,6 +379,7 @@ public abstract class Ability : MonoBehaviour
                 break;
             case sStats.Range:
                 Range *= modifier;
+                AdjustCol();
                 break;
         }
         Invoke("reverter", time);
@@ -345,6 +398,7 @@ public abstract class Ability : MonoBehaviour
                 break;
             case sStats.Range:
                 Range /= modifier;
+                AdjustCol();
                 break;
         }
     }

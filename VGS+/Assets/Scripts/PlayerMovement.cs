@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour {
     private float movement;
     private bool facingRight;
     public Animator animator;
-    
+    private Vector3 lastPos;
+    public Vector3 deltaPos;
 
     public float SpeedModifier
     {
@@ -23,10 +24,14 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
     
-    private void Update()
+    private void FixedUpdate()
     {
-        
-
+        deltaPos = transform.position - lastPos;
+        lastPos = transform.position;
+        int size = this.GetComponent<Class>().Actives.Length;
+        for(int i=0;i<size;i++) {
+            this.GetComponent<Class>().Actives[i].GetComponent<Ability>().Movement = deltaPos;
+        }
         if (Input.GetAxis("Horizontal") < 0 && facingRight) {
             flip();
         }

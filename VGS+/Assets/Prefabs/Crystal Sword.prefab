@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468478931774074}
   - component: {fileID: 212313934100237348}
+  - component: {fileID: 95105149571143792}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -86,14 +87,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4540321774802566}
-  - component: {fileID: 33458411898528656}
-  - component: {fileID: 23578966454909862}
   - component: {fileID: 65700636540596936}
   - component: {fileID: 114115530277127958}
   - component: {fileID: 114814576576424250}
   - component: {fileID: 54929152118588654}
   - component: {fileID: 114671466491116654}
-  - component: {fileID: 114373162053969874}
   m_Layer: 0
   m_Name: Crystal Sword
   m_TagString: Player
@@ -257,54 +255,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041174768244312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4540321774802566}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23578966454909862
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325531234331084}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 4b61943c0043af642a747c4d90fc2277, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &33458411898528656
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325531234331084}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54929152118588654
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -354,8 +310,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 20, z: 15}
-  m_Center: {x: 0, y: 0, z: 12.5}
+  m_Size: {x: 20, y: 20, z: 30}
+  m_Center: {x: 0, y: 0, z: 15}
 --- !u!65 &65373913769057470
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -404,6 +360,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 20, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95105149571143792
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233951425326670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90c14cc85c6899f409d055b7756a0764, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114094804649024358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -415,13 +389,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd14140b7b7f074495e727bdfe28d13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Crystal Sword auto attack
+  name: Auto attack
   description: Generates blood shards
   icon: {fileID: 0}
   cd: 0.5
   remainingCD: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
+  hasAnimation: 1
   duration: 0
   range: 1
   dmgType: 5
@@ -430,8 +404,8 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65329919078090902}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
+  animator: {fileID: 95105149571143792}
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -483,7 +457,7 @@ MonoBehaviour:
   name: Sword Empowerement
   description: Increases auto attack damage and attack speed
   icon: {fileID: 0}
-  cd: 1
+  cd: 3
   remainingCD: 0
   particleflefx: {fileID: 0}
   hasAnimation: 0
@@ -495,7 +469,7 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65007622780026446}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
+  animator: {fileID: 95105149571143792}
   animationDuration: 0
   elapsed: 0
   enemies: []
@@ -516,23 +490,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53de6156a95ab54d87593aefa1803d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Flurry
   description: 
   icon: {fileID: 0}
   cd: 5
   remainingCD: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
+  hasAnimation: 1
   duration: 0
-  range: 2
+  range: 4
   dmgType: 5
   damage: 30
   targetEnemies: 1
   targetAllies: 0
   col: {fileID: 65320240452952486}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
-  animationDuration: 0
+  animator: {fileID: 95105149571143792}
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -585,17 +559,6 @@ MonoBehaviour:
   t5SlowImmunity: 0
   t6CritChance: 0.1
   tnCritDamage: 0.2
---- !u!114 &114373162053969874
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325531234331084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6f7c48f646a0a408fd68d26560601e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114513864596979186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,7 +587,7 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65849225719730830}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
+  animator: {fileID: 95105149571143792}
   animationDuration: 0
   elapsed: 0
   enemies: []
@@ -646,7 +609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   speedModifier: 1.25
-  animator: {fileID: 0}
+  animator: {fileID: 95105149571143792}
 --- !u!114 &114814576576424250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -705,7 +668,7 @@ MonoBehaviour:
   targetAllies: 0
   col: {fileID: 65373913769057470}
   Player: {fileID: 1325531234331084}
-  animator: {fileID: 0}
+  animator: {fileID: 95105149571143792}
   animationDuration: 0
   elapsed: 0
   enemies: []

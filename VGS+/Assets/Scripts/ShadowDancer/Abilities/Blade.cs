@@ -47,6 +47,7 @@ public class Blade : Ability {
         instability = baseInstability;
         stability = baseStability;
         Live = true;
+        AdjustCol();
 
     }
     public void create() {
