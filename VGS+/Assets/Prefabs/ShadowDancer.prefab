@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114960612576735506}
   - component: {fileID: 114511300138888890}
   - component: {fileID: 114160688127152544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShadowDancer
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -187,7 +187,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 10, z: 10}
+  m_Size: {x: 8, y: 10, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114102159594378530
 MonoBehaviour:
@@ -200,16 +200,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be58b3c286fa67e4d89650cf6a3e01fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: AA
   description: 
-  icon: {fileID: 0}
-  requireTarget: 0
-  selfTarget: 0
-  cd: 1
+  cd: 0.5
   timer: 0
   particleflefx: {fileID: 0}
-  duration: 2
-  range: 3
+  duration: 0.5
+  range: 20
   dmgType: 5
   damage: 5
   col: {fileID: 65481380103573154}
@@ -224,7 +221,6 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  keyBinding: 
 --- !u!114 &114443291868546110
 MonoBehaviour:
   m_ObjectHideFlags: 1

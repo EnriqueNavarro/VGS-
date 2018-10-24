@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAbility : MonoBehaviour {
+public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] new private string name;
     [SerializeField] private string description;
-    [SerializeField] private Sprite icon;
-    [SerializeField] private bool requireTarget;
-    [SerializeField] private bool selfTarget;
     [SerializeField] private float cd; //secs
     [SerializeField] private float timer;
     [SerializeField] private GameObject particleflefx;
@@ -29,7 +26,6 @@ public class EnemyAbility : MonoBehaviour {
     public float elapsed;
     public List<GameObject> enemies;
     public List<GameObject> allies;
-    public string keyBinding; // this must be rewritten
     private float cdModifier;
     float rangeModifier;
     private float modifier;
@@ -60,46 +56,7 @@ public class EnemyAbility : MonoBehaviour {
             description = value;
         }
     }
-
-    public Sprite Icon
-    {
-        get
-        {
-            return icon;
-        }
-
-        set
-        {
-            icon = value;
-        }
-    }
-
-    public bool RequireTarget
-    {
-        get
-        {
-            return requireTarget;
-        }
-
-        set
-        {
-            requireTarget = value;
-        }
-    }
-
-    public bool SelfTarget
-    {
-        get
-        {
-            return selfTarget;
-        }
-
-        set
-        {
-            selfTarget = value;
-        }
-    }
-
+    
     public float Cd
     {
         get
@@ -269,6 +226,19 @@ public class EnemyAbility : MonoBehaviour {
         }
     }
 
+    public GameObject Target
+    {
+        get
+        {
+            return target;
+        }
+
+        set
+        {
+            target = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -285,16 +255,14 @@ public class EnemyAbility : MonoBehaviour {
             int i = user.GetComponent<EnemyHealth>().Number;
             tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
-            //Debug.Log("CD:" + (Time.fixedTime - Timer) + "of" + Cd);
             //Debug.Log(distance);
-            if ((Time.fixedTime - Timer) >= Cd && distance <= Range && LOS1)
+            if ((Time.fixedTime - Timer) >= Cd && distance <= Range*10 && LOS1)
             {
                 if (!requestSent)
                 {
-                    //Debug.Log("Sending request");
-                    target = tuple.player;
-                    int targetHp = target.GetComponent<Stats>().Health;
-                    inRange = Vector3.Distance(user.transform.position, target.transform.position) < Range;
+                    Target = tuple.player;
+                    int targetHp = Target.GetComponent<Stats>().Health;
+                    inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
                     Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
                     tokenManager.AddRequest(Request);
                     cost = request.cost;
@@ -325,8 +293,8 @@ public class EnemyAbility : MonoBehaviour {
         Activate();
         Debug.Log("Activating " + this.name);        
     }
-
-    public void Activate() {
+    abstract public void Activate();
+    public void DealDamage() {
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
