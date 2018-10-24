@@ -1,20 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class CrystalSword : Class {
     [SerializeField] private float[] bloodShards;
-    public bool testCost;
-    public float tCost;
+    [SerializeField] private GameObject CrystalSwordUI;
+    [SerializeField] private GameObject[] shards;
+    public bool testGenerator;
+    public float tGenerate;
     private bool free;
-	// Use this for initialization
-	
-	
-	// Update is called once per frame
-	void Update () {
-		if(testCost) {
-            generateShard(tCost);
-            testCost = false;
+    // Use this for initialization
+    private void Start()
+    {
+        CrystalSwordUI.SetActive(true);        
+    }
+
+    // Update is called once per frame
+    void Update () {
+		if(testGenerator) {
+            generateShard(tGenerate);
+            testGenerator = false;
+        }
+        for(int i=0;i<bloodShards.Length;i++) {
+            shards[i].GetComponent<Animator>().SetFloat("Shard", ((int)(bloodShards[i] * 10)));
         }
 	}
     public void Free(float duration)

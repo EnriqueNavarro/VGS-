@@ -754,7 +754,7 @@ MonoBehaviour:
   name: Sword Empowerement
   description: Increases auto attack damage and attack speed
   icon: {fileID: 0}
-  cd: 3
+  cd: 5
   remainingCD: 0
   particleflefx: {fileID: 0}
   hasAnimation: 0
@@ -789,7 +789,7 @@ MonoBehaviour:
   name: Flurry
   description: 
   icon: {fileID: 21300000, guid: 8e20dad12d54ce74abca5cdb5d8e185d, type: 3}
-  cd: 5
+  cd: 1
   remainingCD: 0
   particleflefx: {fileID: 0}
   hasAnimation: 1
@@ -869,7 +869,7 @@ MonoBehaviour:
     armor type, and gives you bonus defenses against physcal attack depending on the
     target
   icon: {fileID: 0}
-  cd: 10
+  cd: 5
   remainingCD: 0
   particleflefx: {fileID: 0}
   hasAnimation: 1
