@@ -367,6 +367,10 @@ public abstract class Ability : MonoBehaviour
     {
         enemies.Remove(other.gameObject);
     }
+    public void removeEnemy(GameObject other)
+    {
+        enemies.Remove(other);
+    }
     private void removeAlly(Collider other)
     {
         enemies.Remove(other.gameObject);

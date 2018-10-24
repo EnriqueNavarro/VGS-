@@ -9,7 +9,25 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private float timer;
     [SerializeField] private List<Request> buffer = new List<Request>();
     [SerializeField] private float ageValue;//adds value to older requests, must be a very small number since it is added on fixed update
-
+    public void Died(GameObject dead)
+    {
+        for (int i = 0; i < buffer.Count; i++)
+        {
+            if (buffer[i].requester == dead)
+            {
+                buffer.RemoveAt(i);
+                i--;
+            }
+        }
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            GameObject[] actives = player.GetComponent<Class>().Actives;
+            for(int i=0;i< player.GetComponent<Class>().Actives.Length;i++) {
+                player.GetComponent<Class>().Actives[i].GetComponent<Ability>().removeEnemy(dead);
+            }
+        }
+    }
 	// Use this for initialization
 	void Start () {
         currentTokens = maxTokens;

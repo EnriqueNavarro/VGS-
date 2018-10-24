@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -311,6 +312,7 @@ public class EnemyHealth : MonoBehaviour
                 UpdateTarget();
             }
         }
+        this.GetComponentInChildren<Slider>().value= (Health * 100) / MaxHealth;
     }
     public void CheckLOS(bool[] LOS) {
         for(int i=0;i<threat.Length;i++) {
@@ -431,6 +433,8 @@ public class EnemyHealth : MonoBehaviour
     }
     void death()
     {
-        //to decide
+        tokenManager.Died(this.gameObject);
+        this.gameObject.SetActive(false);
+        //Destroy(this.gameObject);
     }
 }

@@ -40,23 +40,49 @@ public class Blade : Ability {
         }
     }
 
+    public float Instability
+    {
+        get
+        {
+            return instability;
+        }
+
+        set
+        {
+            instability = value;
+        }
+    }
+
+    public float Stability
+    {
+        get
+        {
+            return stability;
+        }
+
+        set
+        {
+            stability = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
         Col.transform.localScale = new Vector3(Range, 2, Range);
         Activate();
-        instability = baseInstability;
-        stability = baseStability;
+        Instability = baseInstability;
+        Stability = baseStability;
         Live = true;
         AdjustCol();
 
     }
     public void create() {
         Live = true;
-        instability = baseInstability;
-        stability = baseStability;
+        Instability = baseInstability;
+        Stability = baseStability;
     }
     public void addInstability(int i) {
-        instability += i;
+        Instability += i;
     }
     new public void Update(){}
     // Update is called once per frame
@@ -66,27 +92,30 @@ public class Blade : Ability {
         aaEnemies = _enemies;
         if (Live)
         {
-            Damage = (int)(instability + (BaseDamage * 10)) / 10;//to balance
+            Damage = (int)(Instability + (BaseDamage * 10)) / 10;//to balance
             foreach (GameObject enemy in aaEnemies)
             {
-                Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
-                enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
-                switch (target)
+                if (enemy.GetComponent<EnemyHealth>()!= null)
                 {
-                    case Enemies.Plate:
-                        instability += plateModifier;
-                        break;
-                    case Enemies.Mail:
-                        instability += mailModifier;
-                        break;
-                    case Enemies.Leather:
-                        stability += leatherModifier;
-                        instability += leatherModifier + 2;
-                        break;
-                    case Enemies.Cloth:
-                        stability += clothModifier;
-                        instability += clothModifier + 2;
-                        break;
+                    Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
+                    enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
+                    switch (target)
+                    {
+                        case Enemies.Plate:
+                            Instability += plateModifier;
+                            break;
+                        case Enemies.Mail:
+                            Instability += mailModifier;
+                            break;
+                        case Enemies.Leather:
+                            Stability += leatherModifier;
+                            Instability += leatherModifier + 2;
+                            break;
+                        case Enemies.Cloth:
+                            Stability += clothModifier;
+                            Instability += clothModifier + 2;
+                            break;
+                    }
                 }
             }
             checkInstability();
@@ -102,10 +131,10 @@ public class Blade : Ability {
         }
     }
     public void checkInstability() {
-        if(Random.Range(0,instability)>stability) {
-            Debug.Log("Blade exploded with "+instability);
+        if(Random.Range(0,Instability)>Stability) {
+            Debug.Log("Blade exploded with "+Instability);
             Live = false;
-            Damage = (int)(instability + (BaseDamage * 10)) / 2;
+            Damage = (int)(Instability + (BaseDamage * 10)) / 2;
             foreach (GameObject enemy in enemies) {
                 enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
             }
