@@ -406,7 +406,6 @@ MonoBehaviour:
   col: {fileID: 65567488676510740}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -433,7 +432,6 @@ MonoBehaviour:
   stats: {fileID: 114511300138888890}
   passives:
   - {fileID: 1955832259164202}
-  - {fileID: 0}
   actives:
   - {fileID: 1366779337827462}
   - {fileID: 1126899138176524}
@@ -476,7 +474,6 @@ MonoBehaviour:
   col: {fileID: 65658528386604234}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -510,7 +507,6 @@ MonoBehaviour:
   col: {fileID: 65604196016567722}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -578,7 +574,6 @@ MonoBehaviour:
   col: {fileID: 65055515936984236}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -621,7 +616,6 @@ MonoBehaviour:
   col: {fileID: 65781846590113630}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -658,7 +652,6 @@ MonoBehaviour:
   col: {fileID: 65041219175190778}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []

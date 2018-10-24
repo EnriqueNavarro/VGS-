@@ -7,6 +7,7 @@ public class NoMercy : Ability {
     [SerializeField] private float _rangeModifier;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
+    [SerializeField] private GameObject crystals;
     new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().CheckShards(cost))
@@ -32,9 +33,14 @@ public class NoMercy : Ability {
     public override void Activate()
     {
         resource.GetComponent<CrystalSword>().Free(Duration);
-        for(int i = 0; i < activeAbilities.Length; i++)
+        crystals.SetActive(true);
+        Invoke("DeactivateCrystals", Duration);
+        for (int i = 0; i < activeAbilities.Length; i++)
         {
             activeAbilities[i].GetComponent<Ability>().changer(_rangeModifier, Duration, sStats.Range);
         }
+    }
+    void DeactivateCrystals() {
+        crystals.SetActive(false);
     }
 }
