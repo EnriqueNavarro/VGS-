@@ -1,12 +1,24 @@
 fileFormatVersion: 2
 guid: 15185aac1ca52924bb9250d465230dff
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: crystalswordNoMercy_0
+    21300002: crystalswordNoMercy_1
+    21300004: crystalswordNoMercy_2
+    21300006: crystalswordNoMercy_3
+    21300008: crystalswordNoMercy_4
+    21300010: crystalswordNoMercy_5
+    21300012: crystalswordNoMercy_6
+    21300014: crystalswordNoMercy_7
+    21300016: crystalswordNoMercy_8
+    21300018: crystalswordNoMercy_9
+    21300020: crystalswordNoMercy_10
+    21300022: crystalswordNoMercy_11
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,24 +46,24 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 7
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -69,13 +81,264 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: crystalswordNoMercy_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 59
+        height: 92
+      alignment: 9
+      pivot: {x: 0.5254237, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7b050fc604a4145a19a411a5bfa0c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 59
+        height: 89
+      alignment: 9
+      pivot: {x: 0.45762712, y: 0.5168539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc16b4b248e30645afb918531da8e67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 110
+      alignment: 9
+      pivot: {x: 0.48431167, y: 0.4181818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9508efff8ed83a4a949f9569420000f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 82
+        height: 114
+      alignment: 9
+      pivot: {x: 0.50510204, y: 0.40350878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7caa09b342653d245ae59f9537577613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_4
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 0
+        width: 80
+        height: 119
+      alignment: 9
+      pivot: {x: 0.50522995, y: 0.38655463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881ece9f3043551439af1a277afc8ed4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_5
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 0
+        width: 73
+        height: 114
+      alignment: 9
+      pivot: {x: 0.46561465, y: 0.40350878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce7aa924b9279548ac4b08a6cbf7aeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_6
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 105
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43809524}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea450d0a8d0a9246b5aa821f663a1a7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_7
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 0
+        width: 59
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5168539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22973f2c8d60f3a4386439c8409f0c32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_8
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 0
+        width: 59
+        height: 92
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6e3eeb30c7ea64a93b5180f71e3ba9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 58
+        height: 86
+      alignment: 9
+      pivot: {x: 0.5344828, y: 0.53488374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c455a20c0d05b6a41998876c2a090396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_10
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 0
+        width: 57
+        height: 84
+      alignment: 9
+      pivot: {x: 0.50877196, y: 0.54761904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edb7559caa5bff4d89aacd45427f371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crystalswordNoMercy_11
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 0
+        width: 57
+        height: 84
+      alignment: 9
+      pivot: {x: 0.49122807, y: 0.54761904}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf54119b0302c647bf0a5d48f600cb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5c74a1a0bb110bf4abf59b064b358ee9
     vertices: []
     indices: 
     edges: []

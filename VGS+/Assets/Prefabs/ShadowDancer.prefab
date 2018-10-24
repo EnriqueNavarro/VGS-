@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269917224612270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.2, y: -3.342617, z: 4.5745583}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4636111921449834}
@@ -275,7 +275,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65041219175190778
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -406,7 +406,7 @@ MonoBehaviour:
   col: {fileID: 65567488676510740}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.7
+  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -441,6 +441,12 @@ MonoBehaviour:
   - {fileID: 1264543517370846}
   stealth: 0
   combat: 0
+  keyboard:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   baseDmgs: 0000000000000000000000000000000000000000
 --- !u!114 &114365717404665408
 MonoBehaviour:
@@ -470,7 +476,7 @@ MonoBehaviour:
   col: {fileID: 65658528386604234}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.5
+  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -504,7 +510,7 @@ MonoBehaviour:
   col: {fileID: 65604196016567722}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.5
+  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -615,7 +621,7 @@ MonoBehaviour:
   col: {fileID: 65781846590113630}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.5
+  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []
@@ -652,7 +658,7 @@ MonoBehaviour:
   col: {fileID: 65041219175190778}
   Player: {fileID: 1269917224612270}
   animator: {fileID: 95728545386581318}
-  animationDuration: 0.4
+  animationDuration: 0.1
   elapsed: 0
   enemies: []
   allies: []

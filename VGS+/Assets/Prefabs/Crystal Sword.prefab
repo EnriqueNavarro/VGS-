@@ -275,7 +275,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65007622780026446
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -436,6 +436,12 @@ MonoBehaviour:
   - {fileID: 1369074216127236}
   stealth: 0
   combat: 0
+  keyboard:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   baseDmgs: 0000000000000000000000000000000000000000
   bloodShards:
   - 0
@@ -492,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Flurry
   description: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 8e20dad12d54ce74abca5cdb5d8e185d, type: 3}
   cd: 5
   remainingCD: 0
   particleflefx: {fileID: 0}
@@ -660,7 +666,7 @@ MonoBehaviour:
   cd: 30
   remainingCD: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
+  hasAnimation: 1
   duration: 5
   range: 0
   dmgType: 6
@@ -670,7 +676,7 @@ MonoBehaviour:
   col: {fileID: 65373913769057470}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0
+  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []

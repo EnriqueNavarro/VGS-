@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: be5ca6fcdf8733745ae967c707c1603c
+guid: 450fe648821d35a4c947b5c194bafab2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: crystalswordChallenge_0
-    21300002: crystalswordChallenge_1
-    21300004: crystalswordChallenge_2
-    21300006: crystalswordChallenge_3
-    21300008: crystalswordChallenge_4
-    21300010: crystalswordChallenge_5
+    21300000: bloodCrystal_0
+    21300002: bloodCrystal_1
+    21300004: bloodCrystal_2
+    21300006: bloodCrystal_3
+    21300008: bloodCrystal_4
+    21300010: bloodCrystal_5
+    21300012: bloodCrystal_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,13 +91,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crystalswordChallenge_0
+      name: bloodCrystal_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 69
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,19 +105,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bb052590458b8c4a8972b5dc725ef58
+      spriteID: 065589aa422304d49a5a12702cbb84b1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystalswordChallenge_1
+      name: bloodCrystal_1
       rect:
         serializedVersion: 2
-        x: 95
+        x: 12
         y: 0
-        width: 64
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +125,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ed347d51bd53364d9f8941b653cca73
+      spriteID: df768a046a8bbf44c8ec29f041ddab4b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystalswordChallenge_2
+      name: bloodCrystal_2
       rect:
         serializedVersion: 2
-        x: 171
+        x: 24
         y: 0
-        width: 69
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b2d8d5bd914f0341b7964ed6619b5df
+      spriteID: 5c6eca03ed54df342bff8e65aa552cf7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystalswordChallenge_3
+      name: bloodCrystal_3
       rect:
         serializedVersion: 2
-        x: 259
+        x: 36
         y: 0
-        width: 64
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 199c7483379dccd47b12c90d438aab49
+      spriteID: 5f103aa16f8ae224a97624cb1e927690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystalswordChallenge_4
+      name: bloodCrystal_4
       rect:
         serializedVersion: 2
-        x: 335
+        x: 48
         y: 0
-        width: 69
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f66ab38ef6574d54abb48585f948cb5a
+      spriteID: 4ac8202701bc435448ff18befcfbb235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crystalswordChallenge_5
+      name: bloodCrystal_5
       rect:
         serializedVersion: 2
-        x: 423
+        x: 60
         y: 0
-        width: 64
-        height: 87
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +205,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bec1e50dd61abb041b76abce85ad7ad3
+      spriteID: 1a72c4132ac2fdc43ad8c66fcfcd6916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodCrystal_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33a27c4095b264d4a9bf95a83b462f55
       vertices: []
       indices: 
       edges: []
@@ -212,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6b3596e1293995646aec93ad0d89e633
+    spriteID: 715e49d673fbf414ea1d54b2dbb3090f
     vertices: []
     indices: 
     edges: []

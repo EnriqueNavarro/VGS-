@@ -102,8 +102,8 @@ public class Class : MonoBehaviour
         for (int i = 0; i < actives.Length; i++) {
             GameObject abi = actives[i];
 
-            Image img = keyboard[i].GetComponent<Image>();
-            img.sprite = abi.GetComponent<Ability>().Icon;
+            //Image img = keyboard[i].GetComponent<Image>();
+            //img.sprite = abi.GetComponent<Ability>().Icon;
         }
     }
     public void increaseDmg()

@@ -312,7 +312,7 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        healthSlider.value = (Health * 100) / MaxHealth;
     }
     public void damage(int dmg)
     {

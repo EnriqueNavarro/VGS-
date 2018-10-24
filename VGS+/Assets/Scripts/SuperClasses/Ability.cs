@@ -21,7 +21,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private Collider col;
     [SerializeField] private GameObject Player;
     [SerializeField] private Animator animator;
-    [SerializeField] float animationDuration;
+    float animationDuration=0.1f;
     private bool f;
     private Vector3 movement;
     private string animationName;
