@@ -725,8 +725,13 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  testCost: 0
-  tCost: 0
+  CrystalSwordUI: {fileID: 0}
+  shards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  testGenerator: 0
+  tGenerate: 0
 --- !u!114 &114174753762841062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -757,7 +762,7 @@ MonoBehaviour:
   cd: 5
   remainingCD: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
+  hasAnimation: 1
   duration: 5
   range: 0
   dmgType: 6

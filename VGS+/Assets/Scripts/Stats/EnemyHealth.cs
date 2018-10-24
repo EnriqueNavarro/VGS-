@@ -254,7 +254,7 @@ public class EnemyHealth : MonoBehaviour
         switch (TypeName)
         {
             case Enemies.Plate:
-                health = 100;
+                health = 60;
                 maxHealth = health;
                 physicalRes = 3;
                 baseMagicRes = 0;
@@ -265,7 +265,7 @@ public class EnemyHealth : MonoBehaviour
                 poisonRes = baseMagicRes;
                 break;
             case Enemies.Mail:
-                health = 85;
+                health = 45;
                 maxHealth = health;
                 physicalRes = 2;
                 baseMagicRes = 1;
@@ -276,7 +276,7 @@ public class EnemyHealth : MonoBehaviour
                 poisonRes = baseMagicRes;
                 break;
             case Enemies.Leather:
-                health = 70;
+                health = 30;
                 maxHealth = health;
                 physicalRes = 1;
                 baseMagicRes = 2;
@@ -287,7 +287,7 @@ public class EnemyHealth : MonoBehaviour
                 poisonRes = baseMagicRes;
                 break;
             case Enemies.Cloth:
-                health = 65;
+                health = 20;
                 maxHealth = health;
                 physicalRes = 0;
                 baseMagicRes = 3;

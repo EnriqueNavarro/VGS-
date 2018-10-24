@@ -520,16 +520,16 @@ Prefab:
     - target: {fileID: 224352356828757592, guid: 0b127af941e2856428fe7231f453bfe9,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224352356828757592, guid: 0b127af941e2856428fe7231f453bfe9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1032046438125272, guid: 0b127af941e2856428fe7231f453bfe9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b127af941e2856428fe7231f453bfe9, type: 2}
@@ -1008,16 +1008,16 @@ Prefab:
     - target: {fileID: 224073969293334564, guid: 6d319c51d9a64f74c84d9e42c9df1e1d,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224073969293334564, guid: 6d319c51d9a64f74c84d9e42c9df1e1d,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1032046438125272, guid: 6d319c51d9a64f74c84d9e42c9df1e1d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d319c51d9a64f74c84d9e42c9df1e1d, type: 2}
@@ -1147,16 +1147,16 @@ Prefab:
     - target: {fileID: 224306627819346520, guid: cdee77bd018284b488680578da4f4382,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224306627819346520, guid: cdee77bd018284b488680578da4f4382,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1032046438125272, guid: cdee77bd018284b488680578da4f4382, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdee77bd018284b488680578da4f4382, type: 2}
@@ -1173,11 +1173,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: shards.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4540321774802566, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -1230,16 +1225,6 @@ Prefab:
       propertyPath: keyboard.Array.data[3]
       value: 
       objectReference: {fileID: 918278107}
-    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 709914849}
-    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 456671796}
     - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
         type: 2}
       propertyPath: CrystalSwordUI
@@ -1260,6 +1245,16 @@ Prefab:
       propertyPath: shards.Array.data[2]
       value: 
       objectReference: {fileID: 305404018}
+    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 709914849}
+    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 456671796}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f, type: 2}
   m_IsPrefabAsset: 0
