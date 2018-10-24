@@ -405,7 +405,6 @@ MonoBehaviour:
   col: {fileID: 65329919078090902}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -476,7 +475,6 @@ MonoBehaviour:
   col: {fileID: 65007622780026446}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -512,7 +510,6 @@ MonoBehaviour:
   col: {fileID: 65320240452952486}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
@@ -546,7 +543,6 @@ MonoBehaviour:
   col: {fileID: 65704075430721516}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 0}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
@@ -584,7 +580,7 @@ MonoBehaviour:
   cd: 10
   remainingCD: 0
   particleflefx: {fileID: 0}
-  hasAnimation: 0
+  hasAnimation: 1
   duration: 5
   range: 10
   dmgType: 5
@@ -594,14 +590,13 @@ MonoBehaviour:
   col: {fileID: 65849225719730830}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0
   elapsed: 0
   enemies: []
   allies: []
   keyBinding: e
   higher: {fileID: 0}
   resource: {fileID: 1325531234331084}
-  cost: 2
+  cost: 1.5
 --- !u!114 &114671466491116654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -676,7 +671,6 @@ MonoBehaviour:
   col: {fileID: 65373913769057470}
   Player: {fileID: 1325531234331084}
   animator: {fileID: 95105149571143792}
-  animationDuration: 0.5
   elapsed: 0
   enemies: []
   allies: []
