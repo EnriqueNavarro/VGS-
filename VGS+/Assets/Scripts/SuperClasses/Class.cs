@@ -12,6 +12,7 @@ public class Class : MonoBehaviour
     [SerializeField] private bool stealth = false;
     [SerializeField] private bool combat;
     [SerializeField] private GameObject[] keyboard = new GameObject[5];
+    [SerializeField] private Text[] CDs;
     private bool first = true;
     [SerializeField] private int[] baseDmgs = new int[5];
 
@@ -104,6 +105,18 @@ public class Class : MonoBehaviour
 
             //Image img = keyboard[i].GetComponent<Image>();
             //img.sprite = abi.GetComponent<Ability>().Icon;
+        }
+    }
+    public void UpdateCds()
+    {
+        //Debug.Log("a");
+        for(int i=0;i<Actives.Length;i++) {
+            //Debug.Log(((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString());
+            if (Actives[i].GetComponent<Ability>().remainingCD == 0) {
+                CDs[i].text = "";
+            } else {
+                CDs[i].text = ((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString();
+            }
         }
     }
     public void increaseDmg()

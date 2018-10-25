@@ -18,7 +18,8 @@ public class CrystalSword : Class {
 
     // Update is called once per frame
     void Update () {
-		if(testGenerator) {
+        UpdateCds();
+        if (testGenerator) {
             generateShard(tGenerate);
             testGenerator = false;
         }

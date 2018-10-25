@@ -720,6 +720,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  CDs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   baseDmgs: 0000000000000000000000000000000000000000
   bloodShards:
   - 0
