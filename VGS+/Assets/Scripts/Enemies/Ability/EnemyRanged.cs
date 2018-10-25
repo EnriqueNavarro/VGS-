@@ -9,12 +9,18 @@ public class EnemyRanged : EnemyAbility {
     private GameObject tracker;
     public override void Activate()
     {
-        tracker=Instantiate(missile, transform.position,Quaternion.Euler(90,90,0));
+        Invoke("Shoot", Duration);
+        AttackWarning1.SetActive(true);
+        Invoke("TurnWarningOff", Duration);
+        //Debug.Log("shoot");
+    }
+    private void Shoot()
+    {
+        tracker = Instantiate(missile, transform.position, Quaternion.Euler(90, 90, 0));
         tracker.GetComponent<Missile>().Target = Target;
         tracker.GetComponent<Missile>().Range = missileRange;
         tracker.GetComponent<Missile>().Speed = missileSpeed;
         tracker.GetComponent<Missile>().DmgType = DmgType;
         tracker.GetComponent<Missile>().Damage = Damage;
-        Debug.Log("shoot");
     }
 }

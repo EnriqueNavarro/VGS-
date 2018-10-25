@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] new private string name;
+    [SerializeField] private GameObject AttackWarning;
     [SerializeField] private string description;
     [SerializeField] private float cd; //secs
     [SerializeField] private float timer;
@@ -239,11 +240,25 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
+    public GameObject AttackWarning1
+    {
+        get
+        {
+            return AttackWarning;
+        }
+
+        set
+        {
+            AttackWarning = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
         Col.transform.localScale = new Vector3(Range, 2, Range);
         tokenManager = tokens.GetComponent<TokenManager>();
+        AttackWarning1.SetActive(false);
     }
 
     // Update is called once per frame
@@ -294,7 +309,12 @@ public abstract class EnemyAbility : MonoBehaviour {
         Debug.Log("Activating " + this.name);        
     }
     abstract public void Activate();
+    public void TurnWarningOff()
+    {
+        AttackWarning1.SetActive(false);
+    }
     public void DealDamage() {
+
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyAA : EnemyAbility {
     public override void Activate() {
-        DealDamage();
+        Invoke("DealDamage",Duration);
+        AttackWarning1.SetActive(true);
+        Invoke("TurnWarningOff",Duration);
     }
 
 
