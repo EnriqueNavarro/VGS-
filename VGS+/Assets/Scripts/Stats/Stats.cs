@@ -24,6 +24,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private float baseDmg; 
     [SerializeField] private bool stealth = false;
     [SerializeField] private bool slowImmunity;
+    [SerializeField] private GameObject EndGameScreen;
 
     public Slider healthSlider;
 
@@ -277,6 +278,7 @@ public class Stats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Time.timeScale = 1;
         GetComponent<PlayerMovement>().SpeedModifier = Speed+1.25f;
         BaseDmg = 1;
         critDamage = 2;
@@ -354,5 +356,7 @@ public class Stats : MonoBehaviour
     void death()
     {
         //to decide
+        EndGameScreen.SetActive(true);
+        Time.timeScale=0;
     }
 }

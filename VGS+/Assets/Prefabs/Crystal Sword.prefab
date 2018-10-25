@@ -991,6 +991,7 @@ MonoBehaviour:
   baseDmg: 0
   stealth: 0
   slowImmunity: 0
+  EndGameScreen: {fileID: 0}
   healthSlider: {fileID: 0}
 --- !u!114 &114859530702305362
 MonoBehaviour:
