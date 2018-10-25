@@ -256,9 +256,11 @@ public abstract class EnemyAbility : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        tokens = GameObject.FindGameObjectWithTag("TokenManager");
         Col.transform.localScale = new Vector3(Range, 2, Range);
         tokenManager = tokens.GetComponent<TokenManager>();
         AttackWarning1.SetActive(false);
+        
     }
 
     // Update is called once per frame

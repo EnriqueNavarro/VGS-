@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1985349235}
-  test: 0
+  test: 1
   ShadowDancer: {fileID: 709914850}
   CrystalSword: {fileID: 976747939}
 --- !u!1001 &55037455
@@ -598,16 +598,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114162048703496064, guid: 0053aaf493a4166458c00d0788d43e35,
-        type: 2}
-      propertyPath: tokenManager
-      value: 
-      objectReference: {fileID: 399231071}
     - target: {fileID: 114004016010284292, guid: 0053aaf493a4166458c00d0788d43e35,
         type: 2}
       propertyPath: tokens
       value: 
       objectReference: {fileID: 399231070}
+    - target: {fileID: 114162048703496064, guid: 0053aaf493a4166458c00d0788d43e35,
+        type: 2}
+      propertyPath: tokenManager
+      value: 
+      objectReference: {fileID: 399231071}
     - target: {fileID: 224968471488542562, guid: 0053aaf493a4166458c00d0788d43e35,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -617,6 +617,26 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952247442191170, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952247442191170, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.77971
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952247442191170, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.2122559
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952247442191170, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.2122559
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952247442191170, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5.5194407
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
@@ -764,7 +784,7 @@ GameObject:
   - component: {fileID: 399231071}
   m_Layer: 0
   m_Name: TokenManager
-  m_TagString: Untagged
+  m_TagString: TokenManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1166,7 +1186,7 @@ Prefab:
       objectReference: {fileID: 456671796}
     - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}

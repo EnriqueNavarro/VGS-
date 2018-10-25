@@ -30,7 +30,7 @@ public class ManageTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (once) Time.timeScale = 0;
+        if (once&&!test) Time.timeScale = 0;
 		if(once && Input.GetKeyDown("1")&&!test)
         {
             once = false;

@@ -248,6 +248,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
+        tokenManager = GameObject.FindGameObjectWithTag("TokenManager").GetComponent<TokenManager>();
         Attacker = null;
         if (lvl == 0) lvl = 1;
         BaseDmg = 1;

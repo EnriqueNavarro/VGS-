@@ -11,6 +11,7 @@ TagManager:
   - DoorLeft
   - Ability
   - Obstacle
+  - TokenManager
   layers:
   - Default
   - TransparentFX
