@@ -373,7 +373,7 @@ public abstract class Ability : MonoBehaviour
     }
     private void removeAlly(Collider other)
     {
-        enemies.Remove(other.gameObject);
+        allies.Remove(other.gameObject);
     }
     private void addEnemy(Collider other)
     {

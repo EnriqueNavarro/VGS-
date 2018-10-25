@@ -450,7 +450,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  sprite: {fileID: 1476146864581136}
   baseDmgs: 0000000000000000000000000000000000000000
+  stealthColor: {r: 1, g: 1, b: 1, a: 0.4745098}
   UI: {fileID: 0}
   stabilitySlide: {fileID: 0}
   instabilitySlide: {fileID: 0}

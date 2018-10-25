@@ -19,6 +19,13 @@ public class ShadowDancer : Class {
 	// Update is called once per frame
 	void Update () {
         UpdateCds();
+        if (Stealth)
+        {
+            MakeInvisible();
+        } else
+        {
+            MakeVisible();
+        }
         Stealth = GetComponent<Stats>().Stealth;
         live = Blade.GetComponent<Blade>().Live;
         if (live)

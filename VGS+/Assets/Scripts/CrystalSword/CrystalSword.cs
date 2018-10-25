@@ -19,6 +19,14 @@ public class CrystalSword : Class {
     // Update is called once per frame
     void Update () {
         UpdateCds();
+        if (Stealth)
+        {
+            MakeInvisible();
+        }
+        else
+        {
+            MakeVisible();
+        }
         if (testGenerator) {
             generateShard(tGenerate);
             testGenerator = false;

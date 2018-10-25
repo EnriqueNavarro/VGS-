@@ -13,8 +13,11 @@ public class Class : MonoBehaviour
     [SerializeField] private bool combat;
     [SerializeField] private GameObject[] keyboard = new GameObject[5];
     [SerializeField] private Text[] CDs;
+    [SerializeField] private GameObject sprite;
     private bool first = true;
     [SerializeField] private int[] baseDmgs = new int[5];
+    [SerializeField] private Color stealthColor;
+    private Color oldColor;
 
     public ClassNames CName
     {
@@ -134,6 +137,16 @@ public class Class : MonoBehaviour
             }
             
         }
+    }
+    public void MakeInvisible()
+    {
+        oldColor = sprite.GetComponent<SpriteRenderer>().color;
+        sprite.GetComponent<SpriteRenderer>().color = stealthColor;
+        Debug.Log("Changing Color");
+    }
+    public  void MakeVisible()
+    {
+        sprite.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
    
