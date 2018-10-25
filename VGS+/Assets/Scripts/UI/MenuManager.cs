@@ -20,4 +20,16 @@ public class MenuManager : MonoBehaviour
 	{
 		SceneManager.LoadScene("Runes");
 	}
+    public void LoadCharacterSelection()
+    {
+        SceneManager.LoadScene("CharacterSelection");
+    }
+    public void ShadowDancer()
+    {
+        CharacterSelection.ShadowDancer();
+    }
+    public void CrystalSowrd()
+    {
+        CharacterSelection.CrystalSword();
+    }
 }

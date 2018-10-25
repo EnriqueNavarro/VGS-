@@ -113,12 +113,13 @@ public class Class : MonoBehaviour
     public void UpdateCds()
     {
         //Debug.Log("a");
-        for(int i=0;i<Actives.Length;i++) {
+        for(int i=1;i<Actives.Length;i++) {
             //Debug.Log(((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString());
+            //Debug.Log(CDs.Length + " cds " + "actives-> " + Actives.Length);
             if (Actives[i].GetComponent<Ability>().remainingCD == 0) {
-                CDs[i].text = "";
+                CDs[i-1].text = "";
             } else {
-                CDs[i].text = ((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString();
+                CDs[i-1].text = ((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString();
             }
         }
     }
