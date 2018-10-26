@@ -47,7 +47,7 @@ public class Request  {
         CalculateCost();
     }
 
-    private void CalculateValue() {
+    public void CalculateValue() {
         if (!inRange && !LOS) totalValue -= int.MaxValue;
         totalValue += toHit;
         totalValue += 10 / distance;
@@ -56,9 +56,22 @@ public class Request  {
         totalValue += range;
         totalValue += priority * 100;
     }
-    private void CalculateCost() {
+    public void CalculateCost() {
         cost += toHit;
         cost += (int)range;
         //Debug.Log("cost: " + cost + "dmg: "+toHit);
+    }
+    public void Clear()
+    {
+        inRange = false;
+        LOS = false;
+        toHit = 0;
+        distance = 0;
+        threat = 0;
+        targetHP = 0;
+        range = 0;
+        priority = 0;
+        cost = 0;
+        totalValue = 0;
     }
 }

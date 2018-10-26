@@ -260,6 +260,7 @@ public abstract class EnemyAbility : MonoBehaviour {
         Col.transform.localScale = new Vector3(Range, 2, Range);
         tokenManager = tokens.GetComponent<TokenManager>();
         AttackWarning1.SetActive(false);
+        request = new Request();
         
     }
 
@@ -278,8 +279,17 @@ public abstract class EnemyAbility : MonoBehaviour {
                 Target = tuple.player;
                 int targetHp = Target.GetComponent<Stats>().Health;
                 inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
-                Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                //Request = Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                request.requester = user;
+                request.inRange = inRange;
+                request.LOS = LOS1;
+                request.toHit = damage;
+                request.distance = distance;
+                request.threat = tuple.threat;
+                request.targetHP = targetHp;
+                request.range = Range;
                 tokenManager.AddRequest(Request);
+                //Debug.Log("Sending request");
                 cost = request.cost;
                 requestSent = true;
                 
@@ -291,7 +301,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             approved = false;
             Trigger();
             Invoke("Return", Duration);
-            request = new Request();
+            request.Clear();
         }
         elapsed = Time.fixedTime - Timer;
     }
