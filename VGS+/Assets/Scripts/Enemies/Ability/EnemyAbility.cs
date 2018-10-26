@@ -269,18 +269,21 @@ public abstract class EnemyAbility : MonoBehaviour {
         if (user.GetComponent<EnemyHealth>().combat && (Time.fixedTime - Timer) >= Cd )
         {
             float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
+            int i = user.GetComponent<EnemyHealth>().Number;
+            //tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
             //Debug.Log(distance);
             if ( distance <= Range*10 && LOS1)
             {
-                /*Target = tuple.player;
-                int targetHp = Target.GetComponent<Stats>().Health;
-                inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
-                Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
-                tokenManager.AddRequest(Request);
-                cost = request.cost;
-                requestSent = true;*/
+                /* Target = tuple.player;
+                 int targetHp = Target.GetComponent<Stats>().Health;
+                 inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
+                 Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                 tokenManager.AddRequest(Request);
+                 cost = request.cost;
+                 requestSent = true;*/
                 Trigger();
+                
             }
         }
         /*if (Approved)
