@@ -5,7 +5,7 @@ public class MapCamera : MonoBehaviour
 { 
 	[SerializeField]
 	private Vector3 jump = new Vector3 (16, 0, 8);
-	private Vector3 camera;
+	private new Vector3 camera;
 
 	void Start () {
 		camera = new Vector3 (transform.position.x, 0, transform.position.z);

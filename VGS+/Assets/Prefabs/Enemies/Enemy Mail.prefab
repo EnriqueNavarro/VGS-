@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 114382511782313636}
   - component: {fileID: 114769745457985546}
   - component: {fileID: 114934179494278636}
-  - component: {fileID: 114783329577367982}
   - component: {fileID: 114201644930502600}
   - component: {fileID: 54632017163893488}
   m_Layer: 0
@@ -375,6 +374,7 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 1536
+  Delay: 0.2
 --- !u!114 &114258107567295288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,26 +571,6 @@ MonoBehaviour:
   combat: 0
   baseDmgs: 0000000000000000000000000000000000000000
   players: []
---- !u!114 &114783329577367982
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1405016610207300}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 179434c4952504341b45c9d8174a8a3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  combat: 0
-  target: {fileID: 0}
-  lastKnownPos: {x: 0, y: 0, z: 0}
-  maxRange: 1000
-  maxDistanceDelta: 0.5
-  minDistance: 25
-  lm:
-    serializedVersion: 2
-    m_Bits: 1536
 --- !u!114 &114896714870496528
 MonoBehaviour:
   m_ObjectHideFlags: 1

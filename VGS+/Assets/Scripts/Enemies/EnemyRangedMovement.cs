@@ -10,9 +10,14 @@ public class EnemyRangedMovement : MonoBehaviour {
     [SerializeField] float maxDistanceDelta;
     [SerializeField] float minDistance;
     [SerializeField] private LayerMask lm;
-    
+    [SerializeField] private float Delay;
+
+    private void Start()
+    {
+        InvokeRepeating("Move", 0, Delay);
+    }
     // Update is called once per frame
-    void Update()
+    void Move()
     {
         combat = this.GetComponent<EnemyHealth>().combat;
         if (this.GetComponent<EnemyHealth>().Attacker != null)
@@ -23,9 +28,6 @@ public class EnemyRangedMovement : MonoBehaviour {
         {
             target = null;
         }
-    }
-    private void FixedUpdate()
-    {
         if (combat)
         {
             RaycastHit hit;
@@ -36,26 +38,20 @@ public class EnemyRangedMovement : MonoBehaviour {
                 {
                     if (hit.transform == target.transform)
                     {
-                        if (Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.transform.position.x, target.transform.position.z)) < minDistance)
-                        {
-                            //lastKnownPos = transform.position;
-                        }
-                        else
-                        {
-                            lastKnownPos = new Vector3(target.transform.position.x*-1, target.transform.position.y, target.transform.position.z*-1);
-                        }
+                        lastKnownPos = new Vector3(target.transform.position.x * -1, target.transform.position.y, target.transform.position.z * -1);
                     }
                     if (Input.GetKeyDown("m")) Debug.Log("Enemy position: " + transform.position + " Player position: " + target.transform.position + " Distance: " + Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.transform.position.x, target.transform.position.z))
                   + " Last known pos:" + lastKnownPos + " seen" + (hit.transform == target.transform));
                 }
-            }
-            if (target != null)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, lastKnownPos, maxDistanceDelta);
-                //Debug.Log("Going to " + lastKnownPos +"from"+transform.position+ " distance=" + Vector3.Distance(transform.position, target.transform.position));
-            }
-
+            }      
         }
-
+    }
+    private void Update()
+    {
+        if (target != null)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, lastKnownPos, maxDistanceDelta);
+            //Debug.Log("Going to " + lastKnownPos +"from"+transform.position+ " distance=" + Vector3.Distance(transform.position, target.transform.position));
+        }
     }
 }

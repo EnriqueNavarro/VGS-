@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadSystem : MonoBehaviour {
 	
 	private GameObject screenLoading;
-	private float loadDelay = 2f;
+	//private float loadDelay = 2f;
 
 	private void OnEnable()
 	{

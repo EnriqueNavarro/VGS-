@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 	[SerializeField]
-	MapCamera camera;
+	new MapCamera camera;
 	[SerializeField]
 	TargetMovement target;
 

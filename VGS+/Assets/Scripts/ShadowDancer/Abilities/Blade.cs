@@ -95,26 +95,32 @@ public class Blade : Ability {
             Damage = (int)(Instability + (BaseDamage * 10)) / 10;//to balance
             foreach (GameObject enemy in aaEnemies)
             {
-                if (enemy.GetComponent<EnemyHealth>()!= null)
+                if (enemy.GetComponent<EnemyHealth>() != null)
                 {
-                    Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
-                    enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
-                    switch (target)
+                    if (enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Cloth &&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Leather &&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Mail &&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Plate)
                     {
-                        case Enemies.Plate:
-                            Instability += plateModifier;
-                            break;
-                        case Enemies.Mail:
-                            Instability += mailModifier;
-                            break;
-                        case Enemies.Leather:
-                            Stability += leatherModifier;
-                            Instability += leatherModifier + 2;
-                            break;
-                        case Enemies.Cloth:
-                            Stability += clothModifier;
-                            Instability += clothModifier + 2;
-                            break;
+                        Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
+                        enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
+                        switch (target)
+                        {
+                            case Enemies.Plate:
+                                Instability += plateModifier;
+                                break;
+                            case Enemies.Mail:
+                                Instability += mailModifier;
+                                break;
+                            case Enemies.Leather:
+                                Stability += leatherModifier;
+                                Instability += leatherModifier + 2;
+                                break;
+                            case Enemies.Cloth:
+                                Stability += clothModifier;
+                                Instability += clothModifier + 2;
+                                break;
+                        }
                     }
                 }
             }
@@ -125,6 +131,10 @@ public class Blade : Ability {
             Damage = BaseDamage;//to balance
             foreach (GameObject enemy in aaEnemies)
             {
+                if(enemy.GetComponent<EnemyHealth>().TypeName!=Enemies.Cloth&&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Leather&&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Mail&&
+                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Plate) return;
                 Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
                 enemy.GetComponent<EnemyHealth>().damage(Damage, Player1);
             }

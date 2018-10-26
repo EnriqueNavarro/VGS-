@@ -8,7 +8,6 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private int currentTokens;
     [SerializeField] private float timer;
     [SerializeField] private List<Request> buffer = new List<Request>();
-    [SerializeField] private float ageValue;//adds value to older requests, must be a very small number since it is added on fixed update
     public void Died(GameObject dead)
     {
         for (int i = 0; i < buffer.Count; i++)
@@ -61,14 +60,12 @@ public class TokenManager : MonoBehaviour {
         }
     }
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         for(int i=0;i<buffer.Count;i++) {
             if(buffer[i].cost<=currentTokens) {
                 Approve(buffer[i]);
                 buffer.Remove(buffer[i]);
-            } else {
-                buffer[i].totalValue += ageValue;
-            }
+            } 
         }
 	}
     private void Approve(Request approved) {

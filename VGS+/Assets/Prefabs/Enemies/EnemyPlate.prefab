@@ -411,6 +411,7 @@ MonoBehaviour:
   lm:
     serializedVersion: 2
     m_Bits: 1536
+  Delay: 0.2
 --- !u!114 &114501930606041738
 MonoBehaviour:
   m_ObjectHideFlags: 1

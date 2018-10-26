@@ -152,7 +152,7 @@ public class LevelGeneration : MonoBehaviour {
 				if (rooms[x,z] == null){
 					continue;
 				}
-				Vector3 gridPosition = new Vector3(x,0,z);
+				//Vector3 gridPosition = new Vector3(x,0,z);
 				if (z - 1 < 0){ //check above
 					rooms[x,z].doorBot = false;
 				}else{

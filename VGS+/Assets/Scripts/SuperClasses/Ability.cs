@@ -296,13 +296,11 @@ public abstract class Ability : MonoBehaviour
         
         
     }
-    private void FixedUpdate()
-    {
-        AdjustCol();
-    }
+    
     // Update is called once per frame
     public void Update()
     {
+        AdjustCol();
         if (Input.GetKeyDown(keyBinding))
         {
             Trigger();
@@ -326,7 +324,7 @@ public abstract class Ability : MonoBehaviour
             }
             Timer = Time.fixedTime;
             Activate();
-            Debug.Log("Activating " + this.name);
+            //Debug.Log("Activating " + this.name);
         }
     }
     void EndAnimation() {

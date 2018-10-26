@@ -266,37 +266,32 @@ public abstract class EnemyAbility : MonoBehaviour {
     // Update is called once per frame
     public void Update()
     {
-        if (user.GetComponent<EnemyHealth>().combat)
+        if (user.GetComponent<EnemyHealth>().combat && !requestSent && (Time.fixedTime - Timer) >= Cd )
         {
             float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
             int i = user.GetComponent<EnemyHealth>().Number;
             tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
             //Debug.Log(distance);
-            if ((Time.fixedTime - Timer) >= Cd && distance <= Range*10 && LOS1)
+            if ( distance <= Range*10 && LOS1)
             {
-                if (!requestSent)
-                {
-                    Target = tuple.player;
-                    int targetHp = Target.GetComponent<Stats>().Health;
-                    inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
-                    Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
-                    tokenManager.AddRequest(Request);
-                    cost = request.cost;
-                    requestSent = true;
-                }
-                else
-                {
-                    if (Approved)
-                    {
-                        requestSent = false;
-                        approved = false;
-                        Trigger();
-                        Invoke("Return", Duration);
-                        request = new Request();
-                    }
-                }
+                Target = tuple.player;
+                int targetHp = Target.GetComponent<Stats>().Health;
+                inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
+                Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
+                tokenManager.AddRequest(Request);
+                cost = request.cost;
+                requestSent = true;
+                
             }
+        }
+        if (Approved)
+        {
+            requestSent = false;
+            approved = false;
+            Trigger();
+            Invoke("Return", Duration);
+            request = new Request();
         }
         elapsed = Time.fixedTime - Timer;
     }
@@ -308,7 +303,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     {        
         Timer = Time.fixedTime;
         Activate();
-        Debug.Log("Activating " + this.name);        
+        //Debug.Log("Activating " + this.name);        
     }
     abstract public void Activate();
     public void TurnWarningOff()

@@ -11,7 +11,6 @@ public class Class : MonoBehaviour
     [SerializeField] private GameObject[] actives = new GameObject[5]; //each class has at most 4 actives
     [SerializeField] private bool stealth = false;
     [SerializeField] private bool combat;
-    [SerializeField] private GameObject[] keyboard = new GameObject[5];
     [SerializeField] private Text[] CDs;
     [SerializeField] private GameObject sprite;
     private bool first = true;
@@ -103,12 +102,11 @@ public class Class : MonoBehaviour
         increaseDmg();
         first = false;
 
-        for (int i = 0; i < actives.Length; i++) {
+        /*for (int i = 0; i < actives.Length; i++) {
             GameObject abi = actives[i];
-
             //Image img = keyboard[i].GetComponent<Image>();
             //img.sprite = abi.GetComponent<Ability>().Icon;
-        }
+        }*/
     }
     public void UpdateCds()
     {
@@ -143,11 +141,11 @@ public class Class : MonoBehaviour
     {
         oldColor = sprite.GetComponent<SpriteRenderer>().color;
         sprite.GetComponent<SpriteRenderer>().color = stealthColor;
-        Debug.Log("Changing Color");
+        //Debug.Log("Changing Color");
     }
     public  void MakeVisible()
     {
-        sprite.GetComponent<SpriteRenderer>().color = Color.white;
+        sprite.GetComponent<SpriteRenderer>().color = oldColor;
     }
 
    
