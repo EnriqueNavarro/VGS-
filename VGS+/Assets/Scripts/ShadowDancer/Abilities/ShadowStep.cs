@@ -20,23 +20,35 @@ public class ShadowStep : Ability {
         lower = null;
         foreach (GameObject enemy in enemies)
         {
-            if (lower == null) {
-                lower = enemy;
-            } else {
-                aux = enemy.GetComponent<EnemyHealth>().TypeName;
-                switch (aux) {
-                    case Enemies.Plate:
-                        if (aux == Enemies.Plate) lower = enemy;
-                        break;
-                    case Enemies.Mail:
-                        if (aux == Enemies.Plate || aux == Enemies.Mail) lower = enemy;
-                        break;
-                    case Enemies.Leather:
-                        if (aux == Enemies.Plate || aux == Enemies.Mail || aux== Enemies.Leather) lower = enemy;
-                        break;
-                    case Enemies.Cloth:
-                        lower = enemy;
-                        break;
+            if (enemy.activeInHierarchy)
+            {
+
+
+                if (lower == null)
+                {
+                    lower = enemy;
+                }
+                else
+                {
+                    aux = enemy.GetComponent<EnemyHealth>().TypeName;
+                    if (Vector3.Distance(enemy.transform.position, transform.position) <= Range * 10)
+                    {
+                        switch (aux)
+                        {
+                            case Enemies.Plate:
+                                if (aux == Enemies.Plate) lower = enemy;
+                                break;
+                            case Enemies.Mail:
+                                if (aux == Enemies.Plate || aux == Enemies.Mail) lower = enemy;
+                                break;
+                            case Enemies.Leather:
+                                if (aux == Enemies.Plate || aux == Enemies.Mail || aux == Enemies.Leather) lower = enemy;
+                                break;
+                            case Enemies.Cloth:
+                                lower = enemy;
+                                break;
+                        }
+                    }
                 }
             }
             if(lower!=null) {

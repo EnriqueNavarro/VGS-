@@ -141,9 +141,9 @@ public class Blade : Ability {
             foreach (GameObject enemy in enemies) {
                 enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
             }
-            foreach (GameObject ally in allies) {
+            /*foreach (GameObject ally in allies) {
                 ally.GetComponent<Stats>().damage((int)Damage / 5, DmgType);
-            }
+            }*/
             
         }
 
