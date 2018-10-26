@@ -16,7 +16,7 @@ public class Class : MonoBehaviour
     private bool first = true;
     [SerializeField] private int[] baseDmgs = new int[5];
     [SerializeField] private Color stealthColor;
-    private Color oldColor;
+    [SerializeField] private GameObject UI;
 
     public ClassNames CName
     {
@@ -96,6 +96,19 @@ public class Class : MonoBehaviour
         }
     }
 
+    public GameObject UI1
+    {
+        get
+        {
+            return UI;
+        }
+
+        set
+        {
+            UI = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -139,13 +152,12 @@ public class Class : MonoBehaviour
     }
     public void MakeInvisible()
     {
-        oldColor = sprite.GetComponent<SpriteRenderer>().color;
         sprite.GetComponent<SpriteRenderer>().color = stealthColor;
         //Debug.Log("Changing Color");
     }
     public  void MakeVisible()
     {
-        sprite.GetComponent<SpriteRenderer>().color = oldColor;
+        sprite.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
    

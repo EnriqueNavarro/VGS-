@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Request : MonoBehaviour {
+public class Request  {
     public GameObject requester;// who is making the request
     public bool inRange;// if the requester is in range to do the attack, only applicable to melle
     public bool LOS;//if the requester would be able to shoot and hit the target
@@ -33,7 +33,7 @@ public class Request : MonoBehaviour {
         CalculateCost();
     }
 
-    public Request(GameObject requester, bool inRange, bool lOS, int toHit, float distance, int threat, int targetHP, float range)
+    public  Request(GameObject requester, bool inRange, bool lOS, int toHit, float distance, int threat, int targetHP, float range)
     {
         this.requester = requester;
         this.inRange = inRange;

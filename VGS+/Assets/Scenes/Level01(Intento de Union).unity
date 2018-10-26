@@ -676,11 +676,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 935965bec56ed4544ab30ff806bce8e4, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &389332933 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1016851052405818, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
-    type: 2}
-  m_PrefabInternal: {fileID: 55037455}
 --- !u!224 &389332934 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224789323853690604, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
@@ -792,7 +787,6 @@ MonoBehaviour:
   maxTokens: 50
   currentTokens: 0
   timer: 0
-  buffer: []
 --- !u!4 &399231072
 Transform:
   m_ObjectHideFlags: 0
@@ -1126,6 +1120,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114511300138888890, guid: b6ca6ef164e517a41a1110acaefd0c72,
+        type: 2}
+      propertyPath: EndGameScreen
+      value: 
+      objectReference: {fileID: 1577939685}
+    - target: {fileID: 114511300138888890, guid: b6ca6ef164e517a41a1110acaefd0c72,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 456671796}
     - target: {fileID: 114160688127152544, guid: b6ca6ef164e517a41a1110acaefd0c72,
         type: 2}
       propertyPath: CDs.Array.data[0]
@@ -1161,25 +1165,6 @@ Prefab:
       propertyPath: instabilitySlide
       value: 
       objectReference: {fileID: 1472989259}
-    - target: {fileID: 114511300138888890, guid: b6ca6ef164e517a41a1110acaefd0c72,
-        type: 2}
-      propertyPath: EndGameScreen
-      value: 
-      objectReference: {fileID: 1577939685}
-    - target: {fileID: 114511300138888890, guid: b6ca6ef164e517a41a1110acaefd0c72,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 456671796}
-    - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54021770543814464, guid: b6ca6ef164e517a41a1110acaefd0c72,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
   m_IsPrefabAsset: 0
@@ -1414,7 +1399,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4691812091069480, guid: cc8a76de6b8e8d4429f0c4adbdf3d739, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691812091069480, guid: cc8a76de6b8e8d4429f0c4adbdf3d739, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1463,11 +1448,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8a76de6b8e8d4429f0c4adbdf3d739, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &918278107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1045406090347882, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
-    type: 2}
-  m_PrefabInternal: {fileID: 55037455}
 --- !u!224 &918278108 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224138744114475530, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
@@ -1512,41 +1492,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: EndGameScreen
-      value: 
-      objectReference: {fileID: 1577939685}
-    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 456671796}
-    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 709914849}
-    - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: keyboard.Array.data[0]
-      value: 
-      objectReference: {fileID: 389332933}
-    - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: keyboard.Array.data[1]
-      value: 
-      objectReference: {fileID: 1003527030}
-    - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: keyboard.Array.data[2]
-      value: 
-      objectReference: {fileID: 1157294870}
-    - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: keyboard.Array.data[3]
-      value: 
-      objectReference: {fileID: 918278107}
     - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
         type: 2}
       propertyPath: CDs.Array.data[0]
@@ -1569,7 +1514,7 @@ Prefab:
       objectReference: {fileID: 114151400}
     - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
         type: 2}
-      propertyPath: CrystalSwordUI
+      propertyPath: UI
       value: 
       objectReference: {fileID: 428469861}
     - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
@@ -1587,6 +1532,21 @@ Prefab:
       propertyPath: shards.Array.data[2]
       value: 
       objectReference: {fileID: 305404018}
+    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 709914849}
+    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: EndGameScreen
+      value: 
+      objectReference: {fileID: 1577939685}
+    - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 456671796}
     - target: {fileID: 1325531234331084, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -1661,11 +1621,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1003527030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1783130234207368, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
-    type: 2}
-  m_PrefabInternal: {fileID: 55037455}
 --- !u!224 &1003527031 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224653426925943242, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
@@ -1690,7 +1645,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4691812091069480, guid: a416ba03ec779074684bda413a12a264, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4691812091069480, guid: a416ba03ec779074684bda413a12a264, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1726,14 +1681,13 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1405016610207300, guid: a416ba03ec779074684bda413a12a264, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a416ba03ec779074684bda413a12a264, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1157294870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1521758279831046, guid: 76cde0f742218c049a1a0d1ee1ed0d01,
-    type: 2}
-  m_PrefabInternal: {fileID: 55037455}
 --- !u!224 &1157294871 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224377221158999902, guid: 76cde0f742218c049a1a0d1ee1ed0d01,

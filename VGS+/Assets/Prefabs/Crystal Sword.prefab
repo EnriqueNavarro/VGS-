@@ -714,12 +714,6 @@ MonoBehaviour:
   - {fileID: 1369074216127236}
   stealth: 0
   combat: 0
-  keyboard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   CDs:
   - {fileID: 0}
   - {fileID: 0}
@@ -728,11 +722,11 @@ MonoBehaviour:
   sprite: {fileID: 1233951425326670}
   baseDmgs: 0000000000000000000000000000000000000000
   stealthColor: {r: 1, g: 1, b: 1, a: 0.56078434}
+  UI: {fileID: 0}
   bloodShards:
   - 0
   - 0
   - 0
-  CrystalSwordUI: {fileID: 0}
   shards:
   - {fileID: 0}
   - {fileID: 0}

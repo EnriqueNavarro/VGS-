@@ -10,15 +10,9 @@ public class NoMercy : Ability {
     [SerializeField] private GameObject crystals;
     new public void Update()
     {
-        if (resource.GetComponent<CrystalSword>().CheckShards(cost))
+        if (resource.GetComponent<CrystalSword>().CheckShards(cost) && Input.GetKeyDown(keyBinding))
         {
-            if (Input.GetKeyDown(keyBinding))
-            {
-                Trigger();
-
-                resource.GetComponent<CrystalSword>().expendShard(cost);
-                F = true;
-            }
+            Trigger();
         }
         remainingCD = Mathf.Clamp((Cd - elapsed), 0, Cd);
         if (F)

@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class CrystalSword : Class {
     [SerializeField] private float[] bloodShards;
-    [SerializeField] private GameObject CrystalSwordUI;
     [SerializeField] private GameObject[] shards;
     public bool testGenerator;
     public float tGenerate;
     private bool free;
     // Use this for initialization
-    private void Start()
-    {
-        CrystalSwordUI.SetActive(true);        
-    }
+   
 
     // Update is called once per frame
     void Update () {

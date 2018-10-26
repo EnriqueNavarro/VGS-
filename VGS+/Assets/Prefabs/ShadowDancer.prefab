@@ -440,12 +440,6 @@ MonoBehaviour:
   - {fileID: 1264543517370846}
   stealth: 0
   combat: 0
-  keyboard:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   CDs:
   - {fileID: 0}
   - {fileID: 0}

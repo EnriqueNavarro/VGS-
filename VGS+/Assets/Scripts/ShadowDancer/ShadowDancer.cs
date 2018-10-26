@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShadowDancer : Class {
-    [SerializeField] private GameObject UI;
+public class ShadowDancer : Class {    
     [SerializeField] private Slider stabilitySlide;
     [SerializeField] private Slider instabilitySlide;
     [SerializeField] private int stability;
     [SerializeField] private int instability;
     [SerializeField] private GameObject Blade;
     [SerializeField] private bool live;
-	// Use this for initialization
-	void Start () {
-        UI.SetActive(true);
-	}
 	
 	// Update is called once per frame
 	void Update () {
