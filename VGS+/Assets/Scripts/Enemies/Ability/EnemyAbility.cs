@@ -266,33 +266,31 @@ public abstract class EnemyAbility : MonoBehaviour {
     // Update is called once per frame
     public void Update()
     {
-        if (user.GetComponent<EnemyHealth>().combat && !requestSent && (Time.fixedTime - Timer) >= Cd )
+        if (user.GetComponent<EnemyHealth>().combat && (Time.fixedTime - Timer) >= Cd )
         {
             float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
-            int i = user.GetComponent<EnemyHealth>().Number;
-            tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
             //Debug.Log(distance);
             if ( distance <= Range*10 && LOS1)
             {
-                Target = tuple.player;
+                /*Target = tuple.player;
                 int targetHp = Target.GetComponent<Stats>().Health;
                 inRange = Vector3.Distance(user.transform.position, Target.transform.position) < Range;
                 Request = new Request(user, InRange, LOS1, Damage, distance, tuple.threat, targetHp, Range);
                 tokenManager.AddRequest(Request);
                 cost = request.cost;
-                requestSent = true;
-                
+                requestSent = true;*/
+                Trigger();
             }
         }
-        if (Approved)
+        /*if (Approved)
         {
             requestSent = false;
             approved = false;
             Trigger();
             Invoke("Return", Duration);
             request = new Request();
-        }
+        }*/
         elapsed = Time.fixedTime - Timer;
     }
     private void Return() {

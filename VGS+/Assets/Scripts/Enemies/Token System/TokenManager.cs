@@ -10,14 +10,14 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private List<Request> buffer = new List<Request>();
     public void Died(GameObject dead)
     {
-        for (int i = 0; i < buffer.Count; i++)
+        /*for (int i = 0; i < buffer.Count; i++)
         {
             if (buffer[i].requester == dead)
             {
                 buffer.RemoveAt(i);
                 i--;
             }
-        }
+        }*//*
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
@@ -25,7 +25,7 @@ public class TokenManager : MonoBehaviour {
             for(int i=0;i< player.GetComponent<Class>().Actives.Length;i++) {
                 player.GetComponent<Class>().Actives[i].GetComponent<Ability>().removeEnemy(dead);
             }
-        }
+        }*/
     }
 	// Use this for initialization
 	void Start () {
