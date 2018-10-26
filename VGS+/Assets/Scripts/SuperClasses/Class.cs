@@ -120,6 +120,7 @@ public class Class : MonoBehaviour
             //Image img = keyboard[i].GetComponent<Image>();
             //img.sprite = abi.GetComponent<Ability>().Icon;
         }*/
+        UI.SetActive(true);
     }
     public void UpdateCds()
     {

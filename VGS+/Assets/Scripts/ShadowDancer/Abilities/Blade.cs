@@ -97,11 +97,7 @@ public class Blade : Ability {
             {
                 if (enemy.GetComponent<EnemyHealth>() != null)
                 {
-                    if (enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Cloth &&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Leather &&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Mail &&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Plate)
-                    {
+                    
                         Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
                         enemy.GetComponent<EnemyHealth>().damage(Damage, DmgType, Player1);
                         switch (target)
@@ -121,7 +117,7 @@ public class Blade : Ability {
                                 Instability += clothModifier + 2;
                                 break;
                         }
-                    }
+                    
                 }
             }
             checkInstability();
@@ -131,10 +127,7 @@ public class Blade : Ability {
             Damage = BaseDamage;//to balance
             foreach (GameObject enemy in aaEnemies)
             {
-                if(enemy.GetComponent<EnemyHealth>().TypeName!=Enemies.Cloth&&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Leather&&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Mail&&
-                enemy.GetComponent<EnemyHealth>().TypeName != Enemies.Plate) return;
+                
                 Enemies target = enemy.GetComponent<EnemyHealth>().TypeName;
                 enemy.GetComponent<EnemyHealth>().damage(Damage, Player1);
             }

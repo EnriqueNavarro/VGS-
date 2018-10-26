@@ -720,7 +720,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   sprite: {fileID: 1233951425326670}
-  baseDmgs: 0000000000000000000000000000000000000000
+  baseDmgs: 050000001e000000000000003200000000000000
   stealthColor: {r: 1, g: 1, b: 1, a: 0.56078434}
   UI: {fileID: 0}
   bloodShards:
