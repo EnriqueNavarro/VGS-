@@ -12,7 +12,7 @@ public class SpawnEnemy : MonoBehaviour {
 	private bool alreadySpawned = false;
 
 	void Start () {
-		rnd = Random.Range (0, 2);
+		rnd = Random.Range (0, enemy.Length);
 		rend = GetComponent<Renderer> ();
 	}
 
