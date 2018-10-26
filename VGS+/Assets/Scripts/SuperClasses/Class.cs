@@ -143,6 +143,7 @@ public class Class : MonoBehaviour
             {
                 baseDmgs[i] = actives[i].GetComponent<Ability>().Damage;
                 Debug.Log(actives[i].GetComponent<Ability>().Name + " deals: " + actives[i].GetComponent<Ability>().Damage);
+                Debug.Log(stats.BaseDmg);
                 actives[i].GetComponent<Ability>().Damage = (int)(actives[i].GetComponent<Ability>().Damage * stats.BaseDmg);
                 
             } else

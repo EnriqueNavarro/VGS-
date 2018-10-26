@@ -549,7 +549,7 @@ MonoBehaviour:
   poisonRes: 0
   xp: 0
   xpRequiered: 0
-  baseDmg: 0
+  baseDmg: 1
   stealth: 0
   slowImmunity: 0
   EndGameScreen: {fileID: 0}
