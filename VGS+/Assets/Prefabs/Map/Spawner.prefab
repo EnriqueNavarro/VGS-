@@ -88,8 +88,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 1405016610207300, guid: a416ba03ec779074684bda413a12a264, type: 2}
-  - {fileID: 1692699229843000, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
-  - {fileID: 1405016610207300, guid: cc8a76de6b8e8d4429f0c4adbdf3d739, type: 2}
   - {fileID: 1944711865812854, guid: 1c3345839133beb49a32c16e4c254ceb, type: 2}
+  - {fileID: 1692699229843000, guid: 0053aaf493a4166458c00d0788d43e35, type: 2}
   alreadySpawned: 0
