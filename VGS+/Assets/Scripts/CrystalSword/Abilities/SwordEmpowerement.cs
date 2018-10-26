@@ -12,6 +12,7 @@ public class SwordEmpowerement : Ability {
         if (resource.GetComponent<CrystalSword>().CheckShards(cost) && Input.GetKeyDown(keyBinding))
         {
             Trigger();
+            resource.GetComponent<CrystalSword>().expendShard(cost);
         }
         remainingCD = Mathf.Clamp((Cd - elapsed), 0, Cd);
         if (F)
