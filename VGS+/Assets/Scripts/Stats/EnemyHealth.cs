@@ -255,7 +255,7 @@ public class EnemyHealth : MonoBehaviour
         switch (TypeName)
         {
             case Enemies.Plate:
-                health = 60;
+                health = 55;
                 maxHealth = health;
                 physicalRes = 3;
                 baseMagicRes = 0;
