@@ -545,7 +545,6 @@ MonoBehaviour:
   requestSent: 0
   approved: 0
   target: {fileID: 0}
-  request: {fileID: 0}
   elapsed: 0
   enemies: []
   allies: []
@@ -680,8 +679,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1531273703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3bd56e9c918136f4eb787f223e545083, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -726,8 +725,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1531273703
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3ee8d51e64a1b9488e7daf6dfe7a870, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -817,7 +816,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1964891001
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &224325575218512534
