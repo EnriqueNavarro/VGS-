@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1985349235}
-  test: 0
+  test: 1
   ShadowDancer: {fileID: 709914850}
   CrystalSword: {fileID: 976747939}
 --- !u!1001 &55037455
@@ -1073,7 +1073,7 @@ Prefab:
       objectReference: {fileID: 456671796}
     - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212503222306882542, guid: b6ca6ef164e517a41a1110acaefd0c72,
         type: 2}

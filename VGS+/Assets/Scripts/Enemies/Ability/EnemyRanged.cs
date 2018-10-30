@@ -9,9 +9,8 @@ public class EnemyRanged : EnemyAbility {
     private GameObject tracker;
     public override void Activate()
     {
-        Invoke("Shoot", Duration);
-        AttackWarning1.SetActive(true);
-        Invoke("TurnWarningOff", Duration);
+        Invoke("Shoot", Delay);
+        Invoke("TurnWarningOn", (Delay-0.5f));
         //Debug.Log("shoot");
     }
     private void Shoot()

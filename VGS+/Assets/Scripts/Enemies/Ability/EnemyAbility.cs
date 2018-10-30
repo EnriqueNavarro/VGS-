@@ -9,7 +9,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] private float cd; //secs
     [SerializeField] private float timer;
     [SerializeField] private GameObject particleflefx;
-    [SerializeField] private float duration;
+    [SerializeField] private float delay;
     [SerializeField] private float range;
     [SerializeField] private Elements dmgType;
     [SerializeField] private int damage;
@@ -97,16 +97,16 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
-    public float Duration
+    public float Delay
     {
         get
         {
-            return duration;
+            return delay;
         }
 
         set
         {
-            duration = value;
+            delay = value;
         }
     }
 
@@ -300,7 +300,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             requestSent = false;
             approved = false;
             Trigger();
-            Invoke("Return", Duration);
+            Invoke("Return", Cd);
             request.Clear();
         }
         elapsed = Time.fixedTime - Timer;
@@ -319,6 +319,11 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void TurnWarningOff()
     {
         AttackWarning1.SetActive(false);
+    }
+    public void TurnWarningOn()
+    {
+        AttackWarning1.SetActive(true);
+        Invoke("TurnWarningOff", 0.5f);
     }
     public void DealDamage() {
 
@@ -364,7 +369,7 @@ public abstract class EnemyAbility : MonoBehaviour {
                 Damage = (int)(Damage * modifier);
                 break;
             case sStats.Duration:
-                Duration *= modifier;
+                Delay *= modifier;
                 break;
             case sStats.Range:
                 Range *= modifier;
@@ -383,7 +388,7 @@ public abstract class EnemyAbility : MonoBehaviour {
                 Damage = (int)(Damage / modifier);
                 break;
             case sStats.Duration:
-                Duration /= modifier;
+                Delay /= modifier;
                 break;
             case sStats.Range:
                 Range /= modifier;
