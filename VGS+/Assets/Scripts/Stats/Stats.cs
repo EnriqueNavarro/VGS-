@@ -9,6 +9,7 @@ public class Stats : MonoBehaviour
     [SerializeField] private float critDamage;
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    [SerializeField] private bool imunity;
     [SerializeField] private int lvl;
     [SerializeField] private float speed;
     [SerializeField] private ClassNames className;
@@ -275,6 +276,19 @@ public class Stats : MonoBehaviour
         }
     }
 
+    public bool Imunity
+    {
+        get
+        {
+            return imunity;
+        }
+
+        set
+        {
+            imunity = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -314,14 +328,27 @@ public class Stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthSlider.value = (Health * 100) / MaxHealth;
+        healthSlider.value = (Health * 100) / MaxHealth;        
+    }
+    private void EndImmunity()
+    {
+        Imunity = false;
+    }
+    public void StartImunnity(float t)
+    {
+        Imunity = true;
+        Invoke("EndImmunity", t);
     }
     public void damage(int dmg)
     {
         dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
-        Health = Mathf.Clamp(dmg, 0, MaxHealth);
-        healthSlider.value = Health;
-        if (Health == 0) death();
+        if (!imunity)
+        {
+            Health = Mathf.Clamp(dmg, 0, MaxHealth);
+            healthSlider.value = Health;
+            if (Health == 0) death();
+        }
+        
     }
     public void damage(int dmg, Elements element)
     {
@@ -350,8 +377,12 @@ public class Stats : MonoBehaviour
                 dmg = Health - (int)Mathf.Floor(dmg * (10 - PhysicalRes * 2) / 10);
                 break;
         }
-        Health = Mathf.Clamp(dmg, 0, MaxHealth);
-        if (Health == 0) death();
+        if (!imunity)
+        {
+            Health = Mathf.Clamp(dmg, 0, MaxHealth);
+            healthSlider.value = Health;
+            if (Health == 0) death();
+        }
     }
     void death()
     {
