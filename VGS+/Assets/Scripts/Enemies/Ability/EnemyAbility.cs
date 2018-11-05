@@ -295,7 +295,7 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
         if (Movement.x > 0)
         {
-            signX = -1;
+            signX = 1;
         }
         else
         {
@@ -306,18 +306,18 @@ public abstract class EnemyAbility : MonoBehaviour {
 
         if (Movement.x != 0 && Movement.z != 0)
         {
-            Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, r * Range * signZ);
+            Col.transform.localPosition = new Vector3(r * signX * Range/10, Col.transform.localPosition.y, r * Range / 10 * signZ);
         }
         else
         {
             if (Movement.x != 0)
             {
                 //Debug.Log(Movement);
-                Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, 0);
+                Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);
             }
             else
             {
-                if (Movement.z != 0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range * signZ);
+                if (Movement.z != 0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range / 10 * signZ);
             }
         }
 

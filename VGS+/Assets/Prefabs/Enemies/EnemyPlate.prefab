@@ -378,7 +378,7 @@ MonoBehaviour:
   cd: 6
   timer: 0
   particleflefx: {fileID: 0}
-  delay: 3
+  delay: 20
   range: 3
   dmgType: 5
   damage: 10
@@ -386,7 +386,7 @@ MonoBehaviour:
   user: {fileID: 1944711865812854}
   LOS: 0
   inRange: 0
-  melle: 0
+  melle: 1
   tokens: {fileID: 0}
   requestSent: 0
   approved: 0
