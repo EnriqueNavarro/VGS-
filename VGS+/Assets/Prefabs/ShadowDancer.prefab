@@ -392,7 +392,7 @@ MonoBehaviour:
   name: Shadow's Embrace
   description: A shadow clone will strike all enemies in range, and the user will
     get an attack speed buff, and have shadow step's cd greartly reduced
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 55a6be4751baaa542bd49c8a1f93a9f3, type: 3}
   cd: 30
   remainingCD: 0
   particleflefx: {fileID: 0}
@@ -502,7 +502,7 @@ MonoBehaviour:
   name: Create Blade
   description: Activates the magic blade, and if it is already ativated, increases
     instability
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: eb256d3adf910774e889dc9f17ae4ee0, type: 3}
   cd: 15
   remainingCD: 0
   particleflefx: {fileID: 0}
@@ -613,7 +613,7 @@ MonoBehaviour:
   name: Shadow Step
   description: Teleports you to one of the lowest armor types in the vecinity, and
     if there is a target get an attack speed buff
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 254743154798a2c45975bdc92b87c243, type: 3}
   cd: 10
   remainingCD: 0
   particleflefx: {fileID: 0}
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shadow Cloack
   description: Makes the user invisible for a short duration
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 641994860983d93478f7c9734343c239, type: 3}
   cd: 10
   remainingCD: 0
   particleflefx: {fileID: 0}

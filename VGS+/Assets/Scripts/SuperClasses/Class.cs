@@ -9,6 +9,7 @@ public class Class : MonoBehaviour
     [SerializeField] private Stats stats;
     [SerializeField] private GameObject[] passives = new GameObject[2]; // each class has at least 1 passive
     [SerializeField] private GameObject[] actives = new GameObject[5]; //each class has at most 4 actives
+    [SerializeField] private GameObject[] icons= new GameObject[4];
     [SerializeField] private bool stealth = false;
     [SerializeField] private bool combat;
     [SerializeField] private Text[] CDs;
@@ -17,6 +18,7 @@ public class Class : MonoBehaviour
     [SerializeField] private int[] baseDmgs = new int[5];
     [SerializeField] private Color stealthColor;
     [SerializeField] private GameObject UI;
+    public bool hasIcons;
 
     public ClassNames CName
     {
@@ -113,6 +115,12 @@ public class Class : MonoBehaviour
     void Start()
     {
         increaseDmg();
+        if(hasIcons) {
+            for (int i = 1; i < Actives.Length; i++)
+            {
+                icons[i - 1].GetComponent<Image>().sprite = Actives[i].GetComponent<Ability>().Icon;
+            }
+        }
         first = false;
 
         /*for (int i = 0; i < actives.Length; i++) {
@@ -126,8 +134,6 @@ public class Class : MonoBehaviour
     {
         //Debug.Log("a");
         for(int i=1;i<Actives.Length;i++) {
-            //Debug.Log(((int)(Actives[i].GetComponent<Ability>().remainingCD)).ToString());
-            //Debug.Log(CDs.Length + " cds " + "actives-> " + Actives.Length);
             if (Actives[i].GetComponent<Ability>().remainingCD == 0) {
                 CDs[i-1].text = "";
             } else {
