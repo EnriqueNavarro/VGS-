@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] new private string name;
     [SerializeField] private GameObject AttackWarning;
+    [SerializeField] private bool hasAnimation;
+    [SerializeField] private float animationDuration;
+    [SerializeField] private Animator animator;
     [SerializeField] private string description;
     [SerializeField] private float cd; //secs
     [SerializeField] private float timer;
@@ -17,6 +20,8 @@ public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] private GameObject user;
     [SerializeField] private bool LOS;
     [SerializeField] private bool inRange;
+    private Vector3 lastPos;
+    public bool melle;
     public GameObject tokens;
     private TokenManager tokenManager;
     [SerializeField] private bool requestSent=false;
@@ -32,6 +37,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private float modifier;
     private sStats change;
     private int cost;
+    private Vector3 Movement;
     public string Name
     {
         get
@@ -257,16 +263,81 @@ public abstract class EnemyAbility : MonoBehaviour {
     void Start()
     {
         tokens = GameObject.FindGameObjectWithTag("TokenManager");
-        Col.transform.localScale = new Vector3(Range, 2, Range);
+        if (melle)
+        {
+            Col.transform.localScale = new Vector3(Range / 10, 2, Range / 10);
+            Col.transform.localPosition = new Vector3(Range / 20, 0, 0);
+            lastPos = transform.position;
+            Debug.Log(col.transform.localPosition);
+        }
+        else
+        {
+            Col.transform.localScale = new Vector3(Range, 2, Range);
+        }
         tokenManager = tokens.GetComponent<TokenManager>();
         AttackWarning1.SetActive(false);
         request = new Request();
         
     }
+    public void AdjustCol()
+    {
+        //if (this.name == "Flurry") Debug.Log(Movement);
+        float r = 3;
+        float signZ;
+        float signX;
+        if (Movement.z > 0)
+        {
+            signZ = 1;
+        }
+        else
+        {
+            signZ = -1;
+        }
+        if (Movement.x > 0)
+        {
+            signX = -1;
+        }
+        else
+        {
+            signX = -1;
+        }
 
+        //Col.transform.localScale = new Vector3(Range, 2, Range);
+
+        if (Movement.x != 0 && Movement.z != 0)
+        {
+            Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, r * Range * signZ);
+        }
+        else
+        {
+            if (Movement.x != 0)
+            {
+                //Debug.Log(Movement);
+                Col.transform.localPosition = new Vector3(r * signX * Range, Col.transform.localPosition.y, 0);
+            }
+            else
+            {
+                if (Movement.z != 0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range * signZ);
+            }
+        }
+
+
+    }
     // Update is called once per frame
     public void Update()
     {
+        //Debug.Log(Movement);
+        if (melle)
+        {
+            if (!Vector3.Equals(transform.position, lastPos))
+            {
+                Movement = transform.position - lastPos;
+                AdjustCol();
+            }
+            lastPos = transform.position;
+            
+        }
+        
         if (user.GetComponent<EnemyHealth>().combat && !requestSent && (Time.fixedTime - Timer) >= Cd )
         {
             float distance = Vector3.Distance(user.transform.position, user.GetComponent<EnemyHealth>().Attacker.transform.position);
@@ -313,7 +384,20 @@ public abstract class EnemyAbility : MonoBehaviour {
     {        
         Timer = Time.fixedTime;
         Activate();
+        if (hasAnimation)
+        {
+            Invoke("ActivateAnimation", (Delay - animationDuration));
+        }
         //Debug.Log("Activating " + this.name);        
+    }
+    public void ActivateAnimation()
+    {
+        animator.SetBool("attack", true);
+        Invoke("EndAnimation", 0.2f);
+    }
+    public void EndAnimation()
+    {
+        animator.SetBool("attack", false);
     }
     abstract public void Activate();
     public void TurnWarningOff()

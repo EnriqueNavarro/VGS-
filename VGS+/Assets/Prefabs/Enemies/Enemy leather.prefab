@@ -335,18 +335,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: AA
   AttackWarning: {fileID: 1308217639852716}
+  hasAnimation: 0
+  animationDuration: 0
+  animator: {fileID: 0}
   description: 
   cd: 1.5
   timer: 0
   particleflefx: {fileID: 0}
-  duration: 0.5
+  delay: 1
   range: 20
-  dmgType: 5
+  dmgType: 4
   damage: 5
   col: {fileID: 65099116318342900}
   user: {fileID: 1692699229843000}
   LOS: 0
   inRange: 0
+  melle: 0
   tokens: {fileID: 0}
   requestSent: 0
   approved: 0

@@ -548,11 +548,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ranged AA
   AttackWarning: {fileID: 1103517094719730}
+  hasAnimation: 1
+  animationDuration: 1
+  animator: {fileID: 95358555145939680}
   description: 
   cd: 8
   timer: 0
   particleflefx: {fileID: 0}
-  delay: 0
+  delay: 4
   range: 30
   dmgType: 0
   damage: 20

@@ -579,7 +579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &216577232
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6483,6 +6483,10 @@ Prefab:
         type: 2}
       propertyPath: InitialModule.startSize.scalar
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049182101840260, guid: ab2456330a9d33d4fb3e7220becb1e51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab2456330a9d33d4fb3e7220becb1e51, type: 2}
