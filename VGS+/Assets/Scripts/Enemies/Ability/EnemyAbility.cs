@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] new private string name;
     [SerializeField] private GameObject AttackWarning;
-    [SerializeField] private bool hasAnimation;
-    [SerializeField] private float animationDuration;
+    public bool hasAnimation;
+    public float animationDuration;
     [SerializeField] private Animator animator;
     [SerializeField] private string description;
     [SerializeField] private float cd; //secs
@@ -28,6 +28,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] private bool approved;
     [SerializeField] private GameObject target;
     [SerializeField] private Request request;
+    [SerializeField] private float colAdjustFreq;
     private ThreatMeter tuple;
     public float elapsed;
     public List<GameObject> enemies;
@@ -259,6 +260,19 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
+    public float ColAdjustFreq
+    {
+        get
+        {
+            return colAdjustFreq;
+        }
+
+        set
+        {
+            colAdjustFreq = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -268,7 +282,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             Col.transform.localScale = new Vector3(Range / 10, 2, Range / 10);
             Col.transform.localPosition = new Vector3(Range / 20, 0, 0);
             lastPos = transform.position;
-            Debug.Log(col.transform.localPosition);
+            InvokeRepeating("AdjustCol", 0, colAdjustFreq);
         }
         else
         {
@@ -282,6 +296,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
+        Movement = transform.position - lastPos;
         float r = 3;
         float signZ;
         float signX;
@@ -327,16 +342,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void Update()
     {
         //Debug.Log(Movement);
-        if (melle)
-        {
-            if (!Vector3.Equals(transform.position, lastPos))
-            {
-                Movement = transform.position - lastPos;
-                AdjustCol();
-            }
-            lastPos = transform.position;
-            
-        }
+        
         
         if (user.GetComponent<EnemyHealth>().combat && !requestSent && (Time.fixedTime - Timer) >= Cd )
         {
@@ -407,7 +413,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void TurnWarningOn()
     {
         AttackWarning1.SetActive(true);
-        Invoke("TurnWarningOff", 0.5f);
+        Invoke("TurnWarningOff", 1f);
     }
     public void DealDamage() {
 

@@ -115,12 +115,12 @@ public class Class : MonoBehaviour
     void Start()
     {
         increaseDmg();
-        if(hasIcons) {
+        /*if(hasIcons) {
             for (int i = 1; i < Actives.Length; i++)
             {
                 icons[i - 1].GetComponent<Image>().sprite = Actives[i].GetComponent<Ability>().Icon;
             }
-        }
+        }*/
         first = false;
 
         /*for (int i = 0; i < actives.Length; i++) {

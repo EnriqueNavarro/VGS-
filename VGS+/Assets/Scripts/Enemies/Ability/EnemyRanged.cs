@@ -10,7 +10,7 @@ public class EnemyRanged : EnemyAbility {
     public override void Activate()
     {
         Invoke("Shoot", Delay);
-        Invoke("TurnWarningOn", (Delay-0.5f));
+        Invoke("TurnWarningOn", (Delay-1f));
         //Debug.Log("shoot");
     }
     private void Shoot()
