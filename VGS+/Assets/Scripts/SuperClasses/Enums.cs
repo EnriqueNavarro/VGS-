@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class Enums : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
 public enum ClassNames
 {
@@ -35,7 +27,8 @@ public enum Enemies {
     Plate,
     Mail,
     Leather,
-    Cloth
+    Cloth,
+    Jailer
 };
 public enum sStats {
     Particleflefx,

@@ -298,6 +298,17 @@ public class EnemyHealth : MonoBehaviour
                 ShadowRes = baseMagicRes;
                 poisonRes = baseMagicRes;
                 break;
+            case Enemies.Jailer:
+                health = 600;
+                maxHealth = health;
+                physicalRes = 2;
+                baseMagicRes = 2;
+                fireRes = baseMagicRes;
+                frostRes = baseMagicRes;
+                LightRes = baseMagicRes;
+                ShadowRes = baseMagicRes;
+                poisonRes = baseMagicRes;
+                break;
 
         }
         tokenManager.Adder(this.gameObject);
