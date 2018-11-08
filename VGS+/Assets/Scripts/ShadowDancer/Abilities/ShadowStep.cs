@@ -41,7 +41,7 @@ public class ShadowStep : Ability {
             }
             if(lower!=null) {
                 pos = lower.transform.position;
-                player.transform.position = pos;
+                player.transform.position = new Vector3(pos.x - 1, pos.y, pos.z);
                 lower.GetComponent<EnemyHealth>().damage(Damage,DmgType, Player1);
                 attackGameObject.GetComponent<Attack>().attackSpeed(attackSpeedModifier, Duration);
             }

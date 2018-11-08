@@ -39,6 +39,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private sStats change;
     private int cost;
     private Vector3 Movement;
+    private bool inProcess;
     public string Name
     {
         get
@@ -273,6 +274,19 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
+    public bool InProcess
+    {
+        get
+        {
+            return inProcess;
+        }
+
+        set
+        {
+            inProcess = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -296,47 +310,22 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
+        if (InProcess || Target == null) return;
         Movement = transform.position - lastPos;
-        float r = 3;
-        float signZ;
-        float signX;
-        if (Movement.z > 0)
+        float r = 1;
+        float signZ = -Mathf.Sign(User.transform.position.z - Target.transform.position.z);
+        float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
+        float deltax = Mathf.Abs(User.transform.position.x - Target.transform.position.x);
+        float deltay = Mathf.Abs(User.transform.position.z - Target.transform.position.z);
+        Debug.Log("SignX:" + signX + " SignY:" + signZ + " DeltaX" + deltax + " DeltaY" + deltay);
+        if (deltax > deltay)
         {
-            signZ = 1;
+            Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);
         }
         else
         {
-            signZ = -1;
+            Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range / 10 * signZ);
         }
-        if (Movement.x > 0)
-        {
-            signX = 1;
-        }
-        else
-        {
-            signX = -1;
-        }
-
-        //Col.transform.localScale = new Vector3(Range, 2, Range);
-
-        if (Movement.x != 0 && Movement.z != 0)
-        {
-            Col.transform.localPosition = new Vector3(r * signX * Range/10, Col.transform.localPosition.y, r * Range / 10 * signZ);
-        }
-        else
-        {
-            if (Movement.x != 0)
-            {
-                //Debug.Log(Movement);
-                Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);
-            }
-            else
-            {
-                if (Movement.z != 0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range / 10 * signZ);
-            }
-        }
-
-
     }
     // Update is called once per frame
     public void Update()
@@ -379,6 +368,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             Trigger();
             Invoke("Return", Cd);
             request.Clear();
+            InProcess = true;
         }
         elapsed = Time.fixedTime - Timer;
     }
@@ -421,6 +411,7 @@ public abstract class EnemyAbility : MonoBehaviour {
         {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
+        InProcess = false;
     }
     private void OnTriggerEnter(Collider other)
     {

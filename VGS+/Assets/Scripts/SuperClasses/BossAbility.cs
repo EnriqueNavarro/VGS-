@@ -6,8 +6,9 @@ public abstract class BossAbility : EnemyAbility
 {
     private Vector3 lastPos2;
     private Vector3 Movement2;
-    public bool inProcess;
+    
     public bool activate;
+    private ThreatMeter tuple;
     // Use this for initialization
     void Start () {
         if (melle)
@@ -25,79 +26,58 @@ public abstract class BossAbility : EnemyAbility
     new public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
-        if (inProcess) return;
+        if (InProcess||Target==null) return;
         Movement2 = transform.position - lastPos2;
         float r = 1;
-        float signZ;
-        float signX;
-        if (Movement2.z > 0)
-        {
-            signZ = 1;
+        float signZ = -Mathf.Sign(User.transform.position.z - Target.transform.position.z); 
+        float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
+        float deltax = Mathf.Abs(User.transform.position.x - Target.transform.position.x);
+        float deltay = Mathf.Abs(User.transform.position.z - Target.transform.position.z);
+        //Debug.Log("SignX:" + signX + " SignY:" + signZ + " DeltaX" + deltax + " DeltaY" + deltay);
+        if (deltax>deltay) {
+            Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);           
+        } else {
+            Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range / 10 * signZ);
         }
-        else
-        {
-            signZ = -1;
-        }
-        if (Movement2.x > 0)
-        {
-            signX = 1;
-        }
-        else
-        {
-            signX = -1;
-        }
-
-        //Col.transform.localScale = new Vector3(Range, 2, Range);
-
-        if (Movement2.x != 0 && Movement2.z != 0)
-        {
-            Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, r * Range / 10 * signZ);
-        }
-        else
-        {
-            if (Movement2.x != 0)
-            {
-                //Debug.Log(Movement);
-                Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);
-            }
-            else
-            {
-                if (Movement2.z != 0) Col.transform.localPosition = new Vector3(0, Col.transform.localPosition.y, r * Range / 10 * signZ);
-            }
-        }
-
-
     }
     // Update is called once per frame
     new void Update () {
-        if (melle)
+        int i = User.GetComponent<EnemyHealth>().Number;
+        if (i > 0)
         {
-            if (!Vector3.Equals(transform.position, lastPos2))
+            tuple = User.GetComponent<EnemyHealth>().Threat[i];
+            Target = tuple.player;
+            if (melle)
             {
-                Movement2 = transform.position - lastPos2;
-                AdjustCol();
-            }
-            lastPos2 = transform.position;
+                if (!Vector3.Equals(transform.position, lastPos2))
+                {
+                    Movement2 = transform.position - lastPos2;
+                    AdjustCol();
+                }
+                lastPos2 = transform.position;
 
+            }
         }
-        if(!inProcess && activate) {
+        if(!InProcess && activate) {
             Trigger();
             activate = false;
+            this.GetComponentInParent<JailerMovement>().Current = MovementType.Halt;
         }
     }
     new public void DealDamage()
     {
-        inProcess = false;
+        InProcess = false;
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
+        this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
     }
     new public void Trigger()
     {
         Timer = Time.fixedTime;
         Activate();
-        inProcess = true;
+        InProcess = true;
         if (hasAnimation)
         {
             Invoke("ActivateAnimation", (Delay - animationDuration));
