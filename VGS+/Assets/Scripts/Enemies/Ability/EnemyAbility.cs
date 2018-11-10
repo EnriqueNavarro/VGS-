@@ -28,7 +28,6 @@ public abstract class EnemyAbility : MonoBehaviour {
     [SerializeField] private bool approved;
     [SerializeField] private GameObject target;
     [SerializeField] private Request request;
-    [SerializeField] private float colAdjustFreq;
     private ThreatMeter tuple;
     public float elapsed;
     public List<GameObject> enemies;
@@ -261,18 +260,7 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
-    public float ColAdjustFreq
-    {
-        get
-        {
-            return colAdjustFreq;
-        }
-
-        set
-        {
-            colAdjustFreq = value;
-        }
-    }
+    
 
     public bool InProcess
     {
@@ -296,7 +284,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             Col.transform.localScale = new Vector3(Range / 10, 2, Range / 10);
             Col.transform.localPosition = new Vector3(Range / 20, 0, 0);
             lastPos = transform.position;
-            InvokeRepeating("AdjustCol", 0, colAdjustFreq);
+           
         }
         else
         {
@@ -371,6 +359,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             InProcess = true;
         }
         elapsed = Time.fixedTime - Timer;
+        AdjustCol();
     }
     private void Return() {
         tokenManager.Refund(cost);

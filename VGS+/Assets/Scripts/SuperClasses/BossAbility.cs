@@ -9,14 +9,53 @@ public abstract class BossAbility : EnemyAbility
     
     public bool activate;
     private ThreatMeter tuple;
+
+    public Vector3 LastPos2
+    {
+        get
+        {
+            return lastPos2;
+        }
+
+        set
+        {
+            lastPos2 = value;
+        }
+    }
+
+    public Vector3 Movement21
+    {
+        get
+        {
+            return Movement2;
+        }
+
+        set
+        {
+            Movement2 = value;
+        }
+    }
+
+    public ThreatMeter Tuple
+    {
+        get
+        {
+            return tuple;
+        }
+
+        set
+        {
+            tuple = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
         if (melle)
         {
             Col.transform.localScale = new Vector3(Range / 10, 2, Range / 10);
             Col.transform.localPosition = new Vector3(Range / 20, 0, 0);
-            lastPos2 = transform.position;
-            InvokeRepeating("AdjustCol", 0, ColAdjustFreq);
+            LastPos2 = transform.position;
         }
         else
         {
@@ -27,7 +66,7 @@ public abstract class BossAbility : EnemyAbility
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
         if (InProcess||Target==null) return;
-        Movement2 = transform.position - lastPos2;
+        Movement21 = transform.position - LastPos2;
         float r = 1;
         float signZ = -Mathf.Sign(User.transform.position.z - Target.transform.position.z); 
         float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
@@ -42,19 +81,20 @@ public abstract class BossAbility : EnemyAbility
     }
     // Update is called once per frame
     new void Update () {
+        AdjustCol();
         int i = User.GetComponent<EnemyHealth>().Number;
-        if (i > 0)
+        if (User.GetComponent<EnemyHealth>().combat)
         {
-            tuple = User.GetComponent<EnemyHealth>().Threat[i];
-            Target = tuple.player;
+            Tuple = User.GetComponent<EnemyHealth>().Threat[i];
+            Target = Tuple.player;
             if (melle)
             {
-                if (!Vector3.Equals(transform.position, lastPos2))
+                if (!Vector3.Equals(transform.position, LastPos2))
                 {
-                    Movement2 = transform.position - lastPos2;
+                    Movement21 = transform.position - LastPos2;
                     AdjustCol();
                 }
-                lastPos2 = transform.position;
+                LastPos2 = transform.position;
 
             }
         }
@@ -62,6 +102,7 @@ public abstract class BossAbility : EnemyAbility
             Trigger();
             activate = false;
             this.GetComponentInParent<JailerMovement>().Current = MovementType.Halt;
+            InProcess = true;
         }
     }
     new public void DealDamage()
