@@ -6,7 +6,7 @@ public abstract class BossAbility : EnemyAbility
 {
     private Vector3 lastPos2;
     private Vector3 Movement2;
-    
+    [SerializeField] private bool busy;
     public bool activate;
     private ThreatMeter tuple;
 
@@ -101,18 +101,21 @@ public abstract class BossAbility : EnemyAbility
         if(!InProcess && activate) {
             Trigger();
             activate = false;
-            this.GetComponentInParent<JailerMovement>().Current = MovementType.Halt;
             InProcess = true;
         }
     }
     new public void DealDamage()
     {
-        InProcess = false;
+        this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
+        Invoke("MovePlayer", 2);
+    }
+    public void MovePlayer() {
         this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
+        InProcess = false;
     }
     new public void Trigger()
     {

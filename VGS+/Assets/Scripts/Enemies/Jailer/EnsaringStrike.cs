@@ -63,10 +63,20 @@ public class EnsaringStrike : BossAbility
         if (!InProcess && activate)
         {
             Trigger();
-            activate = false;
-            this.GetComponentInParent<JailerMovement>().Current = MovementType.Halt;
+            activate = false;            
+            mist.SetActive(true);
         }
-        mist.SetActive(InProcess);
+        
+    }
+    new public void DealDamage()
+    {
+        this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
+        mist.SetActive(false);
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<Stats>().damage(Damage, DmgType);
+        }
+        Invoke("MovePlayer", 2);
     }
 
 }

@@ -12,8 +12,34 @@ public class JailerControler : MonoBehaviour {
     public int percentage;
     [SerializeField] private GameObject[] actives;
     [SerializeField] private GameObject undeadMist;
-	// Use this for initialization
-	void Start () {
+    [SerializeField] private float distance;
+    [SerializeField] private GameObject player;
+    private float delay;
+    [SerializeField] private float autoCD;
+    [SerializeField] private float ensaringCD;
+    [SerializeField] private bool busy;
+    private float lastAA;
+    private float lastEnsaring;
+    [SerializeField] private float aaRemainingCD;
+    [SerializeField] private float enRemainingCD;
+    [SerializeField] private bool useAA;
+    [SerializeField] private bool useEnsaring;
+
+    public bool Busy
+    {
+        get
+        {
+            return busy;
+        }
+
+        set
+        {
+            busy = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         phase = 1;
         maxHealth = this.GetComponent<EnemyHealth>().MaxHealth;
         actives = this.GetComponent<EnemyType>().Abilities;
@@ -40,9 +66,37 @@ public class JailerControler : MonoBehaviour {
             ability.GetComponent<EnemyAbility>().CancelInvoke();
         }
     }
+    void ActivateAA() {
+        this.GetComponentInChildren<JailerAutoAttack>().activate = true;
+        lastAA = Time.fixedTime;
+    }
+    void ActivateEnsaringStrike() {
+        this.GetComponentInChildren<EnsaringStrike>().activate = true;
+        lastEnsaring = Time.fixedTime;
+    }
 	// Update is called once per frame
 	void Update () {
         combat = this.GetComponent<EnemyHealth>().combat;
+        if(combat) {
+            player = this.GetComponent<EnemyHealth>().Attacker;
+            Busy = false;
+            aaRemainingCD = Mathf.Clamp(autoCD + (lastAA - Time.fixedTime),0,autoCD);
+            enRemainingCD = Mathf.Clamp(ensaringCD + (lastEnsaring - Time.fixedTime), 0, ensaringCD);
+            foreach (GameObject ability in actives) {
+                Busy = Busy || ability.GetComponent<BossAbility>().InProcess;
+            }
+            if(!Busy) {
+                if(aaRemainingCD==0 && this.GetComponentInChildren<JailerAutoAttack>().enemies.Count>0) {
+                    ActivateAA();
+                } else {
+                if(enRemainingCD==0 && this.GetComponentInChildren<EnsaringStrike>().enemies.Count>0) {
+                        ActivateEnsaringStrike();
+                }
+                }
+            }
+        } else {
+            player = null;
+        }
         target = this.GetComponent<EnemyHealth>().Attacker;
         maxHealth = this.GetComponent<EnemyHealth>().MaxHealth;
         currentHealth = this.GetComponent<EnemyHealth>().Health;

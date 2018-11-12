@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class JailerMovement : MonoBehaviour {
-[SerializeField] private bool combat;
+    [SerializeField] private bool combat;
     [SerializeField] private GameObject target;
     [SerializeField] private Vector3 lastKnownPos;
     [SerializeField] float maxRange;
@@ -36,9 +36,14 @@ public class JailerMovement : MonoBehaviour {
         }
     }
     void Teleport() {
+        if (this.GetComponent<JailerControler>().Busy) return;
         target = this.GetComponent<EnemyHealth>().Attacker;
         if(target!=null) transform.position = new Vector3(target.transform.position.x-15, target.transform.position.y, target.transform.position.z);
         Current = MovementType.Halt;
+        Invoke("Name", 1);
+    }
+    void Name() {
+        Current= MovementType.MoveToPlayer;
     }
     void Center() {
         transform.position = Vector3.zero;

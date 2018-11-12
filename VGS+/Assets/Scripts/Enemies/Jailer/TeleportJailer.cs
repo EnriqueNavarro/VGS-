@@ -5,6 +5,7 @@ using UnityEngine;
 public class TeleportJailer : BossAbility {
 
     [SerializeField] float maxDistance;//227
+    public float distance;
     void Start()
     {
         
@@ -16,14 +17,14 @@ public class TeleportJailer : BossAbility {
         {
             Tuple = User.GetComponent<EnemyHealth>().Threat[i];
             Target = Tuple.player;
-            activate = (Vector3.Distance(Target.transform.position, transform.position) > maxDistance);
+            distance = Vector3.Distance(Target.transform.position, transform.position);
+            activate = (distance<maxDistance &&  !this.GetComponentInParent<JailerControler>().Busy);
         }
         
         if (!InProcess && activate)
         {
             Trigger();
             activate = false;
-            this.GetComponentInParent<JailerMovement>().Current = MovementType.Halt;
         }
     }
     public override void Activate()
