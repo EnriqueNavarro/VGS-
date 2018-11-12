@@ -9,9 +9,36 @@ public class CrystalSword : Class {
     public bool testGenerator;
     public float tGenerate;
     private bool free;
+    public float totalShards;
+    [SerializeField] float generationFreq;
+    [SerializeField] float amountToGenerate;
     // Use this for initialization
-   
+    void Start()
+    {
+        increaseDmg();
+        /*if(hasIcons) {
+            for (int i = 1; i < Actives.Length; i++)
+            {
+                icons[i - 1].GetComponent<Image>().sprite = Actives[i].GetComponent<Ability>().Icon;
+            }
+        }*/
+        First = false;
 
+        /*for (int i = 0; i < actives.Length; i++) {
+            GameObject abi = actives[i];
+            //Image img = keyboard[i].GetComponent<Image>();
+            //img.sprite = abi.GetComponent<Ability>().Icon;
+        }*/
+        UI1.SetActive(true);
+        InvokeRepeating("PassiveGeneration", generationFreq, generationFreq);
+    }
+    void PassiveGeneration()
+    {
+        if (!CheckShards(2))
+        {
+            generateShard(amountToGenerate);
+        }
+    }
     // Update is called once per frame
     void Update () {
         UpdateCds();
@@ -35,6 +62,7 @@ public class CrystalSword : Class {
     {
         free = true;
         Invoke("nfree", duration);
+        
     }
     void nfree()
     {
@@ -43,22 +71,22 @@ public class CrystalSword : Class {
     public bool CheckShards(float cost)
     {
         if (free) cost = 0;
-        float total = 0;
+        totalShards = 0;
         foreach (float shard in bloodShards)
         {
-            total += shard;
+            totalShards += shard;
         }
-        if (total < cost) return false;
+        if (totalShards < cost) return false;
         return true;
     }
     public bool expendShard(float cost) {
         //Debug.Log("expend");
         if (free) cost = 0;
-        float total=0;
-        foreach(float shard in bloodShards) {
-            total += shard;
+        totalShards = 0;
+        foreach (float shard in bloodShards) {
+            totalShards += shard;
         }
-        if (total < cost) return false;
+        if (totalShards < cost) return false;
         for (int i = 0; i < bloodShards.Length; i++)
         {
             if (bloodShards[i] > 0 && cost > 0)

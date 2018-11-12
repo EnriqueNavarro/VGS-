@@ -305,7 +305,7 @@ public abstract class EnemyAbility : MonoBehaviour {
         float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
         float deltax = Mathf.Abs(User.transform.position.x - Target.transform.position.x);
         float deltay = Mathf.Abs(User.transform.position.z - Target.transform.position.z);
-        Debug.Log("SignX:" + signX + " SignY:" + signZ + " DeltaX" + deltax + " DeltaY" + deltay);
+
         if (deltax > deltay)
         {
             Col.transform.localPosition = new Vector3(r * signX * Range / 10, Col.transform.localPosition.y, 0);
@@ -404,11 +404,25 @@ public abstract class EnemyAbility : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-      if (other.tag == "Player") addEnemy(other);  
+      if (other.tag == "Player")
+        {
+            addEnemy(other);
+        } 
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player") removeEnemy(other);   
+        if (other.tag == "Player")
+        {
+            removeEnemy(other);
+        }
+
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.gameObject.GetComponent<Class>().Combat = true;
+        }
     }
     private void removeEnemy(Collider other)
     {

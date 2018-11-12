@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9091cc43146f2447a3fe6fd43b70bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRange: 1000
+  maxRange: 250
   inRange: 
   LOS: 
   lm:

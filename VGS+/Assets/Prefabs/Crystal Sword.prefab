@@ -463,7 +463,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 2
 --- !u!65 &65007622780026446
 BoxCollider:
@@ -712,6 +712,11 @@ MonoBehaviour:
   - {fileID: 1188360189760226}
   - {fileID: 1706911280491298}
   - {fileID: 1369074216127236}
+  icons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   stealth: 0
   combat: 0
   CDs:
@@ -723,6 +728,7 @@ MonoBehaviour:
   baseDmgs: 050000001e000000000000003200000000000000
   stealthColor: {r: 1, g: 1, b: 1, a: 0.56078434}
   UI: {fileID: 0}
+  hasIcons: 0
   bloodShards:
   - 0
   - 0
@@ -733,6 +739,9 @@ MonoBehaviour:
   - {fileID: 0}
   testGenerator: 0
   tGenerate: 0
+  totalShards: 0
+  generationFreq: 0.75
+  amountToGenerate: 0.1
 --- !u!114 &114174753762841062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -802,7 +811,7 @@ MonoBehaviour:
   duration: 0
   range: 4
   dmgType: 5
-  damage: 30
+  damage: 20
   targetEnemies: 1
   targetAllies: 0
   col: {fileID: 65320240452952486}
@@ -850,15 +859,15 @@ MonoBehaviour:
   combat: 0
   autoAttack: {fileID: 1294522355244204}
   timerT: 0
-  tiers: 00000000000000000000000000000000000000000000000000000000
+  tiers: 00000000000000
   tierChecker: 0
   t1AttackSpeed: 0.1
   t2MoveSpeed: 0.5
-  t3BaseDmg: 0.2
-  t4BaseDmg: 0.3
+  t3BaseDmg: 0.1
+  t4BaseDmg: 0.2
   t5SlowImmunity: 0
-  t6CritChance: 0.1
-  tnCritDamage: 0.2
+  t6CritChance: 0.3
+  tnCritDamage: 0.5
 --- !u!114 &114513864596979186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -880,7 +889,7 @@ MonoBehaviour:
   particleflefx: {fileID: 0}
   hasAnimation: 1
   duration: 5
-  range: 10
+  range: 200
   dmgType: 5
   damage: 50
   targetEnemies: 1

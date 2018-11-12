@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManageTest : MonoBehaviour {
     private bool once=true;
@@ -8,6 +9,8 @@ public class ManageTest : MonoBehaviour {
     [SerializeField] bool test;
     [SerializeField] GameObject ShadowDancer;
     [SerializeField] GameObject CrystalSword;
+    [SerializeField] bool bossRoom;
+    [SerializeField] string sceneName;
 	// Use this for initialization
 	void Start () {
         if (!test)
@@ -36,6 +39,11 @@ public class ManageTest : MonoBehaviour {
             once = false;
             Time.timeScale = 1;
             UI.SetActive(false);
+        }
+        if(bossRoom && Input.GetKeyDown("z"))
+        {
+            Debug.Log("Reloading level");
+            SceneManager.LoadScene(sceneName);
         }
 	}
 }

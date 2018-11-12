@@ -11,7 +11,7 @@ public class InTheThickOfIt : Ability {
     private bool c2;//to check when entered combat
     [SerializeField] private float timerT;
     private float startingTime;
-    [SerializeField] private int[] tiers= new int[7];
+    [SerializeField] private bool[] tiers= new bool[7];
     [SerializeField] private bool tierChecker=false;
     private float exitTime;
     private bool once=false;
@@ -63,91 +63,117 @@ public class InTheThickOfIt : Ability {
     }
     void deActivate()
     {
-
-        for(int i = 0; i < tiers[0]; i++)
+        if (tiers[0])
         {
             autoAttack.GetComponent<CrystalSwordAttack>().Cd /= t1AttackSpeed;
-            tiers[0]--;
+            tiers[0] = false;
         }
-        for (int i = 0; i < tiers[1]; i++)
+        if (tiers[1])
         {
             resource.GetComponent<PlayerMovement>().SpeedModifier -= t2MoveSpeed;
-            tiers[1]--;
+            tiers[1] = false;
         }
-        for (int i = 0; i < tiers[2]; i++)
+        if (tiers[2])
         {
             resource.GetComponent<Stats>().BaseDmg -= t3BaseDmg;
             resource.GetComponent<CrystalSword>().increaseDmg();
-            tiers[2]--;
+            tiers[2] = false;
         }
-        resource.GetComponent<Stats>().SlowImmunity = false;
-        tiers[4] = 0;
-        for (int i = 0; i < tiers[3]; i++)
+        if (tiers[4])
+        {
+            resource.GetComponent<Stats>().SlowImmunity = false;
+            tiers[4] = false;
+        }
+        if (tiers[3])
         {
             resource.GetComponent<Stats>().BaseDmg -= t4BaseDmg;
             resource.GetComponent<CrystalSword>().increaseDmg();
-            tiers[3]--;
+            tiers[3] = false;
         }
-        for (int i = 0; i < tiers[5]; i++)
+        if (tiers[5])
         {
             resource.GetComponent<Stats>().CritChance -= t6CritChance;
-            tiers[5]--;
+            tiers[5] = false;
         }
-        for (int i = 0; i < tiers[6]; i++)
+        if (tiers[6])
         {
             resource.GetComponent<Stats>().CritDamage -= tnCritDamage;
-            tiers[6]--;
-        }
+            tiers[6] = false;
+        }  
     }
     void Tier1()
     {
+        if (tiers[0])
+        {
+            Tier2();
+            return;
+        }
         autoAttack.GetComponent<CrystalSwordAttack>().Cd *= t1AttackSpeed;
-        tiers[0]++;
+        tiers[0]=true;
         tierChecker = false;
     }
     void Tier2()
     {
+        if (tiers[1])
+        {
+            Tier3();
+            return;
+        }
         resource.GetComponent<PlayerMovement>().SpeedModifier += t2MoveSpeed;
-        tiers[1]++;
+        tiers[1]=true;
         tierChecker = false;
     }
     void Tier3()
     {
+        if (tiers[2])
+        {
+            Tier4();
+            return;
+        }
         resource.GetComponent<Stats>().BaseDmg += t3BaseDmg;
         resource.GetComponent<CrystalSword>().increaseDmg();
-        tiers[2]++;
+        tiers[2]=true;
         tierChecker = false;
     }
     void Tier4()
     {
+        if (tiers[3])
+        {
+            Tier5();
+            return;
+        }
         resource.GetComponent<Stats>().BaseDmg += t4BaseDmg;
         resource.GetComponent<CrystalSword>().increaseDmg();
-        tiers[3]++;
+        tiers[3]=true;
         tierChecker = false;
     }
     void Tier5()
     {
+        if (tiers[4])
+        {
+            Tier6();
+            return;
+        }
         resource.GetComponent<Stats>().SlowImmunity = true;
-        tiers[4] = 1;
+        tiers[4] = true;
         tierChecker = false;
     }
     void Tier6()
     {
-        if (resource.GetComponent<Stats>().CritChance >= 1)
+        if (tiers[5])
         {
             Tiern();
+            return;
         }
-        else
-        {
-            resource.GetComponent<Stats>().CritChance += t6CritChance;
-            tiers[5]++;
-            tierChecker = false;
-        }
+        resource.GetComponent<Stats>().CritChance += t6CritChance;
+        tiers[5] = true;
+        tierChecker = false;
     }
     void Tiern()
     {
+        if (tiers[6]) return;
         resource.GetComponent<Stats>().CritDamage += tnCritDamage;
-        tiers[6]++;
+        tiers[6]=true;
         tierChecker = false;
     }
     public override void Activate()

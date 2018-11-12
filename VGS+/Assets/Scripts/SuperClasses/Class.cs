@@ -111,6 +111,19 @@ public class Class : MonoBehaviour
         }
     }
 
+    public bool First
+    {
+        get
+        {
+            return first;
+        }
+
+        set
+        {
+            first = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -121,7 +134,7 @@ public class Class : MonoBehaviour
                 icons[i - 1].GetComponent<Image>().sprite = Actives[i].GetComponent<Ability>().Icon;
             }
         }*/
-        first = false;
+        First = false;
 
         /*for (int i = 0; i < actives.Length; i++) {
             GameObject abi = actives[i];
@@ -145,7 +158,7 @@ public class Class : MonoBehaviour
     {
         for (int i = 0; i < actives.Length; i++)
         {
-            if (first)
+            if (First)
             {
                 baseDmgs[i] = actives[i].GetComponent<Ability>().Damage;
                 //Debug.Log(actives[i].GetComponent<Ability>().Name + " deals: " + actives[i].GetComponent<Ability>().Damage);

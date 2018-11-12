@@ -445,8 +445,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void death()
     {
-        tokenManager.Died(this.gameObject);
-        this.gameObject.SetActive(false);
-        //Destroy(this.gameObject);
+        tokenManager.Died(this.gameObject,transform.position);
+        Destroy(this.gameObject);
     }
 }

@@ -7406,6 +7406,8 @@ MonoBehaviour:
   test: 1
   ShadowDancer: {fileID: 1927792990}
   CrystalSword: {fileID: 0}
+  bossRoom: 1
+  sceneName: BossScene
 --- !u!114 &2125433289
 MonoBehaviour:
   m_ObjectHideFlags: 0

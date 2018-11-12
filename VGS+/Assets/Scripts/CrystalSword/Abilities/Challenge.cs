@@ -8,6 +8,7 @@ public class Challenge : Ability {
     [SerializeField] GameObject higher;
     [SerializeField] private GameObject resource;
     [SerializeField] private float cost;
+    private int tempRes;
     new public void Update()
     {
         if (resource.GetComponent<CrystalSword>().CheckShards(cost) && Input.GetKeyDown(keyBinding))
@@ -82,12 +83,13 @@ public class Challenge : Ability {
             }    
         }
         //foreach ends here
-        this.GetComponentInParent<Stats>().PhysicalRes += higher.GetComponent<EnemyHealth>().PhysicalRes;
+        tempRes = higher.GetComponent<EnemyHealth>().PhysicalRes;
+        this.GetComponentInParent<Stats>().PhysicalRes += tempRes;
         higher.GetComponent<EnemyHealth>().AddThreat(Damage*2, resource);
         Invoke("ExpireRes", Duration);
     }
     private void ExpireRes()
     {
-        this.GetComponentInParent<Stats>().PhysicalRes -= higher.GetComponent<EnemyHealth>().PhysicalRes;
+        this.GetComponentInParent<Stats>().PhysicalRes -= tempRes;
     }
 }

@@ -8,8 +8,21 @@ public class TokenManager : MonoBehaviour {
     [SerializeField] private int currentTokens;
     [SerializeField] private float timer;
     [SerializeField] private List<Request> buffer = new List<Request>();
-    public void Died(GameObject dead)
+    [SerializeField] private int[] keyGivers = new int[3];//the number of enemies to die that will give a key
+    [SerializeField] private int deadID=0;
+    [SerializeField] private GameObject key;
+    private void DropKey(Vector3 pos)
     {
+        Debug.Log("Dropping key");
+        Instantiate(key, pos,Quaternion.identity);
+    }
+    public void Died(GameObject dead, Vector3 pos)
+    {
+        deadID++;
+        for(int i = 0; i < keyGivers.Length; i++)
+        {
+            if (deadID == keyGivers[i]) DropKey(pos);
+        }
         for (int i = 0; i < buffer.Count; i++)
         {
             if (buffer[i].requester == dead)
@@ -30,7 +43,10 @@ public class TokenManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentTokens = maxTokens;
-	}
+        keyGivers[0] = (int)(Random.Range(1,4));
+        keyGivers[1] = (int)(Random.Range(5, 20));
+        keyGivers[2] = (int)(Random.Range(10, 60));
+    }
 	public void Adder(GameObject e)//when an enemy spawns it must be added here
     {
         enemies.Add(e);

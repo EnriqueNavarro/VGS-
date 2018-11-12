@@ -12,6 +12,7 @@ TagManager:
   - Ability
   - Obstacle
   - TokenManager
+  - KeyManager
   layers:
   - Default
   - TransparentFX
