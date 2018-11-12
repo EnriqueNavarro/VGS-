@@ -7,6 +7,7 @@ public abstract class BossAbility : EnemyAbility
     private Vector3 lastPos2;
     private Vector3 Movement2;
     [SerializeField] private bool busy;
+    [SerializeField] private GameObject aoe;
     public bool activate;
     private ThreatMeter tuple;
 
@@ -49,6 +50,19 @@ public abstract class BossAbility : EnemyAbility
         }
     }
 
+    public GameObject Aoe
+    {
+        get
+        {
+            return aoe;
+        }
+
+        set
+        {
+            aoe = value;
+        }
+    }
+
     // Use this for initialization
     void Start () {
         if (melle)
@@ -56,6 +70,7 @@ public abstract class BossAbility : EnemyAbility
             Col.transform.localScale = new Vector3(Range / 10, 2, Range / 10);
             Col.transform.localPosition = new Vector3(Range / 20, 0, 0);
             LastPos2 = transform.position;
+            
         }
         else
         {
@@ -65,6 +80,7 @@ public abstract class BossAbility : EnemyAbility
     new public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
+        Aoe.SetActive(InProcess);
         if (InProcess||Target==null) return;
         Movement21 = transform.position - LastPos2;
         float r = 1;

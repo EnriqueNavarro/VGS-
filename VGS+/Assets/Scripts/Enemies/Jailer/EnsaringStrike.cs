@@ -14,8 +14,7 @@ public class EnsaringStrike : BossAbility
 
     new public void AdjustCol()
     {
-        //if (this.name == "Flurry") Debug.Log(Movement);
-
+        Aoe.SetActive(InProcess);
         if (InProcess || Target == null) return;
         Movement21 = transform.position - LastPos2;
         float r = 1;
