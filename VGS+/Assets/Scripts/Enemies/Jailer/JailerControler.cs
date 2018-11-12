@@ -24,6 +24,9 @@ public class JailerControler : MonoBehaviour {
     [SerializeField] private float enRemainingCD;
     [SerializeField] private bool useAA;
     [SerializeField] private bool useEnsaring;
+    private float deltaTime = 2;
+    private float deltaStart;
+    private bool wasInProcess;
 
     public bool Busy
     {
@@ -79,13 +82,16 @@ public class JailerControler : MonoBehaviour {
         combat = this.GetComponent<EnemyHealth>().combat;
         if(combat) {
             player = this.GetComponent<EnemyHealth>().Attacker;
+            wasInProcess = busy;
             Busy = false;
             aaRemainingCD = Mathf.Clamp(autoCD + (lastAA - Time.fixedTime),0,autoCD);
             enRemainingCD = Mathf.Clamp(ensaringCD + (lastEnsaring - Time.fixedTime), 0, ensaringCD);
             foreach (GameObject ability in actives) {
                 Busy = Busy || ability.GetComponent<BossAbility>().InProcess;
             }
-            if(!Busy) {
+            if (Busy) this.GetComponent<JailerMovement>().Current = MovementType.Halt;
+            if (!Busy && wasInProcess) deltaStart = Time.fixedTime;
+            if(!Busy && (Time.fixedTime-deltaStart>=deltaTime)) {
                 if(aaRemainingCD==0 && this.GetComponentInChildren<JailerAutoAttack>().enemies.Count>0) {
                     ActivateAA();
                 } else {
