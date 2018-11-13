@@ -39,6 +39,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private int cost;
     private Vector3 Movement;
     private bool inProcess;
+    [SerializeField] private GameObject aoe;
     public string Name
     {
         get
@@ -275,6 +276,19 @@ public abstract class EnemyAbility : MonoBehaviour {
         }
     }
 
+    public GameObject Aoe
+    {
+        get
+        {
+            return aoe;
+        }
+
+        set
+        {
+            aoe = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -298,9 +312,10 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
+        Aoe.SetActive(InProcess);
         if (InProcess || Target == null) return;
         Movement = transform.position - lastPos;
-        float r = 1;
+        float r = 4;
         float signZ = -Mathf.Sign(User.transform.position.z - Target.transform.position.z);
         float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
         float deltax = Mathf.Abs(User.transform.position.x - Target.transform.position.x);
@@ -328,7 +343,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             tuple = user.GetComponent<EnemyHealth>().Threat[i];
             LOS1 = user.GetComponent<LineOfSight>().LOS1[i];
             //Debug.Log(distance);
-            if ( distance <= Range*10 && LOS1)
+            if ( enemies.Count>0 && LOS1)
             {
                 Target = tuple.player;
                 int targetHp = Target.GetComponent<Stats>().Health;

@@ -7,7 +7,6 @@ public abstract class BossAbility : EnemyAbility
     private Vector3 lastPos2;
     private Vector3 Movement2;
     [SerializeField] private bool busy;
-    [SerializeField] private GameObject aoe;
     public bool activate;
     private ThreatMeter tuple;
 
@@ -50,18 +49,7 @@ public abstract class BossAbility : EnemyAbility
         }
     }
 
-    public GameObject Aoe
-    {
-        get
-        {
-            return aoe;
-        }
-
-        set
-        {
-            aoe = value;
-        }
-    }
+   
 
     // Use this for initialization
     void Start () {

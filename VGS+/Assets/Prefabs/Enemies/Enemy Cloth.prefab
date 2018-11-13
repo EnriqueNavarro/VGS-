@@ -387,13 +387,13 @@ MonoBehaviour:
   combat: 0
   target: {fileID: 0}
   lastKnownPos: {x: 0, y: 0, z: 0}
-  maxRange: 1000
+  maxRange: 250
   maxDistanceDelta: 0.5
   minDistance: 0
   lm:
     serializedVersion: 2
     m_Bits: 1536
-  Delay: 0.2
+  Delay: 0.5
 --- !u!114 &114258107567295288
 MonoBehaviour:
   m_ObjectHideFlags: 1

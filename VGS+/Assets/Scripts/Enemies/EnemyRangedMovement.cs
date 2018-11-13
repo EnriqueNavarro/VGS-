@@ -39,6 +39,7 @@ public class EnemyRangedMovement : MonoBehaviour {
                     if (hit.transform == target.transform)
                     {
                         lastKnownPos = new Vector3(target.transform.position.x * -1, target.transform.position.y, target.transform.position.z * -1);
+                        if (lastKnownPos == Vector3.zero) lastKnownPos = transform.position;
                     }
                     if (Input.GetKeyDown("m")) Debug.Log("Enemy position: " + transform.position + " Player position: " + target.transform.position + " Distance: " + Vector2.Distance(new Vector2(transform.position.x, transform.position.z), new Vector2(target.transform.position.x, target.transform.position.z))
                   + " Last known pos:" + lastKnownPos + " seen" + (hit.transform == target.transform));
