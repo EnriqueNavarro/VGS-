@@ -689,7 +689,7 @@ MonoBehaviour:
   allies: []
   keyBinding: a
   resource: {fileID: 1325531234331084}
-  generate: 0.2
+  generate: 0.1
 --- !u!114 &114115530277127958
 MonoBehaviour:
   m_ObjectHideFlags: 1

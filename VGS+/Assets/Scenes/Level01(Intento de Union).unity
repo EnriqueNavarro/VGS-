@@ -6340,11 +6340,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
-        type: 2}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 709914849}
     - target: {fileID: 114814576576424250, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
         type: 2}
       propertyPath: EndGameScreen
@@ -6355,6 +6350,11 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 456671796}
+    - target: {fileID: 114343521940204064, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 709914849}
     - target: {fileID: 114115530277127958, guid: 5e2c309b87ec07b4ab47f57a9e0cd96f,
         type: 2}
       propertyPath: CDs.Array.data[0]
