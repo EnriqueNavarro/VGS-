@@ -11,6 +11,7 @@ public class Execute : BossAbility
     public override void Activate()
     {
         Invoke("DealDamage", Delay);
+        this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
     }
     
     new void Update()
