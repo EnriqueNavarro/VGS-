@@ -7,9 +7,23 @@ public class KeyManager : MonoBehaviour {
     [SerializeField] private Image[] keys = new Image[3];
     [SerializeField] private int keysCollected;
     public bool test;
-	// Use this for initialization
-	void Start () {
-        keysCollected = 0;
+
+    public int KeysCollected
+    {
+        get
+        {
+            return keysCollected;
+        }
+
+        set
+        {
+            keysCollected = value;
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
+        KeysCollected = 0;
 		foreach(Image key in keys)
         {
             key.color = Color.black;
@@ -18,9 +32,9 @@ public class KeyManager : MonoBehaviour {
     public void KeyPicked()
     {
         
-        keysCollected = (int)(Mathf.Clamp(keysCollected, 0, keys.Length));
-        keys[keysCollected].color = Color.white;
-        keysCollected++;
+        KeysCollected = (int)(Mathf.Clamp(KeysCollected, 0, keys.Length));
+        keys[KeysCollected].color = Color.white;
+        KeysCollected++;
     }
 	
 	// Update is called once per frame
