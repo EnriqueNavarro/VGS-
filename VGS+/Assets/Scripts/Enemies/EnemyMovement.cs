@@ -11,7 +11,14 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] float minDistance;
     [SerializeField] private LayerMask lm;
     [SerializeField] private float Delay;
-
+    [SerializeField] private bool halt;
+    public void Stop(float duration) {
+        halt = true;
+        Invoke("MoveAgain", duration);
+    }
+    private void MoveAgain() {
+        halt = false;
+    }
     private void Start()
     {
         InvokeRepeating("Move", 0, Delay);
@@ -44,6 +51,7 @@ public class EnemyMovement : MonoBehaviour {
                 }
             }
         }
+        if (halt) lastKnownPos = transform.position;
     }
     private void Update()
     {

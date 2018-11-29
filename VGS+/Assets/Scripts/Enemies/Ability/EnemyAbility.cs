@@ -40,6 +40,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private Vector3 Movement;
     private bool inProcess;
     [SerializeField] private GameObject aoe;
+    private bool flag;
     public string Name
     {
         get
@@ -312,7 +313,9 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
+        if (inProcess && !flag) this.GetComponentInParent<EnemyMovement>().Stop(Delay);
         Aoe.SetActive(InProcess);
+        flag = inProcess;
         if (InProcess || Target == null) return;
         Movement = transform.position - lastPos;
         float r = 4;
