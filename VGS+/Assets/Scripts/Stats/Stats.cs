@@ -350,6 +350,34 @@ public class Stats : MonoBehaviour
         }
         
     }
+    public void Heal(int amount, Elements element) {
+        switch (element)
+        {
+            case Elements.fire:
+                amount = Health + (int)Mathf.Floor(amount * (10 + FireRes * 2) / 10);
+                break;
+            case Elements.frost:
+                amount = Health + (int)Mathf.Floor(amount * (10 + FrostRes * 2) / 10);
+                break;
+            case Elements.poison:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PoisonRes * 2) / 10);
+                break;
+            case Elements.light:
+                amount = Health + (int)Mathf.Floor(amount * (10 + LightRes * 2) / 10);
+                break;
+            case Elements.shadow:
+                amount = Health + (int)Mathf.Floor(amount * (10 + ShadowRes * 2) / 10);
+                break;
+            case Elements.physical:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PhysicalRes * 2) / 10);
+                break;
+            case Elements.none:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PhysicalRes * 2) / 10);
+                break;
+        }
+        Health = Mathf.Clamp(amount, 0, MaxHealth);
+        healthSlider.value = Health;
+    }
     public void damage(int dmg, Elements element)
     {
         dmg = (int)(dmg * baseDmg);
