@@ -105,7 +105,10 @@ public class Blade : Ability {
                             case Enemies.Plate:
                                 Instability += plateModifier;
                                 break;
-                            case Enemies.Mail:
+                        case Enemies.Jailer:
+                            Instability += plateModifier;
+                            break;
+                        case Enemies.Mail:
                                 Instability += mailModifier;
                                 break;
                             case Enemies.Leather:

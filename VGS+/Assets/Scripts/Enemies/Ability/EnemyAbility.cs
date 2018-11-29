@@ -374,7 +374,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             InProcess = true;
         }
         elapsed = Time.fixedTime - Timer;
-        AdjustCol();
+        if(melle)AdjustCol();
     }
     private void Return() {
         tokenManager.Refund(cost);
