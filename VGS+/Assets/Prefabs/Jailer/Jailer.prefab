@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1557610363109364
 GameObject:
   m_ObjectHideFlags: 1
@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1650562574257966
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,13 +402,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268555602231718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4131495003797820}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &23380228689755046
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -607,8 +607,8 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  busy: 0
   aoe: {fileID: 1549400082990466}
+  busy: 0
   activate: 0
 --- !u!114 &114076197552914504
 MonoBehaviour:
@@ -692,8 +692,8 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  busy: 0
   aoe: {fileID: 1557610363109364}
+  busy: 0
   activate: 0
   mist: {fileID: 1378955377599770}
 --- !u!114 &114277906087250088
@@ -732,8 +732,8 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  busy: 0
   aoe: {fileID: 0}
+  busy: 0
   activate: 0
   startingHealth: 0
   currentHealth: 0
@@ -911,8 +911,8 @@ MonoBehaviour:
   elapsed: 0
   enemies: []
   allies: []
-  busy: 0
   aoe: {fileID: 0}
+  busy: 0
   activate: 0
   maxDistance: 100
   distance: 0
@@ -5646,18 +5646,18 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1964891001
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300014, guid: f4782e5b2fd85064495a6b78206090f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.5, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!212 &212526217630813292
