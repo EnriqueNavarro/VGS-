@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1985349235}
-  test: 1
+  test: 0
   ShadowDancer: {fileID: 709914850}
   CrystalSword: {fileID: 976747939}
   bossRoom: 0
@@ -6316,7 +6316,7 @@ Prefab:
         type: 3}
     - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
