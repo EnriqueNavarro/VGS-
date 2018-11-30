@@ -350,6 +350,14 @@ public class Stats : MonoBehaviour
         }
         
     }
+
+    public void Potion() {
+
+        int amount = (MaxHealth / 20);
+        print(amount);
+        Health = Health + amount;
+        healthSlider.value = Health;
+    }
     public void Heal(int amount, Elements element) {
         switch (element)
         {
