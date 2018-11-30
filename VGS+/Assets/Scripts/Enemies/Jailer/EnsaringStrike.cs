@@ -9,15 +9,14 @@ public class EnsaringStrike : BossAbility
     {
         Invoke("DealDamage", Delay);
         Invoke("TurnWarningOn", (Delay - 1f));
+        Aoe.SetActive(true);
     }
 
 
     new public void AdjustCol()
     {
-        Aoe.SetActive(InProcess);
         if (InProcess || Target == null) return;
         Movement21 = transform.position - LastPos2;
-        float r = 1;
         float signZ = -Mathf.Sign(User.transform.position.z - Target.transform.position.z);
         float signX = -Mathf.Sign(User.transform.position.x - Target.transform.position.x);
         float deltax = Mathf.Abs(User.transform.position.x - Target.transform.position.x);
@@ -64,6 +63,7 @@ public class EnsaringStrike : BossAbility
             Trigger();
             activate = false;            
             mist.SetActive(true);
+            Invoke("StartAnim", 1f);
         }
         
     }
@@ -76,6 +76,16 @@ public class EnsaringStrike : BossAbility
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
         Invoke("MovePlayer", 2);
+        Aoe.SetActive(false);
+    }
+    private void StartAnim()
+    {
+        Anim.SetBool("ensaring", true);
+        Invoke("EndAnim", 0.1f);
+    }
+    private void EndAnim()
+    {
+        Anim.SetBool("ensaring", false);
     }
 
 }

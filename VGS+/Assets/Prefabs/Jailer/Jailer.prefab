@@ -415,7 +415,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073369196960484}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -476,8 +476,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.76, y: 1, z: 4.64}
+  m_Center: {x: 0, y: 0, z: -1.2}
 --- !u!65 &65384107146782906
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -541,7 +541,7 @@ Animator:
   m_GameObject: {fileID: 1268555602231718}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 400f64036169b594cbfdb9a73a2361c8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -608,6 +608,7 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 1549400082990466}
+  anim: {fileID: 95504897947693904}
   busy: 0
   activate: 0
 --- !u!114 &114076197552914504
@@ -693,6 +694,7 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 1557610363109364}
+  anim: {fileID: 95504897947693904}
   busy: 0
   activate: 0
   mist: {fileID: 1378955377599770}
@@ -733,12 +735,13 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 0}
+  anim: {fileID: 95504897947693904}
   busy: 0
   activate: 0
   startingHealth: 0
   currentHealth: 0
   dmgTaken: 0
-  shield: 40
+  shield: 60
 --- !u!114 &114295587278912026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +763,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   current: 0
+  anim: {fileID: 95504897947693904}
 --- !u!114 &114391776613353178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -912,9 +916,10 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 0}
+  anim: {fileID: 0}
   busy: 0
   activate: 0
-  maxDistance: 100
+  maxDistance: 75
   distance: 0
 --- !u!114 &114774923802911792
 MonoBehaviour:

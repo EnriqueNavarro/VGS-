@@ -41,6 +41,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private bool inProcess;
     [SerializeField] private GameObject aoe;
     private bool flag;
+    [SerializeField] Animator anim;
     public string Name
     {
         get
@@ -287,6 +288,19 @@ public abstract class EnemyAbility : MonoBehaviour {
         set
         {
             aoe = value;
+        }
+    }
+
+    public Animator Anim
+    {
+        get
+        {
+            return anim;
+        }
+
+        set
+        {
+            anim = value;
         }
     }
 

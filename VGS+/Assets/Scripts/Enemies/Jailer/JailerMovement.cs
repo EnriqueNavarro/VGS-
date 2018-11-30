@@ -11,7 +11,7 @@ public class JailerMovement : MonoBehaviour {
     [SerializeField] float minDistance;
     [SerializeField] private LayerMask lm;
     [SerializeField] private MovementType current;
-
+    [SerializeField] private Animator anim;
     public MovementType Current
     {
         get
@@ -53,12 +53,20 @@ public class JailerMovement : MonoBehaviour {
         switch(Current) {
             case MovementType.MoveToPlayer:
                 MoveToPlayer();
+                anim.SetBool("move", true);
                 break;
             case MovementType.teleport:
                 Teleport();
+                anim.SetBool("move", false);
+                
                 break;
             case MovementType.Execute:
+                anim.SetBool("execute", true);
+                anim.SetBool("move", false);
                 Center();
+                break;
+            case MovementType.Halt:
+                anim.SetBool("move", false);
                 break;
         }
     }

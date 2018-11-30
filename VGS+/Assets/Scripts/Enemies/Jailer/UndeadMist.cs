@@ -125,6 +125,7 @@ public class UndeadMist : MonoBehaviour {
         if(repetitions[j]<1) {
             repetitions[j] = 0;
             players.Remove(other.gameObject);
+            other.gameObject.GetComponent<PlayerMovement>().Cc = false;
             int index = 0;
             for (int i = 0; i < ps.Length; i++)
             {
@@ -144,6 +145,7 @@ public class UndeadMist : MonoBehaviour {
         int before = players.Count;
         if(!players.Contains(other.gameObject)) {
             players.Add(other.gameObject);
+            other.gameObject.GetComponent<PlayerMovement>().Cc = true;
             
         }
         for(int i=0;i<ps.Length;i++) {

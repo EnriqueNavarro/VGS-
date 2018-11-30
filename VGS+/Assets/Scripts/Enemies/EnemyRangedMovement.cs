@@ -23,6 +23,7 @@ public class EnemyRangedMovement : MonoBehaviour {
         if (this.GetComponent<EnemyHealth>().Attacker != null)
         {
             target = this.GetComponent<EnemyHealth>().Attacker;
+            this.GetComponentInChildren<SpriteRenderer>().flipX = (target.transform.position.x - transform.position.x > 0);
         }
         else
         {

@@ -231,7 +231,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1692699229843000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.8, y: 2.1259384, z: -26.7}
+  m_LocalPosition: {x: -19.1, y: 5, z: 3.5767355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4952247442191170}
@@ -408,6 +408,7 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 1793858811607916}
+  anim: {fileID: 0}
 --- !u!114 &114133643158597762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -475,6 +476,7 @@ MonoBehaviour:
     m_Bits: 1536
   Delay: 0.2
   halt: 0
+  anim: {fileID: 0}
 --- !u!114 &114442014743670948
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -68,7 +68,7 @@ public abstract class BossAbility : EnemyAbility
     new public void AdjustCol()
     {
         //if (this.name == "Flurry") Debug.Log(Movement);
-        Aoe.SetActive(InProcess);
+        
         if (InProcess||Target==null) return;
         Movement21 = transform.position - LastPos2;
         float r = 1;
@@ -116,6 +116,7 @@ public abstract class BossAbility : EnemyAbility
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
         Invoke("MovePlayer", 2);
+        Aoe.SetActive(false);
     }
     public void MovePlayer() {
         this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;

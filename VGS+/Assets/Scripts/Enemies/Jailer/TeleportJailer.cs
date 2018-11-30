@@ -18,7 +18,7 @@ public class TeleportJailer : BossAbility {
             Tuple = User.GetComponent<EnemyHealth>().Threat[i];
             Target = Tuple.player;
             distance = Vector3.Distance(Target.transform.position, transform.position);
-            activate = (distance<maxDistance &&  !this.GetComponentInParent<JailerControler>().Busy);
+            activate = (distance>maxDistance &&  !this.GetComponentInParent<JailerControler>().Busy);
         }
         
         if (!InProcess && activate)
@@ -35,5 +35,6 @@ public class TeleportJailer : BossAbility {
     {
         this.GetComponentInParent<JailerMovement>().Current = MovementType.teleport;
         InProcess = false;
+        
     }
 }

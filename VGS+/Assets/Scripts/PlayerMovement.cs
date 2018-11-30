@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float speedModifier = 1;
     [SerializeField] private float dodgeSpeed;
     [SerializeField] private float dodgeDuration;
+    [SerializeField] private bool cc;
     private Vector3 dodgeDirection;
     private float elapsed;
     public bool dodge;
@@ -28,11 +29,25 @@ public class PlayerMovement : MonoBehaviour {
             speedModifier = value;
         }
     }
-    
+
+    public bool Cc
+    {
+        get
+        {
+            return cc;
+        }
+
+        set
+        {
+            cc = value;
+        }
+    }
+
     private void FixedUpdate()
     {
         deltaPos = transform.position - lastPos;
         lastPos = transform.position;
+        if (!Cc) this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         int size = this.GetComponent<Class>().Actives.Length;
         for(int i=0;i<size;i++) {
             this.GetComponent<Class>().Actives[i].GetComponent<Ability>().Movement = deltaPos;

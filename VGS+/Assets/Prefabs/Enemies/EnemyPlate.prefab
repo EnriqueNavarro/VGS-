@@ -425,6 +425,7 @@ MonoBehaviour:
   enemies: []
   allies: []
   aoe: {fileID: 1237597463411752}
+  anim: {fileID: 0}
 --- !u!114 &114195132526737554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -446,6 +447,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1536
   Delay: 0.3
+  halt: 0
+  anim: {fileID: 0}
 --- !u!114 &114501930606041738
 MonoBehaviour:
   m_ObjectHideFlags: 1

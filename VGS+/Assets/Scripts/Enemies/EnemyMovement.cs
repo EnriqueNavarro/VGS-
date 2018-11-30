@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField] private LayerMask lm;
     [SerializeField] private float Delay;
     [SerializeField] private bool halt;
+    [SerializeField] private Animator anim;
     public void Stop(float duration) {
         halt = true;
         Invoke("MoveAgain", duration);
@@ -30,6 +31,7 @@ public class EnemyMovement : MonoBehaviour {
         if (this.GetComponent<EnemyHealth>().Attacker != null)
         {
             target = this.GetComponent<EnemyHealth>().Attacker;
+            this.GetComponentInChildren<SpriteRenderer>().flipX = (target.transform.position.x - transform.position.x > 0);
         } else
         {
             target = null;
@@ -52,6 +54,7 @@ public class EnemyMovement : MonoBehaviour {
             }
         }
         if (halt) lastKnownPos = transform.position;
+        anim.SetBool("move", lastKnownPos == transform.position);
     }
     private void Update()
     {

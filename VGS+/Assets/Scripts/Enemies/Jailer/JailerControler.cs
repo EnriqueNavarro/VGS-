@@ -27,7 +27,6 @@ public class JailerControler : MonoBehaviour {
     private float deltaTime = 2;
     private float deltaStart;
     private bool wasInProcess;
-
     public bool Busy
     {
         get
@@ -82,6 +81,7 @@ public class JailerControler : MonoBehaviour {
         combat = this.GetComponent<EnemyHealth>().combat;
         if(combat) {
             player = this.GetComponent<EnemyHealth>().Attacker;
+            this.GetComponentInChildren<SpriteRenderer>().flipX = (player.transform.position.x - transform.position.x > 0);
             wasInProcess = busy;
             Busy = false;
             aaRemainingCD = Mathf.Clamp(autoCD + (lastAA - Time.fixedTime),0,autoCD);

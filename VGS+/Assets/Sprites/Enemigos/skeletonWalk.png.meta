@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 1c1d4a4954bec78428fe4a3f6b2da0f4
+guid: 0f2e9829a951d9041bd30efeb38767e8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: skeletonAttack_0
-    21300002: skeletonAttack_1
-    21300004: skeletonAttack_2
-    21300006: skeletonAttack_3
-    21300008: skeletonAttack_6
-    21300010: skeletonAttack_7
-    21300012: skeletonAttack_8
-    21300014: skeletonAttack_9
+    21300000: skeletonWalk_0
+    21300002: skeletonWalk_1
+    21300004: skeletonWalk_2
+    21300006: skeletonWalk_3
+    21300008: skeletonWalk_4
+    21300010: skeletonWalk_5
+    21300012: skeletonWalk_6
+    21300014: skeletonWalk_7
+    21300016: skeletonWalk_8
+    21300018: skeletonWalk_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -92,161 +94,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skeletonAttack_0
+      name: skeletonWalk_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 1
-        width: 91
-        height: 106
-      alignment: 9
-      pivot: {x: 0.28991538, y: 0.4899802}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 266b7da7b45e82f45b47f298d4acfae7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_1
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 1
-        width: 104
-        height: 106
-      alignment: 9
-      pivot: {x: 0.21405087, y: 0.4899802}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a4147f983398e642b74063352811e70
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_2
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 1
-        width: 104
-        height: 106
-      alignment: 9
-      pivot: {x: 0.23447594, y: 0.4899802}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b10c087d2585c540a3c69186af5599e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_3
-      rect:
-        serializedVersion: 2
-        x: 594
-        y: 0
-        width: 192
-        height: 129
-      alignment: 9
-      pivot: {x: 0.54204845, y: 0.4899802}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 050f2f0c07f56284dac69e55547f307e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_6
-      rect:
-        serializedVersion: 2
-        x: 817
-        y: 0
-        width: 109
-        height: 86
-      alignment: 9
-      pivot: {x: 0.7241132, y: 0.6039291}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bec9157e1e80ff4186d2ad32ae81cb7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_7
-      rect:
-        serializedVersion: 2
-        x: 1025
-        y: 0
-        width: 96
-        height: 89
-      alignment: 9
-      pivot: {x: 0.71020764, y: 0.5835719}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c619430906dd06941bbeb2f6b87b5656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_8
-      rect:
-        serializedVersion: 2
-        x: 1232
-        y: 1
-        width: 85
-        height: 93
-      alignment: 9
-      pivot: {x: 0.7529412, y: 0.55847204}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2661b34aa1c795046a298e169900a7b4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skeletonAttack_9
-      rect:
-        serializedVersion: 2
-        x: 1465
+        x: 7
         y: 0
         width: 58
-        height: 92
-      alignment: 9
-      pivot: {x: 0.5344828, y: 0.5645424}
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af6351871296d414fb6517ea18976866
+      spriteID: 0ad1e5af60b1a1d46868a4bf89e86452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed2adf340b02e24c90928378d7bf8a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c8a3215be4eae438d07ead58ca8277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_3
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 0
+        width: 58
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d802a3994fe9f47b37349b23b203f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_4
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 58
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f4211ae9b26554a9fbfbdbe934d351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 0
+        width: 58
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b180d7c9df08b2349b6e85e44ec69c14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 0
+        width: 58
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9160f5dcc957be499c41bd678aa9d10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_7
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1
+        width: 58
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58916944fb077f2488e095377bf039f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1
+        width: 58
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982440a20fcc37949b0caeeb70278aee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeletonWalk_9
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 0
+        width: 58
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765886a215a06c942859ec4a644c5321
       vertices: []
       indices: 
       edges: []
@@ -254,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b02f7088d988edb40adb1d705b2cb831
+    spriteID: eeede02f6833d454abc9f534bf92b6d6
     vertices: []
     indices: 
     edges: []

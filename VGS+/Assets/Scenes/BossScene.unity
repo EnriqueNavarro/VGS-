@@ -1118,14 +1118,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114391776613353178, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: father
-      value: 
-      objectReference: {fileID: 532648357}
     - target: {fileID: 114562546418345726, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
         type: 2}
       propertyPath: undeadMist
+      value: 
+      objectReference: {fileID: 532648357}
+    - target: {fileID: 114391776613353178, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
+        type: 2}
+      propertyPath: father
       value: 
       objectReference: {fileID: 532648357}
     - target: {fileID: 224419865815865292, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
@@ -1138,31 +1138,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 23380228689755046, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65082285341672536, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 65082285341672536, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: m_Size.z
-      value: 4.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 65082285341672536, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: m_Center.z
-      value: -1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 95504897947693904, guid: 7b5863ec5f6720f43bcc1b5583f77e98,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 400f64036169b594cbfdb9a73a2361c8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5863ec5f6720f43bcc1b5583f77e98, type: 2}
   m_IsPrefabAsset: 0
@@ -3652,7 +3627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 2091463245}
-  test: 1
+  test: 0
   ShadowDancer: {fileID: 1927792990}
   CrystalSword: {fileID: 1268115105}
   bossRoom: 0
