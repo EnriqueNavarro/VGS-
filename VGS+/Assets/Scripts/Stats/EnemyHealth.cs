@@ -299,7 +299,7 @@ public class EnemyHealth : MonoBehaviour
                 poisonRes = baseMagicRes;
                 break;
             case Enemies.Jailer:
-                health = 600;
+                health = 1000;
                 maxHealth = health;
                 physicalRes = 2;
                 baseMagicRes = 2;
@@ -371,6 +371,34 @@ public class EnemyHealth : MonoBehaviour
         dmg = health - (int)Mathf.Floor(dmg * (10 - physicalRes * 2) / 10);
         Health = Mathf.Clamp(dmg, 0, MaxHealth);
         if (Health == 0) death();        
+    }
+    public void Heal(int amount, Elements element)
+    {
+        switch (element)
+        {
+            case Elements.fire:
+                amount = Health + (int)Mathf.Floor(amount * (10 + FireRes * 2) / 10);
+                break;
+            case Elements.frost:
+                amount = Health + (int)Mathf.Floor(amount * (10 + FrostRes * 2) / 10);
+                break;
+            case Elements.poison:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PoisonRes * 2) / 10);
+                break;
+            case Elements.light:
+                amount = Health + (int)Mathf.Floor(amount * (10 + LightRes * 2) / 10);
+                break;
+            case Elements.shadow:
+                amount = Health + (int)Mathf.Floor(amount * (10 + ShadowRes * 2) / 10);
+                break;
+            case Elements.physical:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PhysicalRes * 2) / 10);
+                break;
+            case Elements.none:
+                amount = Health + (int)Mathf.Floor(amount * (10 + PhysicalRes * 2) / 10);
+                break;
+        }
+        Health = Mathf.Clamp(amount, 0, MaxHealth);
     }
     public void damage(int dmg, Elements element, GameObject attacker1)
     {
