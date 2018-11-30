@@ -85,6 +85,7 @@ public abstract class BossAbility : EnemyAbility
     }
     // Update is called once per frame
     new void Update () {
+        if (!IsInvoking()) InProcess = false;
         AdjustCol();
         int i = User.GetComponent<EnemyHealth>().Number;
         if (User.GetComponent<EnemyHealth>().combat)

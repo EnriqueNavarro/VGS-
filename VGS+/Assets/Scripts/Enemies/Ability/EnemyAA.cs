@@ -11,7 +11,7 @@ public class EnemyAA : EnemyAbility {
     private void StartAnim()
     {
         Anim.SetBool("auto", true);
-        Invoke("EndAnim", 0.1f);
+        //Invoke("EndAnim", 0.4f);
     }
     private void EndAnim()
     {

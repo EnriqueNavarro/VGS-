@@ -78,18 +78,29 @@ public class JailerControler : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
+        wasInProcess = busy;
+        Busy = false;
         combat = this.GetComponent<EnemyHealth>().combat;
-        if(combat) {
+        foreach (GameObject ability in actives)
+        {
+            Busy = Busy || ability.GetComponent<BossAbility>().InProcess;
+            if (ability.GetComponent<BossAbility>().InProcess) Debug.Log(ability.name);
+        }
+        if (combat) {
             player = this.GetComponent<EnemyHealth>().Attacker;
             this.GetComponentInChildren<SpriteRenderer>().flipX = (player.transform.position.x - transform.position.x > 0);
-            wasInProcess = busy;
-            Busy = false;
+            
+            
             aaRemainingCD = Mathf.Clamp(autoCD + (lastAA - Time.fixedTime),0,autoCD);
             enRemainingCD = Mathf.Clamp(ensaringCD + (lastEnsaring - Time.fixedTime), 0, ensaringCD);
-            foreach (GameObject ability in actives) {
-                Busy = Busy || ability.GetComponent<BossAbility>().InProcess;
+            
+            if (Busy) {
+                this.GetComponent<JailerMovement>().Current = MovementType.Halt;
+            } else {
+                if(this.GetComponent<JailerMovement>().Current != MovementType.teleport) {
+                    this.GetComponent<JailerMovement>().Current = MovementType.MoveToPlayer;
+                }
             }
-            if (Busy) this.GetComponent<JailerMovement>().Current = MovementType.Halt;
             if (!Busy && wasInProcess) deltaStart = Time.fixedTime;
             if(!Busy && (Time.fixedTime-deltaStart>=deltaTime)) {
                 if(aaRemainingCD==0 && this.GetComponentInChildren<JailerAutoAttack>().enemies.Count>0) {
@@ -113,6 +124,7 @@ public class JailerControler : MonoBehaviour {
             CancelAllInvokes();
             this.GetComponentInChildren<Execute>().activate=true;
             undeadMist.GetComponentInChildren<UndeadMist>().ChangePhase(phase);
+            Debug.Log("execute");
         }
 
 

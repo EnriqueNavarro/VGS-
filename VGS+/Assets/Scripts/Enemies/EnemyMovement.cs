@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour {
             }
         }
         if (halt) lastKnownPos = transform.position;
-        anim.SetBool("move", lastKnownPos == transform.position);
+        anim.SetBool("move", lastKnownPos != transform.position);
     }
     private void Update()
     {

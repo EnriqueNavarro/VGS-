@@ -38,7 +38,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     private sStats change;
     private int cost;
     private Vector3 Movement;
-    private bool inProcess;
+    [SerializeField] private bool inProcess;
     [SerializeField] private GameObject aoe;
     private bool flag;
     [SerializeField] Animator anim;
@@ -351,7 +351,7 @@ public abstract class EnemyAbility : MonoBehaviour {
     public void Update()
     {
         //Debug.Log(Movement);
-        
+
         
         if (user.GetComponent<EnemyHealth>().combat && !requestSent && (Time.fixedTime - Timer) >= Cd )
         {
@@ -433,6 +433,7 @@ public abstract class EnemyAbility : MonoBehaviour {
             enemy.GetComponent<Stats>().damage(Damage, DmgType);
         }
         InProcess = false;
+        Anim.SetBool("auto", false);
     }
     private void OnTriggerEnter(Collider other)
     {

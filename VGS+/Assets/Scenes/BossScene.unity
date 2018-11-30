@@ -3626,7 +3626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d684c412642438e4db9f5e45516ed637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 2091463245}
+  UI: {fileID: 1053257229}
   test: 0
   ShadowDancer: {fileID: 1927792990}
   CrystalSword: {fileID: 1268115105}
@@ -6487,7 +6487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1269917224612270, guid: b6ca6ef164e517a41a1110acaefd0c72, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114511300138888890, guid: b6ca6ef164e517a41a1110acaefd0c72,
         type: 2}

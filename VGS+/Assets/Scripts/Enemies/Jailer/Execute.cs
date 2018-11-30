@@ -13,6 +13,7 @@ public class Execute : BossAbility
         Invoke("DealDamage", Delay);
         this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
         StartAnim();
+        this.GetComponentInParent<EnemyHealth>().Health += shield;
     }
     
     new void Update()
@@ -32,6 +33,10 @@ public class Execute : BossAbility
                 CancelInvoke();
                 InProcess = false;                
                 this.GetComponentInParent<JailerMovement>().Current = MovementType.MoveToPlayer;
+                Debug.Log(this.GetComponentInParent<EnemyHealth>().Health);
+                this.GetComponentInParent<EnemyHealth>().Health += shield;
+                Debug.Log(this.GetComponentInParent<EnemyHealth>().Health);
+                Anim.SetBool("execute", false);
             }
 
         }
@@ -45,16 +50,12 @@ public class Execute : BossAbility
         }
         Invoke("MovePlayer", 2);
         Anim.SetBool("strike", true);
+        Anim.SetBool("execute", false);
         Invoke("EndAnim2", 0.1f);
     }
     private void StartAnim()
     {
         Anim.SetBool("execute", true);
-        Invoke("EndAnim", 0.1f);
-    }
-    private void EndAnim()
-    {
-        Anim.SetBool("execute", false);
     }
     private void EndAnim2()
     {
